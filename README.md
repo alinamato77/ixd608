@@ -1,3 +1,4 @@
 # Alina Xie
-Repository for ixd608
-https://alinaxdesign.com/aau/ixd608/xie.alina/index.html
+
+## Relevant link
+https://alinaxdesign.com/aau/ixd608/m4/styleguide/
