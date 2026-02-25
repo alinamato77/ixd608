@@ -1,0 +1,221 @@
+/* CSS RESET */
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+		:root {
+			/* Indicators */
+			--color-teal: #41cacc;
+			--color-teal-light: #d4f5ec;
+			--color-orange: #f5a65b;
+			--color-orange-light: #fbd7b4;
+			--color-red: #df6264;
+			--color-red-light: #fae3e6;
+			
+			/* Primary (Purples) */
+			--color-primary: #8285e6;
+			--color-primary-hover: #6b6ed0;
+			--color-primary-light: #a3a8f5;
+			--color-primary-lightest: #e7e9fd;
+			
+			/* Dark / Neutrals / Grays */
+			--color-text-main: #22242a;
+			--color-text-secondary: #494a5c;
+			--color-text-muted: #8285a0;
+			
+			/* Backgrounds & Strokes */
+			--color-stroke-dark: #d6d9ee;
+			--color-stroke-light: #e5e7f8;
+			--color-bg-main: #f3f4fc;
+			
+			/* Secondary (Creams/Whites) */
+			--color-white: #ffffff;
+			--color-cream: #f9f6ea;
+
+			--font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		}
+
+		/* ==========================================================================
+		   2. BASE STYLES & TYPOGRAPHY
+		   ========================================================================== */
+		body {
+			background-color: var(--color-bg-main);
+			color: var(--color-text-secondary);
+			font-family: var(--font-family-base);
+			margin: 0;
+			padding: 0;
+			line-height: 1.6;
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			color: var(--color-text-main);
+			margin-top: 0;
+			margin-bottom: 0.5rem;
+			font-weight: 700;
+		}
+
+		p { margin-top: 0; margin-bottom: 1rem; }
+
+		a {
+			color: var(--color-primary);
+			text-decoration: none;
+			transition: color 0.2s ease;
+		}
+		a:hover { color: var(--color-primary-hover); }
+
+		/* ==========================================================================
+		   3. LAYOUT & GRID SYSTEM
+		   ========================================================================== */
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 2rem 1rem;
+		}
+
+		.display-flex { display: flex; }
+		.flex-none { flex: none; }
+		.flex-stretch { flex: 1; }
+		.flex-justify-center { justify-content: center; }
+		.flex-align-center { align-items: center; }
+
+		/* Grid System */
+		.grid {
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+		}
+		.grid.gap { gap: 1.5rem; }
+
+		.col-xs-6 { grid-column: span 6; }
+		.col-xs-12 { grid-column: span 12; }
+
+		@media (min-width: 768px) {
+			.col-md-2 { grid-column: span 2; }
+			.col-md-4 { grid-column: span 4; }
+		}
+
+		/* ==========================================================================
+		   4. COMPONENTS
+		   ========================================================================== */
+		/* Navbar */
+		.navbar {
+			background-color: var(--color-white);
+			border-bottom: 1px solid var(--color-stroke-light);
+			position: sticky;
+			top: 0;
+			z-index: 100;
+		}
+		.navbar .container { padding: 1rem; }
+		.navbar h1 { margin: 0; font-size: 1.5rem; color: var(--color-primary); letter-spacing: 1px;}
+
+		/* Cards */
+		.card {
+			background-color: var(--color-white);
+			border: 1px solid var(--color-stroke-light);
+			border-radius: 0.75rem;
+			padding: 1.5rem;
+			margin-bottom: 1.5rem;
+			transition: box-shadow 0.2s;
+		}
+		
+		.card.soft { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+		.card.hard { box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); border-color: var(--color-stroke-dark); }
+		.card.flat { box-shadow: none; border-color: var(--color-stroke-dark); background-color: transparent; }
+		.card.dark { background-color: var(--color-text-main); color: var(--color-white); border-color: var(--color-text-main); }
+		.card.dark h3 { color: var(--color-white); }
+		.card.medium { background-color: var(--color-cream); border-color: var(--color-stroke-dark); }
+
+		/* Navigation Lists */
+		.navigation ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.nav-horizontal ul {
+			display: flex;
+			gap: 1.5rem;
+			flex-wrap: wrap;
+		}
+		.nav-horizontal a { color: var(--color-text-secondary); font-weight: 500; }
+		.nav-horizontal a:hover { color: var(--color-primary); }
+		.nav-vertical ul {
+			display: flex;
+			flex-direction: column;
+			gap: 0.75rem;
+		}
+
+		/* Buttons */
+		.btn {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0.75rem 1.5rem;
+			border-radius: 999px;
+			font-weight: 600;
+			font-size: 0.875rem;
+			border: none;
+			cursor: pointer;
+			transition: all 0.2s ease;
+		}
+		.btn.primary { background-color: var(--color-primary); color: var(--color-white); }
+		.btn.primary:hover { background-color: var(--color-primary-hover); }
+		
+		.btn.secondary { background-color: var(--color-primary-lightest); color: var(--color-primary); }
+		.btn.secondary:hover { background-color: var(--color-primary-light); color: var(--color-white); }
+		
+		.btn.success { background-color: var(--color-teal); color: var(--color-white); }
+		.btn.success:hover { filter: brightness(0.95); }
+		
+		.btn.danger { background-color: var(--color-red); color: var(--color-white); }
+		.btn.danger:hover { filter: brightness(0.95); }
+		
+		.btn.outline { background-color: transparent; border: 1px solid var(--color-stroke-dark); color: var(--color-text-secondary); }
+		.btn.outline:hover { border-color: var(--color-text-main); color: var(--color-text-main); }
+
+		/* Color Swatches (For Styleguide) */
+		.color-circle {
+			width: 3.5rem;
+			height: 3.5rem;
+			border-radius: 50%;
+			margin-bottom: 1rem;
+			box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+		}
+		.color-label {
+			font-size: 0.75rem;
+			color: var(--color-text-secondary);
+			font-family: monospace;
+			line-height: 1.4;
+		}
+
+		/* Tables */
+		.table {
+			width: 100%;
+			border-collapse: collapse;
+			text-align: left;
+			background-color: var(--color-white);
+		}
+		.table th {
+			background-color: var(--color-primary-lightest);
+			color: var(--color-primary);
+			padding: 1rem;
+			font-weight: 600;
+		}
+		.table td { padding: 1rem; color: var(--color-text-secondary); }
+		.table.lined td, .table.lined th { border-bottom: 1px solid var(--color-stroke-light); }
+		.table.striped tbody tr:nth-child(even) { background-color: var(--color-bg-main); }
+
+		/* Figures & Images */
+		.figure { margin: 0; }
+		.img-placeholder {
+			background-color: var(--color-cream);
+			color: var(--color-text-muted);
+			height: 200px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 0.5rem;
+			margin-bottom: 1rem;
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+		}
+		figcaption { text-align: center; color: var(--color-text-main); font-weight: 600;}

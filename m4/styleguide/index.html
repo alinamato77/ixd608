@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Styleguide</title>
+
+	<link rel="stylesheet" href="lib/css/styleguide.css">
+</head>
+<body>
+	
+	<header class="navbar">
+		<div class="container display-flex">
+			<div class="flex-none">
+				<h1>Styleguide</h1>
+			</div>
+			<div class="flex-stretch"></div>
+			<nav class="flex-none nav">
+				<ul class="container display-flex">
+					<li><a href="#tableofcontents">Table of Contents</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container" id="tableofcontents">
+		<h2>Table of Contents</h2>
+		<div class="card soft">
+			<nav class="navigation nav-horizontal">
+				<ul>
+					<li><a href="#typography">Typography</a></li>
+					<li><a href="#cards">Cards</a></li>
+					<li><a href="#buttons">Buttons</a></li>
+					<li><a href="#colors">Colors</a></li>
+					<li><a href="#navigation">Navigation</a></li>
+					<li><a href="#tables">Tables</a></li>
+					<li><a href="#gridsystem">Grid System</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<!-- Typography Section -->
+	<div class="container" id="typography">
+		<h2>Typography</h2>
+
+		<div class="card soft">
+			<h3>Headings</h3>
+			<h1>Heading 1 - Primary Hero Title</h1>
+			<h2>Heading 2 - Section Headers</h2>
+			<h3>Heading 3 - Card Titles</h3>
+			<h4>Heading 4 - Subtitles</h4>
+			<h5>Heading 5 - Small Headers</h5>
+			<h6>Heading 6 - Labels</h6>
+		</div>
+
+		<div class="card soft">
+			<h3>Paragraph</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+	</div>
+
+	<!-- Cards Section -->
+	<div class="container" id="cards">
+		<h2>Cards</h2>
+		<div class="grid gap">
+			<div class="col-xs-12 col-md-4">
+				<div class="card">Card</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="card soft">Card Soft</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="card hard">Card Hard</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="card flat">Card Flat</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="card dark">
+					<h3>Card Dark</h3>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+				<div class="card medium">Card Medium</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Buttons Section -->
+	<div class="container" id="buttons">
+		<h2>Buttons</h2>
+		<div class="card soft">
+			<p>Standard button styles used across the system. Fully rounded for a modern e-commerce feel.</p>
+			<div class="display-flex flex-align-center" style="gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+				<button class="btn primary">Primary Button</button>
+				<button class="btn secondary">Secondary Button</button>
+				<button class="btn success">Success</button>
+				<button class="btn outline">Outline Button</button>
+				<button class="btn danger">Danger</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Colors Section (UPDATED to match specific image palette) -->
+	<div class="container" id="colors">
+		<h2>Colors</h2>
+
+		<!-- 指示色：Indicators -->
+		<h3>Indicators</h3>
+		<div class="grid gap">
+			<div class="col-xs-6 col-md-2">
+				<div class="card flat">
+					<div class="color-circle" style="background-color: var(--color-teal);"></div>
+					<div class="color-label">Teal<br>#41CACC</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-2">
+				<div class="card flat">
+					<div class="color-circle" style="background-color: var(--color-teal-light);"></div>
+					<div class="color-label">Teal Light<br>#D4F5EC</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-2">
+				<div class="card flat">
+					<div class="color-circle" style="background-color: var(--color-orange);"></div>
+					<div class="color-label">Orange<br>#F5A65B</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-2">
+				<div class="card flat">
+					<div class="color-circle" style="background-color: var(--color-orange-light);"></div>
+					<div class="color-label">Orange Light<br>#FBD7B4</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-2">
+				<div class="card flat">
+					<div class="color-circle" style="background-color: var(--color-red);"></div>
+					<div class="color-label">Red<br>#DF6264</div>
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-2">
+				<div class="card flat">
+					<div class="color-circle" style="background-color: var(--color-red-light);"></div>
+					<div class="color-label">Red Light<br>#FAE3E6</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Primary、Secondary 和 Dark -->
+		<div class="grid gap">
+			<!-- Primary 组 -->
+			<div class="col-xs-12 col-md-4">
+				<h3>Primary</h3>
+				<div class="grid gap">
+					<div class="col-xs-6">
+						<div class="card flat">
+							<div class="color-circle" style="background-color: var(--color-primary);"></div>
+							<div class="color-label">Primary<br>#8285E6</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="card flat">
+							<div class="color-circle" style="background-color: var(--color-primary-light);"></div>
+							<div class="color-label">Primary Light<br>#A3A8F5</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Secondary 组 -->
+			<div class="col-xs-12 col-md-4">
+				<h3>Secondary</h3>
+				<div class="grid gap">
+					<div class="col-xs-6">
+						<div class="card flat">
+							<!-- 加上淡淡的边框方便在白色背景查看 -->
+							<div class="color-circle" style="background-color: var(--color-white); border: 1px solid var(--color-stroke-dark);"></div>
+							<div class="color-label">White<br>#FFFFFF</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="card flat">
+							<div class="color-circle" style="background-color: var(--color-cream); border: 1px solid var(--color-stroke-light);"></div>
+							<div class="color-label">Cream<br>#F9F6EA</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Dark / Neutrals 组 -->
+			<div class="col-xs-12 col-md-4">
+				<h3>Dark / Neutrals</h3>
+				<div class="grid gap">
+					<div class="col-xs-6">
+						<div class="card flat">
+							<div class="color-circle" style="background-color: var(--color-text-main);"></div>
+							<div class="color-label">Text Main<br>#22242A</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="card flat">
+							<div class="color-circle" style="background-color: var(--color-text-muted);"></div>
+							<div class="color-label">Text Muted<br>#8285A0</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Navigation Section -->
+	<div class="container" id="navigation">
+		<h2>Navigation</h2>
+		<div class="card soft">
+			<h3>Horizontal Navigation</h3>
+			<nav class="navigation nav-horizontal">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">Our Story</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="card soft">
+			<h3>Vertical Navigation (Sidebar)</h3>
+			<nav class="navigation nav-vertical">
+				<ul>
+					<li><a href="#">Account Dashboard</a></li>
+					<li><a href="#">Order History</a></li>
+					<li><a href="#">Wishlist</a></li>
+					<li><a href="#">Log Out</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<!-- Tables Section -->
+	<div class="container" id="tables">
+		<h2>Tables</h2>
+		<div class="card soft">
+			<h3>Striped Lined Border Table</h3>
+			<table class="table striped lined">
+				<thead>
+					<tr>
+						<th>Order ID</th>
+						<th>Product</th>
+						<th>Customer Name</th>
+						<th>Status</th>
+						<th>Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>#10045</td>
+						<td>Dog Food</td>
+						<td>Hamilton Cline</td>
+						<td><span style="color: var(--color-teal); font-weight: bold;">Shipped</span></td>
+						<td>$65.00</td>
+					</tr>
+					<tr>
+						<td>#10046</td>
+						<td>Cat Food</td>
+						<td>Fred McHale</td>
+						<td><span style="color: var(--color-orange); font-weight: bold;">Processing</span></td>
+						<td>$450.00</td>
+					</tr>
+					<tr>
+						<td>#10047</td>
+						<td>Dog Shampoo</td>
+						<td>Michael Catanzaro</td>
+						<td><span style="color: var(--color-teal); font-weight: bold;">Shipped</span></td>
+						<td>$120.00</td>
+					</tr>
+					<tr>
+						<td>#10048</td>
+						<td>Cat Shampoo</td>
+						<td>Andrea Pimentel</td>
+						<td><span style="color: var(--color-red); font-weight: bold;">Cancelled</span></td>
+						<td>$28.00</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<!-- Grid System Section -->
+	<div class="container" id="gridsystem">
+		<h2>Grid System</h2>
+
+		<div class="card soft" style="background-color: var(--color-bg-main);">
+			<p style="color: var(--color-text-secondary); margin-bottom: 2rem;">3-up grid layout demonstrating how the palette maps to product cards.</p>
+
+			<div class="grid gap">
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure card flat" style="background-color: var(--color-white);">
+						<div class="img-placeholder">Product Image</div>
+						<figcaption>Product Name</figcaption>
+						<p style="text-align: center; color: var(--color-text-muted); font-size: 0.875rem;">$120.00</p>
+					</figure>
+				</div>
+
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure card flat" style="background-color: var(--color-white);">
+						<div class="img-placeholder">Product Image</div>
+						<figcaption>Product Name</figcaption>
+						<p style="text-align: center; color: var(--color-text-muted); font-size: 0.875rem;">$45.00</p>
+					</figure>
+				</div>
+
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure card flat" style="background-color: var(--color-white);">
+						<div class="img-placeholder">Product Image</div>
+						<figcaption>Product Name</figcaption>
+						<p style="text-align: center; color: var(--color-text-muted); font-size: 0.875rem;">$85.00</p>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
