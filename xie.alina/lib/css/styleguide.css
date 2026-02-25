@@ -136,19 +136,91 @@ a:hover
 
 
 
-/* viewwindow */
-
+/* VIEW WINDOW */
 .view-window {
-	height: 50vh;
-	position:relative;
-	overflow: hidden;
-	background-size: cover;
-	background-position: center;
-	background-attachment: fixed;
+  max-width: 100%;
+  height: 50vh;
+  min-height: 400px; /* Base size for desktops */
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+}
+
+/* Laptops and Large Tablets */
+@media (max-width: 1200px) {
+  .view-window {
+    height: 45vh;
+    min-height: 350px;
+  }
+}
+
+/* Tablets / iPad Pro */
+@media (max-width: 1024px) {
+  .view-window {
+    height: 40vh;
+    min-height: 300px;
+    background-attachment: scroll; 
+  }
+}
+
+/* Mobile Devices and Smaller Tablets */
+@media (max-width: 768px) {
+  .view-window {
+    height: 35vh; 
+    min-height: 250px;
+    background-attachment: scroll; 
+  }
+}
+
+/* Large Mobile Phones */
+@media (max-width: 480px) {
+  .view-window {
+    height: 30vh;
+    min-height: 200px;
+    background-attachment: scroll;
+  }
+}
+
+/* Small Mobile Phones */
+@media (max-width: 360px) {
+  .view-window {
+    height: 25vh;
+    min-height: 180px;
+    background-attachment: scroll;
+  }
 }
 
 
 
 
 
+/* TABLES */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
 
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.2em 0.5em;
+}
+
+.table.striped tbody tr:nth-child(odd) {
+  background-color: var(--color-neutral-light);
+}
+
+.table.lined.vertical th:not(:first-child),
+.table.lined.vertical td:not(:first-child) {
+  border-left: 1px solid var(--color-neutral-medium);
+}
+
+.table.lined.horizontal tbody tr {
+  border-top: 1px solid var(--color-neutral-medium);
+}
+
+.table.lined.border {
+  border: 1px solid var(--color-neutral-medium);
+}

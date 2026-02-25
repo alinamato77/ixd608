@@ -32,12 +32,12 @@
 			--color-white: #ffffff;
 			--color-cream: #f9f6ea;
 
-			--font-family-base: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			--font-family-base: 'Alegreya', Georgia, 'Times New Roman', serif;
+			--font-family-heading: 'Source Sans Pro', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			--font-family-ui: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 		}
 
-		/* ==========================================================================
-		   2. BASE STYLES & TYPOGRAPHY
-		   ========================================================================== */
+		/* BASE STYLES & TYPOGRAPHY */
 		body {
 			background-color: var(--color-bg-main);
 			color: var(--color-text-secondary);
@@ -63,9 +63,7 @@
 		}
 		a:hover { color: var(--color-primary-hover); }
 
-		/* ==========================================================================
-		   3. LAYOUT & GRID SYSTEM
-		   ========================================================================== */
+		/* LAYOUT & GRID SYSTEM */
 		.container {
 			max-width: 1200px;
 			margin: 0 auto;
@@ -93,9 +91,7 @@
 			.col-md-4 { grid-column: span 4; }
 		}
 
-		/* ==========================================================================
-		   4. COMPONENTS
-		   ========================================================================== */
+		/* COMPONENTS */
 		/* Navbar */
 		.navbar {
 			background-color: var(--color-white);
