@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PawShop Style Guide</title>
+  <link rel="stylesheet" href="lib/css/gridsystem.css" />
+  <link rel="stylesheet" href="lib/css/styleguide.css" />
+</head>
+<body>
+<div class="app">
+
+  <!-- ===== SIDEBAR ===== -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-logo">
+      <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="8" r="2"/><path d="M9 17.2C9 11.8 12.3 10 15.1 10.8M15 17.2C15 11.8 11.7 10 8.9 10.8"/><circle cx="12" cy="17" r="4"/></svg>
+      <span>PawShop</span>
+    </div>
+    <p class="sidebar-label">Style Guide</p>
+    <ul>
+      <li><a href="#typography" class="active" data-nav>Typography</a></li>
+      <li><a href="#cards" data-nav>Cards</a></li>
+      <li><a href="#buttons" data-nav>Buttons</a></li>
+      <li><a href="#colors" data-nav>Colors</a></li>
+      <li><a href="#navigation" data-nav>Navigation</a></li>
+      <li><a href="#tables" data-nav>Tables</a></li>
+      <li><a href="#gridsystem" data-nav>Grid System</a></li>
+      <li><a href="#default-inputs" data-nav>Default Inputs</a></li>
+      <li><a href="#form-inputs" data-nav>Form Inputs</a></li>
+      <li><a href="#labels-controls" data-nav>Labels &amp; Controls</a></li>
+      <li><a href="#checkboxes" data-nav>Checkboxes</a></li>
+      <li><a href="#toggle" data-nav>Toggle</a></li>
+      <li><a href="#hotdog" data-nav>Hotdog</a></li>
+      <li><a href="#select" data-nav>Select</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <div class="content">
+
+    <!-- ==================== TYPOGRAPHY ==================== -->
+    <div class="section-header" id="typography">
+      <h2>Typography</h2>
+      <p>Font family: Source Sans 3. Use consistent sizing and weight throughout the petshop interface.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="box space-y-6">
+      <div>
+        <p class="sub-label">Headings</p>
+        <div class="heading-1">Heading 1 &mdash; Welcome to PawShop</div>
+        <div class="heading-2">Heading 2 &mdash; Our Pet Categories</div>
+        <div class="heading-3">Heading 3 &mdash; Featured Products</div>
+        <div class="heading-4">Heading 4 &mdash; Special Offers</div>
+      </div>
+      <div class="hr"></div>
+      <div>
+        <p class="sub-label">Body Text</p>
+        <p class="body-regular">Body Regular (16px) &mdash; Your one-stop shop for premium pet food, accessories, and grooming products. We care about your furry friends as much as you do.</p>
+        <p class="body-small">Body Small (14px) &mdash; Free shipping on orders over $50. Same-day delivery available in select areas.</p>
+        <p class="caption">Caption (12px) &mdash; *Terms and conditions apply. Offer valid while stocks last.</p>
+      </div>
+      <div class="hr"></div>
+      <div>
+        <p class="sub-label">Fonts</p>
+        <div class="flex gap-8 flex-wrap">
+          <div class="font-card">
+            <p class="font-card-label">Primary</p>
+            <p class="font-card-name" style="font-family:'Source Sans 3',sans-serif;font-weight:700">Source Sans 3</p>
+            <p class="font-card-desc" style="font-family:'Source Sans 3',sans-serif">Body text, headings, paragraphs</p>
+          </div>
+          <div class="font-card">
+            <p class="font-card-label">Secondary</p>
+            <p class="font-card-name" style="font-family:'Alegreya',serif;font-weight:700">Alegreya</p>
+            <p class="font-card-desc" style="font-family:'Alegreya',serif">Buttons, inputs, labels, badges</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== CARDS ==================== -->
+    <div class="section-header" id="cards">
+      <h2>Cards</h2>
+      <p>Card container styles used across the petshop for grouping content, products, and UI elements.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="cards-grid">
+      <!-- Card -->
+      <div class="card-variant card-default">
+        <p>Card</p>
+      </div>
+
+      <!-- Card Soft -->
+      <div class="card-variant card-soft">
+        <p>Card Soft</p>
+      </div>
+
+      <!-- Card Hard -->
+      <div class="card-variant card-hard">
+        <p>Card Hard</p>
+      </div>
+
+      <!-- Card Outline -->
+      <div class="card-variant card-outline-var">
+        <p>Card Outline</p>
+      </div>
+
+      <!-- Card Dark -->
+      <div class="card-variant card-dark">
+        <p>Card Dark</p>
+      </div>
+
+      <!-- Card Gradient -->
+      <div class="card-variant card-gradient">
+        <p>Card Gradient</p>
+      </div>
+    </div>
+
+    <!-- ==================== BUTTONS ==================== -->
+    <div class="section-header" id="buttons">
+      <h2>Buttons</h2>
+      <p>Button styles for primary actions, secondary actions, and various states.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="box space-y-8">
+      <div>
+        <p class="sub-label">Primary</p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <button class="btn btn-primary">Default</button>
+          <button class="btn btn-primary-hover">Hover</button>
+          <button class="btn btn-primary-active">Active</button>
+          <button class="btn btn-primary-disabled">Disabled</button>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Secondary</p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <button class="btn btn-secondary">Default</button>
+          <button class="btn btn-secondary-hover">Hover</button>
+          <button class="btn btn-secondary-disabled">Disabled</button>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Outline</p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <button class="btn btn-outline">Primary</button>
+          <button class="btn btn-outline-accent">Accent</button>
+          <button class="btn btn-outline-danger">Danger</button>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">With Icons</p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <button class="btn btn-icon" style="border-radius:12px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+            Add to Cart
+          </button>
+          <button class="btn btn-teal" style="border-radius:12px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            Wishlist
+          </button>
+          <button class="btn btn-orange" style="border-radius:12px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="8" r="2"/><path d="M9 17.2C9 11.8 12.3 10 15.1 10.8M15 17.2C15 11.8 11.7 10 8.9 10.8"/><circle cx="12" cy="17" r="4"/></svg>
+            Adopt Now
+          </button>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Sizes</p>
+        <div class="flex flex-wrap gap-4 items-center">
+          <button class="btn btn-primary btn-sm">Small</button>
+          <button class="btn btn-primary btn-md">Medium</button>
+          <button class="btn btn-primary btn-lg">Large</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== COLORS ==================== -->
+    <div class="section-header" id="colors">
+      <h2>Colors</h2>
+      <p>The complete color palette for the PawShop brand, extracted from the design system.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="box space-y-8">
+      <div>
+        <p class="sub-label">Indicators</p>
+        <div class="flex flex-wrap gap-5">
+          <div class="color-swatch"><div class="color-circle" style="background:#34cfd2"></div><p class="color-name">Info</p><p class="color-hex">#34cfd2</p></div>
+          <div class="color-swatch"><div class="color-circle" style="background:rgba(76,252,255,0.28)"></div><p class="color-name">Info Light</p><p class="color-hex">#4cfcff</p><p class="color-opacity">28% opacity</p></div>
+          <div class="color-swatch"><div class="color-circle" style="background:#fea852"></div><p class="color-name">Warning</p><p class="color-hex">#fea852</p></div>
+          <div class="color-swatch"><div class="color-circle" style="background:rgba(254,168,82,0.37)"></div><p class="color-name">Warning Light</p><p class="color-hex">#fea852</p><p class="color-opacity">37% opacity</p></div>
+          <div class="color-swatch"><div class="color-circle" style="background:#e05a5a"></div><p class="color-name">Error</p><p class="color-hex">#e05a5a</p></div>
+          <div class="color-swatch"><div class="color-circle" style="background:#ffe1e1"></div><p class="color-name">Error Light</p><p class="color-hex">#ffe1e1</p></div>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Primary</p>
+        <div class="flex flex-wrap gap-5">
+          <div class="color-swatch"><div class="color-circle" style="background:#2b2675"></div><p class="color-name">Primary Dark</p><p class="color-hex">#2b2675</p></div>
+          <div class="color-swatch"><div class="color-circle" style="background:#625cb7"></div><p class="color-name">Primary</p><p class="color-hex">#625cb7</p></div>
+          <div class="color-swatch"><div class="color-circle" style="background:#a99bf7"></div><p class="color-name">Primary Light</p><p class="color-hex">#a99bf7</p></div>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Secondary</p>
+        <div class="flex flex-wrap gap-5">
+          <div class="color-swatch"><div class="color-circle" style="background:#d1d84e"></div><p class="color-name">Secondary Dark</p><p class="color-hex">#d1d84e</p></div>
+          <div class="color-swatch"><div class="color-circle" style="background:#eaf075"></div><p class="color-name">Secondary</p><p class="color-hex">#eaf075</p></div>
+          <div class="color-swatch"><div class="color-circle" style="background:rgba(209,216,78,0.2)"></div><p class="color-name">Secondary Light</p><p class="color-hex">#d1d84e</p><p class="color-opacity">20% opacity</p></div>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Neutrals</p>
+        <div class="flex flex-wrap gap-5">
+          <div class="color-swatch"><div class="color-circle" style="background:#fffcf2"></div><p class="color-name">Cream</p><p class="color-hex">#fffcf2</p></div>
+          <div class="color-swatch"><div class="color-circle" style="background:#ffffff"></div><p class="color-name">White</p><p class="color-hex">#ffffff</p></div>
+          <div class="color-swatch"><div class="color-circle" style="background:#e2ded3"></div><p class="color-name">Warm Gray</p><p class="color-hex">#e2ded3</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <div class="section-header" id="navigation">
+      <h2>Navigation</h2>
+      <p>Top navigation bar patterns for the petshop, including desktop and mobile variants.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="space-y-6">
+      <!-- Desktop Nav -->
+      <div class="nav-demo">
+        <div class="nav-bar">
+          <div class="nav-left">
+            <div class="nav-brand">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="4" cy="8" r="2"/><path d="M9 17.2C9 11.8 12.3 10 15.1 10.8M15 17.2C15 11.8 11.7 10 8.9 10.8"/><circle cx="12" cy="17" r="4"/></svg>
+              <span>PawShop</span>
+            </div>
+            <div class="nav-links">
+              <a href="#" style="color:#fff;font-weight:600">Home</a>
+              <a href="#">Shop <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;vertical-align:middle;margin-left:2px"><polyline points="6 9 12 15 18 9"/></svg></a>
+              <a href="#">Adoption</a>
+              <a href="#">Services</a>
+              <a href="#">Blog</a>
+            </div>
+          </div>
+          <div class="nav-right">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <div style="position:relative">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+              <span class="cart-badge">3</span>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Breadcrumb -->
+      <div class="box" style="padding:20px">
+        <p class="sub-label" style="margin-bottom:12px">Breadcrumb</p>
+        <div class="breadcrumb">
+          <svg class="home-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e2ded3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="crumb-link">Shop</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e2ded3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="crumb-link">Dog Food</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#e2ded3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          <span class="crumb-current">Premium Puppy Kibble</span>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="box" style="padding:20px">
+        <p class="sub-label" style="margin-bottom:12px">Tabs</p>
+        <div class="tabs">
+          <button class="tab active">Description</button>
+          <button class="tab">Ingredients</button>
+          <button class="tab">Reviews (128)</button>
+          <button class="tab">Shipping</button>
+        </div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="box" style="padding:20px">
+        <p class="sub-label" style="margin-bottom:12px">Pagination</p>
+        <div class="pagination">
+          <button class="page-btn arrow">&laquo;</button>
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <span class="page-ellipsis">...</span>
+          <button class="page-btn">12</button>
+          <button class="page-btn arrow">&raquo;</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TABLES ==================== -->
+    <div class="section-header" id="tables">
+      <h2>Tables</h2>
+      <p>Table styles for displaying product inventory, orders, and customer data.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="td-id">P001</td>
+            <td class="td-name">Premium Puppy Kibble</td>
+            <td class="td-category">Dog Food</td>
+            <td class="td-price">$24.99</td>
+            <td class="td-stock">142</td>
+            <td><span class="status-badge status-in-stock">In Stock</span></td>
+          </tr>
+          <tr>
+            <td class="td-id">P002</td>
+            <td class="td-name">Salmon Cat Treats</td>
+            <td class="td-category">Cat Food</td>
+            <td class="td-price">$12.50</td>
+            <td class="td-stock">89</td>
+            <td><span class="status-badge status-in-stock">In Stock</span></td>
+          </tr>
+          <tr>
+            <td class="td-id">P003</td>
+            <td class="td-name">Squeaky Ball Toy</td>
+            <td class="td-category">Toys</td>
+            <td class="td-price">$8.99</td>
+            <td class="td-stock">5</td>
+            <td><span class="status-badge status-low-stock">Low Stock</span></td>
+          </tr>
+          <tr>
+            <td class="td-id">P004</td>
+            <td class="td-name">Leather Dog Collar</td>
+            <td class="td-category">Accessories</td>
+            <td class="td-price">$19.99</td>
+            <td class="td-stock">0</td>
+            <td><span class="status-badge status-out-of-stock">Out of Stock</span></td>
+          </tr>
+          <tr>
+            <td class="td-id">P005</td>
+            <td class="td-name">Bird Seed Mix</td>
+            <td class="td-category">Bird Food</td>
+            <td class="td-price">$15.00</td>
+            <td class="td-stock">67</td>
+            <td><span class="status-badge status-in-stock">In Stock</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ==================== GRID SYSTEM ==================== -->
+    <div class="section-header" id="gridsystem">
+      <h2>Grid System</h2>
+      <p>Responsive grid layouts used for product listings and content arrangement.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="space-y-6">
+      <div>
+        <p class="sub-label" style="margin-bottom:12px">4 Columns</p>
+        <div class="grid-demo-4">
+          <div class="grid-cell purple">Col 1</div>
+          <div class="grid-cell purple">Col 2</div>
+          <div class="grid-cell purple">Col 3</div>
+          <div class="grid-cell purple">Col 4</div>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label" style="margin-bottom:12px">3 Columns</p>
+        <div class="grid-demo-3">
+          <div class="grid-cell yellow">Col 1</div>
+          <div class="grid-cell yellow">Col 2</div>
+          <div class="grid-cell yellow">Col 3</div>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label" style="margin-bottom:12px">2 Columns</p>
+        <div class="grid-demo-2">
+          <div class="grid-cell teal">Col 1</div>
+          <div class="grid-cell teal">Col 2</div>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label" style="margin-bottom:12px">Sidebar + Content</p>
+        <div class="grid-demo-sidebar">
+          <div class="grid-cell dark-purple tall">Sidebar</div>
+          <div class="grid-cell light-purple tall">Main Content</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== DEFAULT INPUTS ==================== -->
+    <div class="section-header" id="default-inputs">
+      <h2>Default Inputs</h2>
+      <p>Standard input field variations for text, search, and data entry.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="box space-y-6">
+      <div>
+        <p class="sub-label">Default</p>
+        <input type="text" class="input-field" placeholder="Search for products..." />
+      </div>
+      <div>
+        <p class="sub-label">With Icon</p>
+        <div class="input-with-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" class="input-field" style="padding-left:40px;max-width:none;width:100%" placeholder="Search for products..." />
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">States</p>
+        <div class="flex flex-col gap-3" style="max-width:400px">
+          <input type="text" class="input-field input-focused" value="Focused state" readonly style="max-width:none;width:100%" />
+          <input type="text" class="input-field input-error" value="Error state" readonly style="max-width:none;width:100%" />
+          <input type="text" class="input-field input-success" value="Success state" readonly style="max-width:none;width:100%" />
+          <input type="text" class="input-field input-disabled" value="Disabled state" disabled style="max-width:none;width:100%" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== FORM INPUTS ==================== -->
+    <div class="section-header" id="form-inputs">
+      <h2>Form Inputs</h2>
+      <p>Complete form input types for pet registration, checkout, and contact forms.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="box">
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label">Pet Name</label>
+          <input type="text" class="input-field" style="max-width:none;width:100%" placeholder="e.g. Buddy" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Owner Email</label>
+          <input type="email" class="input-field" style="max-width:none;width:100%" placeholder="owner@email.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Pet Age (years)</label>
+          <input type="number" class="input-field" style="max-width:none;width:100%" placeholder="3" min="0" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Appointment Date</label>
+          <input type="date" class="input-field" style="max-width:none;width:100%" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="input-field" style="max-width:none;width:100%" placeholder="(555) 123-4567" />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" class="input-field" style="max-width:none;width:100%" placeholder="--------" />
+        </div>
+        <div class="form-group full-width">
+          <label class="form-label">Special Requirements</label>
+          <textarea class="input-field" style="max-width:none;width:100%;resize:none" rows="3" placeholder="Any allergies, dietary needs, or special instructions..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== LABELS & CONTROLS ==================== -->
+    <div class="section-header" id="labels-controls">
+      <h2>Labels &amp; Controls</h2>
+      <p>Labels, badges, tags, and notification indicators used throughout the interface.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="box space-y-8">
+      <div>
+        <p class="sub-label">Badges</p>
+        <div class="flex flex-wrap gap-3">
+          <span class="badge badge-primary">Primary</span>
+          <span class="badge badge-accent">Accent</span>
+          <span class="badge badge-secondary">Secondary</span>
+          <span class="badge badge-info">Info</span>
+          <span class="badge badge-warning">Warning</span>
+          <span class="badge badge-error">Error</span>
+          <span class="badge badge-neutral">Neutral</span>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Tags</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="tag">Dog <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+          <span class="tag">Cat <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+          <span class="tag">Birds <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+          <span class="tag">Fish <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+          <span class="tag">Reptiles <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+          <span class="tag">Small Pets <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Status Indicators</p>
+        <div class="flex flex-wrap gap-3">
+          <span class="status-indicator status-available"><span class="status-dot"></span> Available</span>
+          <span class="status-indicator status-pending"><span class="status-dot"></span> Pending</span>
+          <span class="status-indicator status-unavailable"><span class="status-dot"></span> Unavailable</span>
+          <span class="status-indicator status-processing"><span class="status-dot"></span> Processing</span>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Form Labels</p>
+        <div class="flex flex-col gap-4" style="max-width:400px">
+          <div>
+            <label class="form-label">Required Field <span class="required">*</span></label>
+            <input type="text" class="input-field" style="max-width:none;width:100%" />
+          </div>
+          <div>
+            <label class="form-label">Optional Field</label>
+            <input type="text" class="input-field" style="max-width:none;width:100%" />
+            <p class="helper-text">Helper text provides additional guidance</p>
+          </div>
+          <div>
+            <label class="form-label">Error Field <span class="required">*</span></label>
+            <input type="text" class="input-field input-error-field" style="max-width:none;width:100%" value="Invalid input" readonly />
+            <p class="error-text">This field is required</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== CHECKBOXES ==================== -->
+    <div class="section-header" id="checkboxes">
+      <h2>Checkboxes</h2>
+      <p>Checkbox components for filters, preferences, and multi-select options.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="box space-y-8">
+      <div>
+        <p class="sub-label">Standard</p>
+        <div class="flex flex-col gap-3">
+          <label class="checkbox-row" data-checkbox>
+            <div class="checkbox-box checked">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checkbox-label">Free Shipping</span>
+          </label>
+          <label class="checkbox-row" data-checkbox>
+            <div class="checkbox-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checkbox-label">In Stock Only</span>
+          </label>
+          <label class="checkbox-row" data-checkbox>
+            <div class="checkbox-box checked">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checkbox-label">On Sale</span>
+          </label>
+          <label class="checkbox-row" data-checkbox>
+            <div class="checkbox-box">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checkbox-label">New Arrivals</span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Disabled</p>
+        <div class="flex flex-col gap-3">
+          <label class="checkbox-row checkbox-disabled">
+            <div class="checkbox-box checked">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <span class="checkbox-label" style="color:#9ca3af">Disabled Checked</span>
+          </label>
+          <label class="checkbox-row checkbox-disabled">
+            <div class="checkbox-box"></div>
+            <span class="checkbox-label" style="color:#9ca3af">Disabled Unchecked</span>
+          </label>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Color Variants</p>
+        <div class="flex flex-wrap gap-6">
+          <label class="flex items-center gap-2">
+            <div class="color-checkbox" style="background:#2b2675"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span style="font-size:13px;color:#242e42">Primary</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <div class="color-checkbox" style="background:#625cb7"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span style="font-size:13px;color:#242e42">Accent</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <div class="color-checkbox" style="background:#34cfd2"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span style="font-size:13px;color:#242e42">Info</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <div class="color-checkbox" style="background:#fea852"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span style="font-size:13px;color:#242e42">Warning</span>
+          </label>
+          <label class="flex items-center gap-2">
+            <div class="color-checkbox" style="background:#e05a5a"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <span style="font-size:13px;color:#242e42">Error</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== TOGGLE ==================== -->
+    <div class="section-header" id="toggle">
+      <h2>Toggle</h2>
+      <p>Toggle switches for on/off preferences and settings.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="box space-y-8">
+      <div>
+        <p class="sub-label">Standard</p>
+        <div class="flex flex-col gap-4">
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <p>Email Notifications</p>
+              <p>Receive order updates via email</p>
+            </div>
+            <div class="toggle on" data-toggle><div class="toggle-knob"></div></div>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <p>SMS Alerts</p>
+              <p>Get text messages for delivery updates</p>
+            </div>
+            <div class="toggle off" data-toggle><div class="toggle-knob"></div></div>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <p>Dark Mode</p>
+              <p>Switch to dark theme</p>
+            </div>
+            <div class="toggle on" data-toggle><div class="toggle-knob"></div></div>
+          </div>
+          <div class="toggle-row">
+            <div class="toggle-info">
+              <p>Auto-Renew</p>
+              <p>Automatically renew subscription</p>
+            </div>
+            <div class="toggle off" data-toggle><div class="toggle-knob"></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Sizes</p>
+        <div class="flex items-center gap-8">
+          <div class="flex items-center gap-2">
+            <div class="toggle toggle-sm on"><div class="toggle-knob"></div></div>
+            <span style="font-size:13px;color:#6b7280">Small</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="toggle on"><div class="toggle-knob"></div></div>
+            <span style="font-size:13px;color:#6b7280">Medium</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="toggle toggle-lg on"><div class="toggle-knob"></div></div>
+            <span style="font-size:13px;color:#6b7280">Large</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Color Variants</p>
+        <div class="flex items-center gap-6">
+          <div class="flex items-center gap-2">
+            <div class="toggle-color" style="background:#2b2675"><div class="toggle-knob"></div></div>
+            <span style="font-size:13px;color:#6b7280">Primary</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="toggle-color" style="background:#625cb7"><div class="toggle-knob"></div></div>
+            <span style="font-size:13px;color:#6b7280">Accent</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="toggle-color" style="background:#34cfd2"><div class="toggle-knob"></div></div>
+            <span style="font-size:13px;color:#6b7280">Info</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <div class="toggle-color" style="background:#d1d84e"><div class="toggle-knob"></div></div>
+            <span style="font-size:13px;color:#6b7280">Secondary</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== HOTDOG ==================== -->
+    <div class="section-header" id="hotdog">
+      <h2>Hotdog</h2>
+      <p>Hotdog expandable search — the <code style="font-family:monospace">≡</code> icon is built into the search bar.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="box space-y-8">
+      <div>
+        <p class="sub-label" style="margin-bottom:4px">Default</p>
+        <p style="font-size:14px;color:#6b7280;margin-bottom:16px">Click the menu icon inside the bar to show or hide filters.</p>
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="hotdog-bar" id="hotdogBar">
+            <button class="hotdog-menu-btn" id="hotdogMenuBtn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" class="hotdog-input" placeholder="Search pet products…" id="hotdogInput" />
+            <button class="hotdog-clear" id="hotdogClear" style="display:none">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            <button class="hotdog-search-btn">Search</button>
+          </div>
+          <div class="hotdog-filters" id="hotdogFilters" style="display:none">
+            <p class="sub-label">Filters</p>
+            <div class="flex flex-wrap gap-3">
+              <button class="hotdog-filter-pill">Dog</button>
+              <button class="hotdog-filter-pill">Cat</button>
+              <button class="hotdog-filter-pill">Bird</button>
+              <button class="hotdog-filter-pill">Fish</button>
+              <button class="hotdog-filter-pill">Reptile</button>
+              <button class="hotdog-filter-pill">Small Pet</button>
+            </div>
+            <div class="flex flex-wrap gap-3" style="margin-top:12px">
+              <button class="hotdog-filter-pill">Food</button>
+              <button class="hotdog-filter-pill">Toys</button>
+              <button class="hotdog-filter-pill">Accessories</button>
+              <button class="hotdog-filter-pill">Grooming</button>
+              <button class="hotdog-filter-pill">Health</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SELECT ==================== -->
+    <div class="section-header" id="select">
+      <h2>Select</h2>
+      <p>Dropdown select components for category filtering, sorting, and form selections.</p>
+      <div class="divider"></div>
+    </div>
+    <div class="box space-y-8">
+      <div>
+        <p class="sub-label">Native Select</p>
+        <div style="max-width:400px">
+          <label class="form-label">Pet Type</label>
+          <select class="select-native">
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Bird</option>
+            <option>Fish</option>
+            <option>Reptile</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Custom Dropdown</p>
+        <div class="custom-dropdown" style="max-width:400px" id="customDropdown">
+          <label class="form-label">Product Category</label>
+          <button class="dropdown-trigger" id="dropdownTrigger">
+            <span class="placeholder" id="dropdownText">Select a category...</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="dropdown-menu" id="dropdownMenu">
+            <button class="dropdown-option" data-value="Dog Food">Dog Food</button>
+            <button class="dropdown-option" data-value="Cat Food">Cat Food</button>
+            <button class="dropdown-option" data-value="Bird Supplies">Bird Supplies</button>
+            <button class="dropdown-option" data-value="Fish Supplies">Fish Supplies</button>
+            <button class="dropdown-option" data-value="Reptile Supplies">Reptile Supplies</button>
+            <button class="dropdown-option" data-value="Small Pet Supplies">Small Pet Supplies</button>
+            <button class="dropdown-option" data-value="Grooming">Grooming</button>
+            <button class="dropdown-option" data-value="Toys & Accessories">Toys &amp; Accessories</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <p class="sub-label">Multiple Select</p>
+        <div style="max-width:400px">
+          <label class="form-label">Sort By</label>
+          <div class="flex flex-wrap gap-2">
+            <button class="sort-pill active">Newest</button>
+            <button class="sort-pill">Price: Low-High</button>
+            <button class="sort-pill">Price: High-Low</button>
+            <button class="sort-pill">Best Sellers</button>
+            <button class="sort-pill">Top Rated</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /app -->
+
+<script src="lib/js/script.js"></script>
+
+</body>
+</html>
