@@ -215,3 +215,155 @@
 			letter-spacing: 1px;
 		}
 		figcaption { text-align: center; color: var(--color-text-main); font-weight: 600;}
+
+		/* -----------------------------------------------
+   HOTDOG SEARCH BAR
+----------------------------------------------- */
+.hotdog-search {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+
+/* The ☰ toggle button */
+.hotdog-search__toggle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 5px;
+	width: 2.5rem;
+	height: 2.5rem;
+	padding: 0.5rem;
+	background: none;
+	border: 1.5px solid var(--color-stroke-dark);
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: border-color 0.2s, background 0.2s;
+}
+.hotdog-search__toggle:hover {
+	border-color: var(--color-primary);
+	background: var(--color-primary-lightest);
+}
+.hotdog-search__toggle[aria-expanded="true"] {
+	border-color: var(--color-primary);
+	background: var(--color-primary-lightest);
+}
+
+/* The 3 bars */
+.hotdog-bar {
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: var(--color-text-main);
+	border-radius: 2px;
+	transition: transform 0.25s ease, opacity 0.2s ease;
+	transform-origin: center;
+}
+.hotdog-search__toggle[aria-expanded="true"] .hotdog-bar:nth-child(1) {
+	transform: translateY(7px) rotate(45deg);
+}
+.hotdog-search__toggle[aria-expanded="true"] .hotdog-bar:nth-child(2) {
+	opacity: 0;
+	transform: scaleX(0);
+}
+.hotdog-search__toggle[aria-expanded="true"] .hotdog-bar:nth-child(3) {
+	transform: translateY(-7px) rotate(-45deg);
+}
+
+/* The expandable search panel */
+.hotdog-search__panel {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	background: var(--color-white);
+	border: 1.5px solid var(--color-stroke-dark);
+	border-radius: 0.5rem;
+	padding: 0.5rem 0.625rem;
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	pointer-events: none;
+	margin-top: 0;
+	transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+	            opacity 0.25s ease,
+	            margin-top 0.25s ease;
+}
+.hotdog-search__panel.is-open {
+	max-height: 4rem;
+	opacity: 1;
+	pointer-events: auto;
+	margin-top: 0.5rem;
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 3px var(--color-primary-lightest);
+}
+
+.hotdog-search__icon {
+	color: var(--color-text-muted);
+	display: flex;
+	align-items: center;
+	flex-shrink: 0;
+}
+.hotdog-search__input {
+	flex: 1;
+	border: none;
+	outline: none;
+	background: none;
+	font-size: 0.9375rem;
+	font-family: var(--font-family-base);
+	color: var(--color-text-main);
+	min-width: 0;
+}
+.hotdog-search__input::placeholder { color: var(--color-text-muted); }
+
+.hotdog-search__clear {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--color-text-muted);
+	padding: 0.2rem;
+	display: flex;
+	align-items: center;
+	border-radius: 50%;
+	transition: color 0.15s, background 0.15s;
+	flex-shrink: 0;
+}
+.hotdog-search__clear:hover {
+	color: var(--color-text-main);
+	background: var(--color-bg-main);
+}
+.hotdog-search__btn {
+	background-color: var(--color-primary);
+	color: var(--color-white);
+	border: none;
+	border-radius: 999px;
+	padding: 0.3rem 0.875rem;
+	font-size: 0.8125rem;
+	font-weight: 600;
+	font-family: var(--font-family-heading);
+	cursor: pointer;
+	transition: background 0.2s;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+.hotdog-search__btn:hover { background-color: var(--color-primary-hover); }
+
+/* Tags row */
+.hotdog-search__tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	max-height: 0;
+	opacity: 0;
+	overflow: hidden;
+	pointer-events: none;
+	margin-top: 0;
+	transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+	            opacity 0.25s ease,
+	            margin-top 0.25s ease;
+}
+.hotdog-search__tags.is-open {
+	max-height: 6rem;
+	opacity: 1;
+	pointer-events: auto;
+	margin-top: 0.625rem;
+}
