@@ -1,7 +1,7 @@
 /* CSS RESET */
 
 *, *::after, *::before {
-	box-sizing: border-box;
+	background-origin: border-box;
 }
 
 

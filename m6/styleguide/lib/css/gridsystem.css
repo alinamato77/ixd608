@@ -1,19 +1,15 @@
-/* =========================================
-   BASE GRID SYSTEM (12-Column Responsive)
-========================================= */
-
 /* Base Grid Container */
 .grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: var(--grid-gap, 1.5rem);
+  gap: var(--grid-gap, 1em);
 }
 
 /* Extra Small */
 @media (min-width: 0) {
-  .gap-xs-large { --grid-gap: 2rem; }
-  .gap-xs-medium { --grid-gap: 1.5rem; }
-  .gap-xs-small { --grid-gap: 0.5rem; }
+  .gap.xs-large { --grid-gap: 2em; }
+  .gap.xs-medium { --grid-gap: 1em; }
+  .gap.xs-small { --grid-gap: 0.5em; }
 
   .col-xs-1 { grid-column: span 1; }
   .col-xs-2 { grid-column: span 2; }
@@ -30,7 +26,11 @@
 }
 
 /* Small */
-@media (min-width: 480px) {
+@media (min-width: 380px) {
+  .gap.sm-large { --grid-gap: 2em; }
+  .gap.sm-medium { --grid-gap: 1em; }
+  .gap.sm-small { --grid-gap: 0.5em; }
+
   .col-sm-1 { grid-column: span 1; }
   .col-sm-2 { grid-column: span 2; }
   .col-sm-3 { grid-column: span 3; }
@@ -47,6 +47,10 @@
 
 /* Medium */
 @media (min-width: 768px) {
+  .gap.md-large { --grid-gap: 2em; }
+  .gap.md-medium { --grid-gap: 1em; }
+  .gap.md-small { --grid-gap: 0.5em; }
+
   .col-md-1 { grid-column: span 1; }
   .col-md-2 { grid-column: span 2; }
   .col-md-3 { grid-column: span 3; }
@@ -63,6 +67,10 @@
 
 /* Large */
 @media (min-width: 1024px) {
+  .gap.lg-large { --grid-gap: 2em; }
+  .gap.lg-medium { --grid-gap: 1em; }
+  .gap.lg-small { --grid-gap: 0.5em; }
+
   .col-lg-1 { grid-column: span 1; }
   .col-lg-2 { grid-column: span 2; }
   .col-lg-3 { grid-column: span 3; }
@@ -79,6 +87,10 @@
 
 /* Extra Large */
 @media (min-width: 1280px) {
+  .gap.xl-large { --grid-gap: 2em; }
+  .gap.xl-medium { --grid-gap: 1em; }
+  .gap.xl-small { --grid-gap: 0.5em; }
+
   .col-xl-1 { grid-column: span 1; }
   .col-xl-2 { grid-column: span 2; }
   .col-xl-3 { grid-column: span 3; }
@@ -91,96 +103,4 @@
   .col-xl-10 { grid-column: span 10; }
   .col-xl-11 { grid-column: span 11; }
   .col-xl-12 { grid-column: span 12; }
-}
-
-/* =========================================
-   FLEX & GRID UTILITY HELPERS
-========================================= */
-/* Display Helpers */
-.flex { display: flex; }
-.flex-wrap { flex-wrap: wrap; }
-.flex-col { flex-direction: column; }
-.items-center { align-items: center; }
-.justify-between { justify-content: space-between; }
-.justify-center { justify-content: center; }
-
-/* Gap Helpers */
-.gap-1 { gap: 4px; }
-.gap-2 { gap: 8px; }
-.gap-3 { gap: 12px; }
-.gap-4 { gap: 16px; }
-.gap-5 { gap: 20px; }
-.gap-6 { gap: 24px; }
-.gap-8 { gap: 32px; }
-
-/* Quick Static Grid Columns */
-.grid-cols-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-.grid-cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.grid-cols-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-.col-span-1 { grid-column: span 1; }
-.col-span-2 { grid-column: span 2; }
-.col-span-3 { grid-column: span 3; }
-
-/* =========================================
-   GRID SYSTEM DEMO CLASSES (STYLEGUIDE)
-========================================= */
-.grid-demo-4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-}
-
-.grid-demo-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-
-.grid-demo-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-}
-
-.grid-demo-sidebar {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  gap: 16px;
-}
-
-.grid-cell {
-  height: 80px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: 600;
-  font-family: var(--font-family-heading, 'Source Sans 3', sans-serif);
-  transition: opacity 0.2s;
-}
-
-/* Connects to your new root variables */
-.grid-cell.purple { 
-  background-color: var(--color-primary-light); 
-  color: var(--color-primary-dark); 
-}
-.grid-cell.yellow { 
-  background-color: var(--color-secondary); 
-  color: var(--color-text-main); 
-}
-.grid-cell.teal { 
-  background-color: var(--color-teal-light); 
-  color: var(--color-teal); 
-}
-.grid-cell.dark-purple { 
-  background-color: var(--color-primary-dark); 
-  color: var(--color-white); 
-}
-.grid-cell.light-purple { 
-  background-color: var(--color-primary); 
-  color: var(--color-white); 
-}
-.grid-cell.tall { 
-  height: 96px; 
 }
