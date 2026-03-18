@@ -1,5 +1,5 @@
 /* ============================================================
-   PARTS — Structural rules (dot-notation, matches PHP HTML)
+   PARTS and SITES
    ============================================================ */
 
 /* Body uses cream background */
@@ -155,19 +155,29 @@ section.banner .container {
 /* ── Confirmation page ───────────────────────────────────── */
 .confirmation.wrap {
   max-width: 600px;
-  margin: 4rem 0;
+  margin: 4rem auto;
   text-align: center;
   padding: 0 1rem;
 }
+.confirm.heading.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.confirm.heading.row h3 {
+  margin: 0;
+}
 .confirm.icon {
-  width: 72px;
-  height: 72px;
+  width: 24px;
+  height: 24px;
   background-color: var(--color-primary-dark);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 0 1.5rem;
+  margin: 0;
   color: var(--color-white);
 }
 
@@ -311,7 +321,7 @@ section.banner .container {
 .next.steps.item {
   display: flex;
   gap: 0.75rem;
-  padding: 0.75rem 0;
+  padding: 0.375rem 0;
   border-bottom: 1px solid var(--color-stroke-light);
 }
 .next.steps.item:last-child { border-bottom: none; }
@@ -969,6 +979,25 @@ section.banner .container {
   border-right: 1px solid var(--color-stroke-light);
   padding: 0.25rem 0;
 }
+
+/* ── Card soft: internal spacing ────────────────────────── */
+.card.soft .display.flex {
+  margin-bottom: 0.625rem;
+}
+.card.soft hr {
+  margin: 0.75rem 0;
+}
+.card.soft .form.actions {
+  margin-top: 1rem;
+}
+.card.soft > .form.group,
+.card.soft > .grid.gap {
+  margin-top: 0.75rem;
+}
+.card.soft h4 {
+  margin-bottom: 1rem;
+}
+
 
 /* Order Summary Card */
 .order-summary-card {

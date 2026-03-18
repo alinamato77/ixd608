@@ -21,14 +21,14 @@
 
 				<!-- Left: Cart items -->
 				<div class="col-xs-12 col-md-8">
-					<h1>Your Cart (1)</h1>
+					<h3>Your Cart (1)</h3>
 
 					<div class="cart item">
 						<div class="cart item img"></div>
 						<div>
 							<p><strong>Premium Dry Food Recipe</strong></p>
 							<p><small>Delivery every 4 weeks</small></p>
-							<button class="btn outline sm cart item remove" type="button">Remove</button>
+							<button class="btn secondary sm" type="button">Remove</button>
 						</div>
 						<div>
 							<p><strong>$31.50</strong></p>
