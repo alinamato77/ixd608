@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Styleguide</title>
+
+  <link rel="stylesheet" href="lib/css/gridsystem.css" />
+  <link rel="stylesheet" href="lib/css/styleguide.css" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+	<header class="navbar">
+		<div class="container display flex flex align">
+			<div class="flex none">
+				<h1>Styleguide</h1>
+			</div>
+			<div class="flex stretch"></div>
+			<nav class="flex none nav">
+				<ul class="nav inline">
+					<li><a href="#tableofcontents">Table of Contents</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<!-- TABLE OF CONTENTS -->
+	<div class="container" id="tableofcontents">
+		<h2>Table of Contents</h2>
+		<div class="card soft">
+			<nav class="nav horizontal">
+				<ul>
+					<li><a href="#typography" class="active">Typography</a></li>
+					<li><a href="#cards">Cards</a></li>
+					<li><a href="#buttons">Buttons</a></li>
+					<li><a href="#colors">Colors</a></li>
+					<li><a href="#navigation">Navigation</a></li>
+					<li><a href="#tables">Tables</a></li>
+					<li><a href="#gridsystem">Grid System</a></li>
+					<li><a href="#default-inputs">Default Inputs</a></li>
+					<li><a href="#form-inputs">Form Inputs</a></li>
+					<li><a href="#labels-controls">Labels and Controls</a></li>
+					<li><a href="#checkboxes">Checkboxes</a></li>
+					<li><a href="#hotdog">Hotdog</a></li>
+					<li><a href="#select">Select</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<!-- TYPOGRAPHY -->
+	<div class="container" id="typography">
+		<h2>Typography</h2>
+		<div class="card soft">
+			<h3>Headings</h3>
+			<h1>Heading 1 - Primary Hero Title</h1>
+			<h2>Heading 2 - Section Headers</h2>
+			<h3>Heading 3 - Card Titles</h3>
+			<h4>Heading 4 - Subtitles</h4>
+			<h5>Heading 5 - Small Headers</h5>
+			<h6>Heading 6 - Labels</h6>
+		</div>
+		<div class="card soft">
+			<h3>Paragraph</h3>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+		</div>
+		<div class="card soft">
+			<h3>Interactive Text</h3>
+				<button class="btn primary">Primary Button</button>
+				<button class="btn secondary">Secondary Button</button>
+				<button class="btn outline">Outline Button</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- CARDS -->
+	<div class="container" id="cards">
+		<h2>Cards</h2>
+		<div class="grid gap">
+			<div class="col-xs-12 col-md-4"><div class="card">Card</div></div>
+			<div class="col-xs-12 col-md-4"><div class="card soft">Card Soft</div></div>
+			<div class="col-xs-12 col-md-4"><div class="card hard">Card Hard</div></div>
+			<div class="col-xs-12 col-md-4"><div class="card outline">Card Outline</div></div>
+			<div class="col-xs-12 col-md-4"><div class="card item">Card Item</div></div>
+			<div class="col-xs-12 col-md-4"><div class="card gradient">Card Gradient</div></div>
+		</div>
+	</div>
+
+	<!-- BUTTONS -->
+	<div class="container" id="buttons">
+		<h2>Buttons</h2>
+		<div class="card soft">
+			<div class="btn row">
+				<button class="btn primary">Primary Button</button>
+				<button class="btn secondary">Secondary Button</button>
+				<button class="btn success">Success</button>
+				<button class="btn outline">Outline Button</button>
+				<button class="btn danger">Danger</button>
+				<button class="btn warning">Warning</button>
+				<button class="btn dark">Dark</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- COLORS -->
+	<div class="container" id="colors">
+		<h2>Colors</h2>
+		<h3>Indicators</h3>
+		<div class="grid gap">
+			<div class="col-xs-6 col-md-2"><div class="card soft"><div class="color circle swatch teal"></div><div class="color label">Teal<br>#34cfd2</div></div></div>
+			<div class="col-xs-6 col-md-2"><div class="card soft"><div class="color circle swatch teal light"></div><div class="color label">Teal Light<br>rgba(52,207,210,.15)</div></div></div>
+			<div class="col-xs-6 col-md-2"><div class="card soft"><div class="color circle swatch orange"></div><div class="color label">Orange<br>#fea852</div></div></div>
+			<div class="col-xs-6 col-md-2"><div class="card soft"><div class="color circle swatch orange light"></div><div class="color label">Orange Light<br>rgba(254,168,82,.15)</div></div></div>
+			<div class="col-xs-6 col-md-2"><div class="card soft"><div class="color circle swatch red"></div><div class="color label">Red<br>#e05a5a</div></div></div>
+			<div class="col-xs-6 col-md-2"><div class="card soft"><div class="color circle swatch red light"></div><div class="color label">Red Light<br>rgba(224,90,90,.15)</div></div></div>
+		</div>
+
+        <div class="grid gap">
+    <div class="col-xs-12 col-md-6">
+        <h3>Primary</h3>
+        <div class="grid gap">
+            <div class="col-xs-4"><div class="card soft"><div class="color circle swatch primary dark"></div><div class="color label">Primary Dark<br>#2b2675</div></div></div>
+            <div class="col-xs-4"><div class="card soft"><div class="color circle swatch primary"></div><div class="color label">Primary<br>#625cb7</div></div></div>
+            <div class="col-xs-4"><div class="card soft"><div class="color circle swatch primary light"></div><div class="color label">Primary Light<br>#a99bf7</div></div></div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <h3>Secondary</h3>
+        <div class="grid gap">
+            <div class="col-xs-4"><div class="card soft"><div class="color circle swatch secondary dark"></div><div class="color label">Secondary Dark<br>#d1d84e</div></div></div>
+            <div class="col-xs-4"><div class="card soft"><div class="color circle swatch secondary"></div><div class="color label">Secondary<br>#eaf075</div></div></div>
+            <div class="col-xs-4"><div class="card soft"><div class="color circle swatch secondary light"></div><div class="color label">Secondary Light<br>#F3F1CA</div></div></div>
+        </div>
+    </div>
+</div>
+
+<h3>Neutral</h3>
+		<div class="grid gap">
+    <div class="col-xs-4 col-md-2"><div class="card soft"><div class="color circle swatch white"></div><div class="color label">White<br>#ffffff</div></div></div>
+    <div class="col-xs-4 col-md-2"><div class="card soft"><div class="color circle swatch cream"></div><div class="color label">Cream<br>#f5f3ed</div></div></div>
+    <div class="col-xs-4 col-md-2"><div class="card soft"><div class="color circle swatch warm grey"></div><div class="color label">Warm Grey<br>#e2ded3</div></div></div>
+    <div class="col-xs-6 col-md-3"><div class="card soft"><div class="color circle swatch text main"></div><div class="color label">Text Main<br>#242e42</div></div></div>
+    <div class="col-xs-6 col-md-3"><div class="card soft"><div class="color circle swatch text muted"></div><div class="color label">Text Muted<br>#9ca3af</div></div></div>
+</div>
+	</div><!-- /colors -->
+
+
+	<!-- NAVIGATION -->
+	<div class="container" id="navigation">
+		<h2>Navigation</h2>
+		<div class="card soft">
+			<h3>Horizontal Navigation</h3>
+			<nav class="navigation nav horizontal">
+				<ul>
+					<li><a href="#" class="active">Home</a></li>
+					<li><a href="#">Products</a></li>
+					<li><a href="#">Our Story</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="card soft">
+			<h3>Vertical Navigation (Sidebar)</h3>
+			<nav class="navigation nav vertical">
+				<ul>
+					<li><a href="#" class="active">Account Dashboard</a></li>
+					<li><a href="#">Order History</a></li>
+					<li><a href="#">Wishlist</a></li>
+					<li><a href="#">Log Out</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<!-- TABLES -->
+	<div class="container" id="tables">
+		<h2>Tables</h2>
+		<div class="card soft">
+			<h3>Striped Lined Border Table</h3>
+			<table class="table striped lined">
+				<thead>
+					<tr><th>Order ID</th><th>Product</th><th>Customer Name</th><th>Status</th><th>Total</th></tr>
+				</thead>
+				<tbody>
+					<tr><td>#10045</td><td>Dog Food</td><td>Hamilton Cline</td><td><span class="status shipped">Shipped</span></td><td>$65.00</td></tr>
+					<tr><td>#10046</td><td>Cat Food</td><td>Fred McHale</td><td><span class="status processing">Processing</span></td><td>$450.00</td></tr>
+					<tr><td>#10047</td><td>Dog Shampoo</td><td>Michael Catanzaro</td><td><span class="status shipped">Shipped</span></td><td>$120.00</td></tr>
+					<tr><td>#10048</td><td>Cat Shampoo</td><td>Andrea Pimentel</td><td><span class="status cancelled">Cancelled</span></td><td>$28.00</td></tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<!-- GRID SYSTEM -->
+	<div class="container" id="gridsystem">
+    <h2>Grid System</h2>
+
+    <!-- 1. 6-up Grid System -->
+    <h3>6-up Category Grid</h3>
+    <div class="grid gap">
+        <div class="col-xs-6 col-md-2"><div class="card soft">Dogs</div></div>
+        <div class="col-xs-6 col-md-2"><div class="card soft">Cats</div></div>
+        <div class="col-xs-6 col-md-2"><div class="card soft">Birds</div></div>
+        <div class="col-xs-6 col-md-2"><div class="card soft">Fish</div></div>
+        <div class="col-xs-6 col-md-2"><div class="card soft">Rabbits</div></div>
+        <div class="col-xs-6 col-md-2"><div class="card soft">Reptiles</div></div>
+    </div>
+
+    <!-- 2. 3-up Grid Items -->
+    <h3>3-up Product Grid</h3>
+    <div class="grid gap">
+        <div class="col-xs-4">
+            <figure class="card soft" style="position:relative">
+                <span class="badge danger" style="position:absolute;top:1rem;left:1rem">Sale</span>
+                <button class="btn pet favorite" style="position:absolute;top:1rem;right:1rem">♡</button>
+                <div class="img placeholder">Product Image</div>
+                <h3>Premium Dog Food</h3>
+                <div class="product rating">★★★★☆ (24)</div>
+                <p class="product price"><s>$150.00</s> $120.00</p>
+                <button class="btn primary btn full">Add to Cart</button>
+            </figure>
+        </div>
+        <div class="col-xs-4">
+            <figure class="card soft" style="position:relative">
+                <span class="badge primary" style="position:absolute;top:1rem;left:1rem">New</span>
+                <button class="btn pet favorite" style="position:absolute;top:1rem;right:1rem">♡</button>
+                <div class="img placeholder">Product Image</div>
+                <h3>Cat Scratch Tower</h3>
+                <div class="product rating">★★★★★ (12)</div>
+                <p class="product price">$45.00</p>
+                <button class="btn primary btn full">Add to Cart</button>
+            </figure>
+        </div>
+        <div class="col-xs-4">
+            <figure class="card soft" style="position:relative">
+                <span class="badge warning" style="position:absolute;top:1rem;left:1rem">Low Stock</span>
+                <button class="btn pet favorite" style="position:absolute;top:1rem;right:1rem">♡</button>
+                <div class="img placeholder">Product Image</div>
+                <h3>Bird Cage Deluxe</h3>
+                <div class="product rating">★★★☆☆ (8)</div>
+                <p class="product price">$85.00</p>
+                <button class="btn primary btn full">Add to Cart</button>
+            </figure>
+        </div>
+    </div>
+
+    <!-- 3. 4 Grid -->
+<h3>4-up Product Grid</h3>
+<div class="grid gap">
+    <div class="col-xs-3">
+        <figure class="card item">
+            <div class="img placeholder">Product Image</div>
+            <h3>Premium Dog Food</h3>
+            <p class="product subtitle">For Every Breed & Size</p>
+        </figure>
+    </div>
+    <div class="col-xs-3">
+        <figure class="card item">
+            <div class="img placeholder">Product Image</div>
+            <h3>Cat Scratch Tower</h3>
+            <p class="product subtitle">Keep Your Cat Happy</p>
+        </figure>
+    </div>
+    <div class="col-xs-3">
+        <figure class="card item">
+            <div class="img placeholder">Product Image</div>
+            <h3>Bird Cage Deluxe</h3>
+            <p class="product subtitle">Spacious & Easy to Clean</p>
+        </figure>
+    </div>
+    <div class="col-xs-3">
+        <figure class="card item">
+            <div class="img placeholder">Product Image</div>
+            <h3>Rabbit Hutch XL</h3>
+            <p class="product subtitle">Room to Roam & Play</p>
+        </figure>
+    </div>
+</div>
+
+
+
+
+	<!-- ============================================================
+	     DEFAULT INPUTS — Member Login / Registration Info
+	     ============================================================ -->
+	<div class="container" id="default-inputs">
+		<h2>Default Inputs</h2>
+		<div class="grid gap">
+			<!-- Member Login -->
+			<div class="col-xs-12 col-md-6">
+				<div class="card soft">
+					<h3>Member Login</h3>
+					<div class="form group">
+						<label class="form label" for="login-email">Email Address</label>
+						<div class="input wrap">
+							<span class="input icon">
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+							</span>
+							<input class="input" type="email" id="login-email" placeholder="you@example.com">
+						</div>
+					</div>
+					<div class="form group">
+						<label class="form label" for="login-password">Password</label>
+						<div class="input wrap">
+							<span class="input icon">
+								<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+							</span>
+							<input class="input" type="password" id="login-password" placeholder="Enter your password">
+						</div>
+					</div>
+					<button class="btn primary full">Sign In</button>
+				<button class="btn outline full mt-2">Forgot password?</button>
+				</div>
+			</div>
+
+			<!-- Input States -->
+			<div class="col-xs-12">
+				<div class="card soft">
+					<h3>Input States</h3>
+					<div class="grid gap">
+						<div class="col-xs-12 col-md-4">
+							<div class="form group form group last">
+								<label class="form label">Success State</label>
+								<input class="input success" type="email" value="jane@example.com" readonly>
+								<span class="field hint success">✓ Email address is valid</span>
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-4">
+							<div class="form group form group last">
+								<label class="form label">Error State</label>
+								<input class="input error" type="email" value="not-an-email">
+								<span class="field hint error">✗ Please enter a valid email address</span>
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-4">
+							<div class="form group form group last">
+								<label class="form label">Disabled State</label>
+								<input class="input" type="text" value="Read-only field" disabled>
+								<span class="field hint">This field cannot be edited.</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ============================================================
+	     FORM INPUTS
+	     ============================================================ -->
+	<div class="container" id="form-inputs">
+		<h2>Form Inputs</h2>
+		<div class="grid gap">
+			<!-- Pet Profile Form -->
+			<div class="col-xs-12 col-md-8">
+				<div class="card soft">
+					<h3>Pet Profile</h3>
+					<div class="grid gap">
+						<div class="col-xs-12 col-md-6">
+							<div class="form group">
+								<label class="form label" for="pet-name">Pet Name</label>
+								<input class="input" type="text" id="pet-name" placeholder="e.g. Whiskers">
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-6">
+							<div class="form group">
+								<label class="form label" for="pet-species">Species</label>
+								<div class="select wrap">
+									<select class="input" id="pet-species">
+										<option value="">— Select species —</option>
+										<option>Dog</option>
+										<option>Cat</option>
+										<option>Bird</option>
+										<option>Fish</option>
+										<option>Rabbit</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-6">
+							<div class="form group">
+								<label class="form label" for="pet-owner-email">Owner Email</label>
+								<input class="input" type="email" id="pet-owner-email" placeholder="owner@example.com">
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-6">
+							<div class="form group">
+								<label class="form label" for="pet-dob">Pet's Birthday</label>
+								<input class="input" type="date" id="pet-dob">
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-6">
+							<div class="form group">
+								<label class="form label" for="pet-weight">Weight (kg)</label>
+								<input class="input" type="number" id="pet-weight" placeholder="e.g. 5.2" min="0" step="0.1">
+							</div>
+						</div>
+						<div class="col-xs-12 col-md-6">
+							<div class="form group">
+								<label class="form label" for="pet-vet">Vet's Phone</label>
+								<div class="input wrap">
+									<span class="input icon">
+										<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.65 4.45 2 2 0 0 1 3.62 2.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17.27z"/></svg>
+									</span>
+									<input class="input" type="tel" id="pet-vet" placeholder="+1 (555) 000-0000">
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12">
+							<div class="form group form group last">
+								<label class="form label" for="pet-notes">Special Care Notes</label>
+								<textarea class="input" id="pet-notes" placeholder="Allergies, dietary needs, medication, vet info…"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="form actions">
+						<button class="btn primary">Save Pet Profile</button>
+						<button class="btn outline">Cancel</button>
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+	</div>
+
+	<!-- ============================================================
+	     labels and controls
+	     ============================================================ -->
+
+	<div class="container" id="labels-controls">
+		<h2>Labels and Controls</h2>
+		<div class="grid gap">
+			<div class="col-xs-12 col-md-6">
+				<div class="card soft">
+					<h3>Tags</h3>
+					<div class="flex wrap">
+						<span class="tag">Dogs <button class="btn remove">×</button></span>
+						<span class="tag">Under $50 <button class="btn remove">×</button></span>
+						<span class="tag">Organic <button class="btn remove">×</button></span>
+						<span class="tag">Free Shipping <button class="btn remove">×</button></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<div class="card soft">
+					<h3>Badges</h3>
+					<div class="flex wrap">
+						<span class="badge primary">New Arrival</span>
+						<span class="badge success">In Stock</span>
+						<span class="badge warning">Low Stock</span>
+						<span class="badge danger">Out of Stock</span>
+						<span class="badge neutral">Discontinued</span>
+						<span class="badge secondary">Bestseller</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ============================================================
+	     Buttons
+	     ============================================================ -->
+
+	<div class="container" id="checkboxes">
+		<h2>Checkboxes</h2>
+		<div class="grid gap">
+			<!-- Checkboxes + Add to Favorites -->
+			<div class="col-xs-12 col-md-4">
+				<div class="card soft">
+					<h3>Checkboxes</h3>
+					<div class="control group">
+						<label class="control label"><input type="checkbox" checked><span>Dog Food &amp; Treats</span></label>
+						<label class="control label"><input type="checkbox" disabled><span>Cat Food &amp; Treats</span></label>
+
+					</div>
+				</div>
+			</div>
+
+			<!-- Toggles -->
+			<div class="col-xs-12 col-md-4">
+				<div class="card soft">
+					<h3>Toggle Switches</h3>
+					<div class="control group">
+						<label class="toggle label">
+							<div class="toggle switch"><input type="checkbox" checked><span class="toggle track"></span></div>
+							<span class="toggle text">Email Notifications</span>
+						</label>
+						<label class="toggle label">
+							<div class="toggle switch"><input type="checkbox" checked><span class="toggle track"></span></div>
+							<span class="toggle text">Auto-reorder Reminders</span>
+						</label>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-4">
+			<div class="card soft">
+				<h3>Favorites</h3>
+				<div class="btn row sm">
+					<button class="btn danger sm" id="fav-demo">
+						<span class="heart icon">♡</span> Add to Favorites
+					</button>
+				</div>
+			</div>
+		</div>
+		</div>
+
+
+	    
+</div>
+
+	<!-- ============================================================
+	     HOTDOG
+	     ============================================================ -->
+  <div class="container" id="hotdog">
+    <h2>Hotdog</h2>
+    <div class="card soft">
+      <h3>Default</h3>
+      <div class="hotdog search" id="hotdog-search-demo">
+        <div class="hotdog search bar">
+          <button class="hotdog search toggle" id="hotdog-toggle" aria-label="Open filters" aria-expanded="false" aria-controls="hotdog-filters">
+            <span class="hotdog bar"></span>
+            <span class="hotdog bar"></span>
+            <span class="hotdog bar"></span>
+          </button>
+
+          <span class="hotdog search icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+
+          <input
+            class="hotdog search input"
+            type="text"
+            id="hotdog-input"
+            placeholder="Search pet products…"
+          >
+
+          <button class="hotdog search clear" id="hotdog-clear" type="button" aria-label="Clear search">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+
+          <button class="btn primary">Search</button>
+        </div>
+
+        <div class="hotdog search filters" id="hotdog-filters">
+          <button class="filter chip active" type="button">Dogs</button>
+          <button class="filter chip" type="button">Cats</button>
+          <button class="filter chip" type="button">Food</button>
+          <button class="filter chip" type="button">Toys</button>
+          <button class="filter chip" type="button">Sale</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+	<!-- ============================================================
+	     SELECT
+	     ============================================================ -->
+	<div class="container" id="select">
+		<h2>Select</h2>
+		<div class="grid gap">
+			<div class="col-xs-12 col-md-6">
+				<div class="card soft">
+					<h3>Single Select</h3>
+					<div class="form group">
+						<label class="form label" for="sel-pet">Pet Type</label>
+						<div class="select wrap">
+							<select class="input" id="sel-pet">
+								<option value="">— Choose a pet —</option>
+								<option selected>Dog</option>
+								<option>Cat</option>
+								<option>Bird</option>
+								<option>Fish</option>
+								<option>Rabbit</option>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-xs-12 col-md-6">
+				<div class="card soft">
+					<h3>Grouped Select</h3>
+					<div class="form group">
+						<label class="form label" for="sel-breed">Filter by Breed</label>
+						<div class="select wrap">
+							<select class="input" id="sel-breed">
+								<option value="">— All Breeds —</option>
+								<optgroup label="Dogs">
+									<option>Golden Retriever</option>
+									<option>French Bulldog</option>
+									<option>Labrador Retriever</option>
+									<option>German Shepherd</option>
+								</optgroup>
+								<optgroup label="Cats">
+									<option>Persian</option>
+									<option>Maine Coon</option>
+									<option>Siamese</option>
+									<option>British Shorthair</option>
+								</optgroup>
+							</select>
+						</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<script src="lib/js/script.js"></script>
+</body>
+</html>

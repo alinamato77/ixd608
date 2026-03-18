@@ -1,0 +1,420 @@
+/* ============================================================
+   PARTS.CSS — Only structural rules with no styleguide equivalent
+   ============================================================ */
+
+/* Body uses cream background (styleguide default is bg-main) */
+body { background-color: var(--color-cream); }
+
+/* ── Dark background utility ─────────────────────────────── */
+/* No bg utility class in styleguide.css */
+.color.primary.dark {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+}
+header.color.primary.dark {
+  width: 100%;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+header.color.primary.dark .container {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 2.5rem !important;
+}
+
+/* Push main content down so it doesn't hide behind fixed header */
+main {
+  padding-top: 170px;
+  padding-bottom: 4rem;
+}
+
+/* ── Hero Banner ─────────────────────────────────────────── */
+section.banner {
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  height: 200px;
+  overflow: hidden;
+  margin: 0;
+}
+section.banner .container {
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.banner.inner {
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+  gap: 0;
+}
+
+.banner.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0 2rem;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.banner.heading {
+  color: var(--color-white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.banner.text {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.banner.figure {
+  flex: 1;
+  margin: 0;
+  background-color: var(--color-primary);
+  border-radius: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.banner.figure h2 {
+  color: rgba(255,255,255,0.3);
+  margin: 0;
+}
+
+
+/* ── Breadcrumb ──────────────────────────────────────────── */
+/* No breadcrumb component in styleguide.css */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 1rem 0 0;
+  margin: 0 0 1.5rem;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  flex-wrap: wrap;
+}
+.breadcrumb li + li::before { content: '/'; margin-right: 0.125rem; }
+.breadcrumb a { color: var(--color-text-muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--color-primary); }
+.breadcrumb li:last-child { color: var(--color-text-main); font-weight: 600; }
+
+/* ── Cart item 3-col grid ────────────────────────────────── */
+/* No 3-column item layout in styleguide.css */
+.cart.item {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--color-stroke-light);
+}
+.cart.item:last-of-type { border-bottom: none; }
+.cart.item.img {
+  width: 72px;
+  height: 72px;
+  border-radius: 0.5rem;
+  background-color: var(--color-warm-gray);
+}
+
+/* ── Qty stepper ─────────────────────────────────────────── */
+/* No stepper component in styleguide.css */
+.qty.stepper {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-stroke-dark);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+.qty.stepper button {
+  background: none;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-base);
+}
+.qty.stepper button:hover { background: var(--color-cream); }
+.qty.stepper span {
+  width: 2rem;
+  text-align: center;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--color-text-main);
+  border-left: 1px solid var(--color-stroke-light);
+  border-right: 1px solid var(--color-stroke-light);
+}
+
+/* ── Confirmation page ───────────────────────────────────── */
+/* No centered confirmation layout in styleguide.css */
+.confirmation.wrap {
+  max-width: 600px;
+  margin: 4rem 0;
+  text-align: center;
+  padding: 0 1rem;
+}
+.confirm.icon {
+  width: 72px;
+  height: 72px;
+  background-color: var(--color-primary-dark);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 1.5rem;
+  color: var(--color-white);
+}
+
+/* ── Product gallery ─────────────────────────────────────── */
+/* No product gallery layout in styleguide.css */
+.product.gallery.main {
+  background-color: var(--color-warm-gray);
+  border-radius: 1rem;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75rem;
+}
+.product.gallery.thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+}
+.product.gallery.thumb {
+  background-color: var(--color-warm-gray);
+  border-radius: 0.5rem;
+  aspect-ratio: 1;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+.product.gallery.thumb:first-child,
+.product.gallery.thumb:hover { border-color: var(--color-primary); }
+
+/* ── Footer links column — right-aligned ────────────────── */
+.site.footer > .container > .grid > .col-md-7 {
+  text-align: right;
+}
+
+/* ── Footer link lists ───────────────────────────────────── */
+/* Remove default list bullets inside footer */
+.site.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.site.footer ul a {
+  color: rgba(255,255,255,0.6);
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+.site.footer ul a:hover { color: var(--color-white); }
+.site.footer h5 { color: var(--color-white); }
+.site.footer h3 { color: var(--color-white); }
+.site.footer p  { color: rgba(255,255,255,0.7); }
+
+/* ── Footer newsletter input row ────────────────────────── */
+.newsletter.input.row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.newsletter.input.row .input.wrap { flex: 1; min-width: 180px; }
+
+/* ── Footer bottom copyright ────────────────────────────── */
+.footer.bottom {
+  text-align: center;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin-top: 1.5rem;
+}
+.footer.bottom p {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.4);
+}
+
+
+/* ============================================================
+   SITE.CSS — Page-level component styles
+   ============================================================ */
+
+
+/* ── Brand cards ─────────────────────────────────────────── */
+.brand.section { padding: 2.5rem 0; }
+
+.brand.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand.figure {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: var(--color-warm-gray);
+  border-radius: 0.75rem 0.75rem 0 0;
+  margin: 0;
+}
+
+.brand.name { margin: 0; }
+
+.brand.desc {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+/* ── Pet category cards ──────────────────────────────────── */
+.pet.name {
+  margin: 0 0 0.25rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-text-main);
+}
+.pet.meta {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-text-muted);
+}
+
+/* ── header ────────────────────────────── */
+.card.logo {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-primary-dark);
+}
+#logo { align-self: flex-end; }
+
+
+/* ── Header search width ─────────────────────────────────── */
+#site-search { width: 420px; }
+
+/* ── Categories section heading ─────────────────────────── */
+.categories.heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Category page header row (title + sort) ────────────── */
+.page.header.row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.page.header.row h1 {
+  margin: 0;
+  flex: 1;
+}
+.page.header.row select {
+  width: auto;
+}
+
+/* ── Filter tags row ─────────────────────────────────────── */
+.search.tags.filter {
+  margin-bottom: 1.5rem;
+}
+
+/* ── Product rating row ──────────────────────────────────── */
+.rating.row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+.rating.stars {
+  color: var(--color-secondary-dark);
+}
+
+/* ── Buy box ─────────────────────────────────────────────── */
+.buy.box {
+  display: flex;
+  gap: 0.75rem;
+  width: 480px;
+}
+.buy.box.option {
+  flex: 1;
+  min-height: unset;
+  padding: 1rem;
+  gap: 0.5rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+.buy.box.option input[type="radio"] {
+  accent-color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+/* ── Payment method option ───────────────────────────────── */
+.payment.method.option {
+  gap: 0.75rem;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Checkout plan item ──────────────────────────────────── */
+.plan.item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-stroke-light);
+}
+.plan.item.info {
+  flex: 1;
+}
+
+/* ── Confirmation next-steps card ───────────────────────── */
+.next.steps {
+  text-align: left;
+  margin: 2rem 0;
+}
+.next.steps.item {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-stroke-light);
+}
+.next.steps.item:last-child {
+  border-bottom: none;
+}
+
+/* ── Confirmation action buttons row ────────────────────── */
+.confirm.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
