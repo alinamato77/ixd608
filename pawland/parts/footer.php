@@ -61,6 +61,6 @@
   </div>
 </footer>
 
-<script src="lib/js/script.js"></script>
+<script src="styleguide/lib/js/script.js"></script>
 </body>
 </html>
