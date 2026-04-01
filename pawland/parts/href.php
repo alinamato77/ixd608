@@ -1,9 +1,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- STYLESHEETS -->
-	<link rel="stylesheet" href="/styleguide/lib/css/gridsystem.css">
-	<link rel="stylesheet" href="/styleguide/lib/css/styleguide.css">
-	<link rel="stylesheet" href="/styleguide/lib/css/site.css">
+	<link rel="stylesheet" href="../styleguide/lib/css/gridsystem.css">
+	<link rel="stylesheet" href="../styleguide/lib/css/styleguide.css">
+	<link rel="stylesheet" href="../styleguide/lib/css/site.css">
 
 	<!-- FONTS -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">

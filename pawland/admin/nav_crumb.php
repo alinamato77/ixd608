@@ -1,4 +1,4 @@
-<nav class="nav_crumb">
+<nav class="nav crumb">
 	<ul>
 		<li><a href="/admin/index.php">Admin</a></li>
 		<li><a href="/admin/index.php?p=user-list">User List</a></li>

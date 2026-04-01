@@ -287,11 +287,11 @@ a:hover { color: var(--color-primary-light); }
 .nav.vertical ul     { display: flex; flex-direction: column; gap: 0.25rem; }
 .nav.vertical a      { padding: 0.6rem 1rem; }
 
-.nav_thumb {
+.nav.crumb {
   background: transparent;
   padding: 0.5rem 0;
 }
-.nav_thumb ul {
+.nav.crumb ul {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -299,7 +299,7 @@ a:hover { color: var(--color-primary-light); }
   gap: 0.25rem;
   flex-wrap: wrap;
 }
-.nav_thumb a {
+.nav.crumb a {
   display: block;
   padding: 0.4rem 1rem;
   color: var(--color-primary-dark);
@@ -309,43 +309,11 @@ a:hover { color: var(--color-primary-light); }
   border-radius: 0.5rem;
   transition: background 0.2s, color 0.2s;
 }
-.nav_thumb a:hover {
+.nav.crumb a:hover {
   background: var(--color-primary-lightest);
   color: var(--color-primary-dark);
 }
-.nav_thumb a.active {
-  background: var(--color-primary-lightest);
-  color: var(--color-primary-dark);
-  font-weight: 700;
-}
-
-.nav_crumb {
-  background: transparent;
-  padding: 0.5rem 0;
-}
-.nav_crumb ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 0.25rem;
-  flex-wrap: wrap;
-}
-.nav_crumb a {
-  display: block;
-  padding: 0.4rem 1rem;
-  color: var(--color-primary-dark);
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  transition: background 0.2s, color 0.2s;
-}
-.nav_crumb a:hover {
-  background: var(--color-primary-lightest);
-  color: var(--color-primary-dark);
-}
-.nav_crumb a.active {
+.nav.crumb a.active {
   background: var(--color-primary-lightest);
   color: var(--color-primary-dark);
   font-weight: 700;
