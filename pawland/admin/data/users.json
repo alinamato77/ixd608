@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Priya Mehta",
+        "type": "one-time",
+        "email": "priya@example.com",
+        "phone": "+1 (555) 345-6789"
+    },
+    {
+        "name": "Leon Torres",
+        "type": "autoship",
+        "email": "leon@example.com",
+        "phone": "+1 (555) 456-7890"
+    },
+    {
+        "name": "Yuki Nakamura",
+        "type": "one-time",
+        "email": "yuki@example.com",
+        "phone": "+1 (555) 567-8901"
+    },
+    {
+        "name": "Sara Okafor",
+        "type": "autoship",
+        "email": "sara@example.com",
+        "phone": "+1 (555) 678-9012"
+    },
+    {
+        "name": "alina xie",
+        "type": "autoship",
+        "email": "888@88.com",
+        "phone": "+1 888 888 8888"
+    }
+]
