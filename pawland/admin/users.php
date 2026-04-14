@@ -13,8 +13,9 @@ $users    = json_decode($file);
 		<ul>
 		<?php
 		for ($i = 0; $i < count($users); $i++) {
+			$name = htmlspecialchars($users[$i]->name);
 			echo "<li>
-				<a href='/admin/index.php?p=user-detail&id=$i'>{$users[$i]->name}</a>
+				<a href='/admin/index.php?p=user-detail&id=$i'>{$name}</a>
 			</li>";
 		}
 		?>

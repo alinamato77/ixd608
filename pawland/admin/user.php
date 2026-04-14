@@ -2,8 +2,9 @@
 $filename = "../admin/data/users.json";
 $file     = file_get_contents($filename);
 $users    = json_decode($file);
-$id       = isset($_GET['id']) ? $_GET['id'] : 0;
-$user     = $users[$id];
+$id   = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+$user = isset($users[$id]) ? $users[$id] : null;
+if (!$user) { echo "<p>User not found.</p>"; return; }
 ?>
 
 <div class="card soft">
@@ -15,19 +16,19 @@ $user     = $users[$id];
 		<tbody>
 			<tr>
 				<th>Name</th>
-				<td><?php echo $user->name; ?></td>
+				<td><?php echo htmlspecialchars($user->name); ?></td>
 			</tr>
 			<tr>
 				<th>Type</th>
-				<td><?php echo $user->type; ?></td>
+				<td><?php echo htmlspecialchars($user->type); ?></td>
 			</tr>
 			<tr>
 				<th>Email</th>
-				<td><?php echo $user->email; ?></td>
+				<td><?php echo htmlspecialchars($user->email); ?></td>
 			</tr>
 			<tr>
 				<th>Phone</th>
-				<td><?php echo $user->phone; ?></td>
+				<td><?php echo htmlspecialchars($user->phone); ?></td>
 			</tr>
 		</tbody>
 	</table>

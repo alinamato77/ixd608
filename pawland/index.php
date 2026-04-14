@@ -28,7 +28,7 @@
 
 					<!-- Dry Food -->
 					<div class="col-xs-12 col-md-4">
-						<a href="category.php">
+						<a href="category.php?cat=Dry Food">
 							<div class="pet card">
 								<div class="pet img">
 								</div>
@@ -42,7 +42,7 @@
 
 					<!-- Wet Food -->
 					<div class="col-xs-12 col-md-4">
-						<a href="category.php">
+						<a href="category.php?cat=Wet Food">
 							<div class="pet card">
 								<div class="pet img">
 								</div>
@@ -56,7 +56,7 @@
 
 					<!-- Fresh Food -->
 					<div class="col-xs-12 col-md-4">
-						<a href="category.php">
+						<a href="category.php?cat=Fresh Food">
 							<div class="pet card">
 								<div class="pet img">
 								</div>

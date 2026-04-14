@@ -62,5 +62,3 @@
 </footer>
 
 <script src="styleguide/lib/js/script.js"></script>
-</body>
-</html>

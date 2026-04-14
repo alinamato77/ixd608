@@ -2,8 +2,9 @@
 $filename = "../admin/data/users.json";
 $file     = file_get_contents($filename);
 $users    = json_decode($file);
-$id       = isset($_GET['id']) ? $_GET['id'] : 0;
-$user     = $users[$id];
+$id   = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+$user = isset($users[$id]) ? $users[$id] : null;
+if (!$user) { echo "<p>User not found.</p>"; return; }
 ?>
 
 <form method="post" action="/admin/index.php?p=user-edit&id=<?php echo $id; ?>">
@@ -16,7 +17,7 @@ $user     = $users[$id];
 			<tbody>
 				<tr>
 					<th>Name</th>
-					<td><input class="input" type="text" name="name" value="<?php echo $user->name; ?>" placeholder="Full name"></td>
+					<td><input class="input" type="text" name="name" value="<?php echo htmlspecialchars($user->name); ?>" placeholder="Full name"></td>
 				</tr>
 				<tr>
 					<th>Type</th>
@@ -29,11 +30,11 @@ $user     = $users[$id];
 				</tr>
 				<tr>
 					<th>Email</th>
-					<td><input class="input" type="email" name="email" value="<?php echo $user->email; ?>" placeholder="you@example.com"></td>
+					<td><input class="input" type="email" name="email" value="<?php echo htmlspecialchars($user->email); ?>" placeholder="you@example.com"></td>
 				</tr>
 				<tr>
 					<th>Phone</th>
-					<td><input class="input" type="tel" name="phone" value="<?php echo $user->phone; ?>" placeholder="+1 (555) 000-0000"></td>
+					<td><input class="input" type="tel" name="phone" value="<?php echo htmlspecialchars($user->phone); ?>" placeholder="+1 (555) 000-0000"></td>
 				</tr>
 			</tbody>
 		</table>

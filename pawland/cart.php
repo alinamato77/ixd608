@@ -1,4 +1,18 @@
-<!DOCTYPE html>
+<?php
+
+include "parts/functions.php";
+include "parts/template.php";
+
+$cart = makeQuery(
+	makeConn(),
+	"
+	SELECT *
+	FROM `products`
+	WHERE `id` = ".(int)$_GET['id']."
+	"
+);
+
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -21,25 +35,8 @@
 
 				<!-- Left: Cart items -->
 				<div class="col-xs-12 col-md-8">
-					<h3>Your Cart (1)</h3>
-
-					<div class="cart item">
-						<div class="cart item img"></div>
-						<div>
-							<p><strong>Premium Dry Food Recipe</strong></p>
-							<p><small>Delivery every 4 weeks</small></p>
-							<button class="btn secondary sm" type="button">Remove</button>
-						</div>
-						<div>
-							<p><strong>$31.50</strong></p>
-							<div class="qty stepper">
-								<button type="button">-</button>
-								<span>1</span>
-								<button type="button">+</button>
-							</div>
-						</div>
-					</div>
-
+					<h1>Your Cart</h1>
+					<?php echo array_reduce($cart, 'cartListTemplate'); ?>
 				</div>
 
 				<!-- Right: Order Summary -->
@@ -49,23 +46,18 @@
 						<div class="display flex">
 							<span>Subtotal</span>
 							<span class="flex stretch"></span>
-							<span>$31.50</span>
+							<span>$<?php echo number_format($cart[0]->price ?? 0, 2); ?></span>
 						</div>
 						<div class="display flex">
 							<span>Shipping</span>
 							<span class="flex stretch"></span>
 							<span>Calculated at next step</span>
 						</div>
-						<div class="display flex">
-							<span class="badge primary">Subscription Discount</span>
-							<span class="flex stretch"></span>
-							<span>- $13.50</span>
-						</div>
 						<hr>
 						<div class="display flex">
 							<strong>Total</strong>
 							<span class="flex stretch"></span>
-							<strong>$31.50</strong>
+							<strong>$<?php echo number_format($cart[0]->price ?? 0, 2); ?></strong>
 						</div>
 						<div class="form actions">
 							<a href="checkout.php" class="btn primary flex stretch">Checkout</a>
