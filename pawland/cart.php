@@ -1,22 +1,18 @@
 <?php
-
-include "parts/functions.php";
+include_once "parts/functions.php";
 include "parts/template.php";
 
-$cart = makeQuery(
-	makeConn(),
-	"
-	SELECT *
-	FROM `products`
-	WHERE `id` = ".(int)$_GET['id']."
-	"
-);
+//$cart = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id` = ".(int)$_GET['id']);
 
-?><!DOCTYPE html>
+$cart_items = getCartItems();
+
+?>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Your Cart &mdash; Pawland</title>
+	<title>Cart Page</title>
 	<?php include "parts/href.php"; ?>
 </head>
 <body>
@@ -24,49 +20,43 @@ $cart = makeQuery(
 	<?php include "parts/header.php"; ?>
 
 	<main>
-		<div class="container">
+	<div class="container">
+		<h2>In Your Cart</h2>
+		<div class="grid gap">
 
-			<ol class="breadcrumb">
-				<li><a href="index.php">Home</a></li>
-				<li>Cart</li>
-			</ol>
-
-			<div class="grid gap">
-
-				<!-- Left: Cart items -->
-				<div class="col-xs-12 col-md-8">
-					<h1>Your Cart</h1>
-					<?php echo array_reduce($cart, 'cartListTemplate'); ?>
+			<div class="col-xs-12 col-md-7">
+				<div class="card soft">
+					<?= array_reduce($cart_items, 'cartListTemplate') ?>
 				</div>
+			</div>
 
-				<!-- Right: Order Summary -->
-				<div class="col-xs-12 col-md-4">
-					<div class="card soft">
-						<h4>Order Summary</h4>
-						<div class="display flex">
-							<span>Subtotal</span>
-							<span class="flex stretch"></span>
-							<span>$<?php echo number_format($cart[0]->price ?? 0, 2); ?></span>
-						</div>
-						<div class="display flex">
-							<span>Shipping</span>
-							<span class="flex stretch"></span>
-							<span>Calculated at next step</span>
-						</div>
-						<hr>
-						<div class="display flex">
-							<strong>Total</strong>
-							<span class="flex stretch"></span>
-							<strong>$<?php echo number_format($cart[0]->price ?? 0, 2); ?></strong>
-						</div>
-						<div class="form actions">
-							<a href="checkout.php" class="btn primary flex stretch">Checkout</a>
-						</div>
+			<div class="col-xs-12 col-md-5">
+				<div class="card soft flat">
+					<?php
+						$subtotal = array_sum(array_map(function($item){ return $item->price; }, $cart_items));
+						$tax = $subtotal * 0.1;
+						$total = $subtotal + $tax;
+					?>
+					<div class="card section display-flex">
+						<div class="flex-stretch"><strong>Sub Total</strong></div>
+						<div class="flex-none">&dollar;<?= number_format($subtotal, 2) ?></div>
+					</div>
+					<div class="card section display-flex">
+						<div class="flex-stretch"><strong>Taxes</strong></div>
+						<div class="flex-none">&dollar;<?= number_format($tax, 2) ?></div>
+					</div>
+					<div class="card section display-flex">
+						<div class="flex-stretch"><strong>Total</strong></div>
+						<div class="flex-none">&dollar;<?= number_format($total, 2) ?></div>
+					</div>
+					<div class="card section">
+						<a href="checkout.php" class="btn primary full">Checkout</a>
 					</div>
 				</div>
-
 			</div>
+
 		</div>
+	</div>
 	</main>
 
 	<?php include "parts/footer.php"; ?>

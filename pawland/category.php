@@ -16,7 +16,7 @@
 
 				<?php
 
-				include "parts/functions.php";
+				include_once "parts/functions.php";
 				include "parts/template.php";
 
 				$result = makeQuery(

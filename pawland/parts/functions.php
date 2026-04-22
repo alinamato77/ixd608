@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function print_p($v){
 	echo "<pre>", print_r($v),"</pre>";
 }
@@ -23,4 +25,66 @@ function makeQuery($conn,$qry) {
 	return $a;
 }
 
+function makeExec($conn,$qry) {
+	$conn->query($qry);
+	if($conn->errno) die($conn->error);
+	return $conn->affected_rows;
+}
+
+function array_find($array,$fn) {
+	foreach($array as $o) if($fn($o)) return $o;
+	return false;
+}
+
+function getCart() {
+	return isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+}
+
+function addToCart($id,$amount) {
+	$cart = getCart();
+
+	$p = array_find($cart, function($o) use($id) { return $o->id==$id; });
+
+	if($p) {
+		$p->amount += $amount;
+	} else {
+		$_SESSION['cart'][] = (object)[
+			"id"=>$id,
+			"amount"=>$amount,
+		];
+	}
+}
+
+function resetCart() {
+	$_SESSION['cart'] = [];
+}
+
+function makeCartBadge() {
+	$cart = getCart();
+	if(count($cart)==0) {
+		return "";
+	} else {
+		return "(".array_reduce($cart, function($r,$o){return $r+$o->amount;},0).")";
+	}
+}
+
+function getCartItems() {
+    $cart = getCart();
+
+    if (empty($cart)) return [];
+
+    $ids = implode(",", array_map(function($o){ return $o->id; }, $cart));
+    $data = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id` IN ($ids)");
+
+    return array_map(function($o) use ($cart) {
+        $p = array_find($cart, function($c) use ($o) { return $c->id == $o->id; });
+        $o->amount = $p->amount ?? 1;
+        $o->total = $o->amount * $o->price;
+        return $o;
+    }, $data);
+}
+
+
+
 ?>
+

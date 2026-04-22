@@ -1,7 +1,8 @@
 <?php
-include "parts/functions.php";
+include_once "parts/functions.php";
 
-$product = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id`=".(int)$_GET['id'])[0];
+$id = (int)($_POST['product-id'] ?? $_GET['id'] ?? 0);
+$product = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id`=$id")[0];
 if (!$product) { header('Location: index.php'); exit; }
 ?>
 <!DOCTYPE html>
@@ -39,7 +40,7 @@ if (!$product) { header('Location: index.php'); exit; }
 				<div class="display flex flex align" style="gap:1rem;">
 					<div class="flex none"><a href="category.php?cat=<?php echo urlencode($product->category); ?>" class="btn outline">Continue Shopping</a></div>
 					<div class="flex stretch"></div>
-					<div class="flex none"><a href="cart.php" class="btn primary">Go To Cart</a></div>
+					<div class="flex none"><a href="cart.php?id=<?= $product->id ?>" class="btn primary">Go To Cart</a></div>
 				</div>
 
 			</div>

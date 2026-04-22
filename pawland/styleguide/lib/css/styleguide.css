@@ -134,6 +134,12 @@ a:hover { color: var(--color-primary-light); }
   z-index: 200;
 }
 
+.nav {
+  background-color: var(--color-primary);
+  position: sticky;
+  top: 0;
+}
+
 .navbar .container { padding: 1rem; }
 .navbar h1 {
   margin: 0;
@@ -238,6 +244,31 @@ a:hover { color: var(--color-primary-light); }
 .card.gradient {
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: var(--color-white);
+}
+
+.card.section {
+  border-radius: 16px;
+  padding: 24px;
+  min-height: 100px;
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  border: none;
+  background: var(--color-white);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.display-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-stroke-light);
+}
+
+.flex-none {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
 }
 
 
@@ -741,6 +772,27 @@ input[type="range"] {
 .badge.neutral   { background-color: var(--color-bg-main);      color: var(--color-text-muted); border: 1px solid var(--color-stroke-dark); }
 .badge.secondary { background-color: var(--color-primary-dark); color: var(--color-secondary); }
 
+/* Cart badge */
+.badge.cart {
+  text-align: center;
+  font-family: var(--font-family-heading);
+  color: var(--color-secondary);
+  transition: all 0.2s ease;
+}
+.badge.cart:hover {
+  text-align: center;
+  font-family: var(--font-family-heading);
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+}
+
+span.badge.cart:not(:empty)::after {
+    content: ')';
+}
+span.badge.cart:not(:empty)::before {
+    content: '(';
+}
+
 
 /* ============================================================
    TAGS
@@ -1169,6 +1221,68 @@ input[type="range"] {
 }
 .card.soft:has(.color.circle) { padding: 1rem; }
 
+/* ============================================================
+   CARD SECTION
+   ============================================================ */
+
+.card section {
+  padding: 1rem 0;
+  border-top: 1px solid var(--color-stroke-light);
+}
+.card section:first-child { border-top: none; padding-top: 0; }
+.card section:last-child  { padding-bottom: 0; }
+
+/* ============================================================
+   FORM SELECT  /  FORM LABEL  (hyphen variants)
+   ============================================================ */
+
+.form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text-secondary);
+  font-family: var(--font-family-heading);
+  display: block;
+  margin-bottom: 0.375rem;
+}
+
+.form-select {
+  position: relative;
+  width: 100%;
+}
+.form-select select {
+  width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-stroke-dark);
+  border-radius: 0.5rem;
+  padding: 0.625rem 2.5rem 0.625rem 0.875rem;
+  font-size: 0.9375rem;
+  font-family: var(--font-family-base);
+  color: var(--color-text-secondary);
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.form-select select:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--focus-ring);
+}
+.form-select::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  right: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid var(--color-text-secondary);
+}
+
 .swatch.teal           { background-color: var(--color-teal); }
 .swatch.teal.light     { background-color: var(--color-teal-light); }
 .swatch.orange         { background-color: var(--color-orange); }
@@ -1187,4 +1301,13 @@ input[type="range"] {
 .swatch.cream          { background-color: var(--color-cream);     border: 1px solid var(--color-stroke-light); }
 .swatch.warm.grey      { background-color: var(--color-warm-gray); border: 1px solid var(--color-stroke-light); }
 
+
+
+.product-price {
+  color:var(--color-primary); font-weight:700; font-size:1.25rem;
+}
+.images-main {text-align:center;}
+.images-main-style {"max-width:100%; max-height:420px; object-fit:contain;}
+.images-thumb {display:flex; gap:0.75rem; justify-content:center;}
+.images-thumbs-style {width:80px; height:80px; object-fit:contain; border-radius:8px; border:2px solid var(--color-stroke-light); cursor:pointer;}
 
