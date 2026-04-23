@@ -31,7 +31,7 @@ $cart_items = getCartItems();
 			</div>
 
 			<div class="col-xs-12 col-md-5">
-				<div class="card soft flat">
+				<div class="card soft">
 					<?php
 						$subtotal = array_sum(array_map(function($item){ return $item->price; }, $cart_items));
 						$tax = $subtotal * 0.1;
@@ -39,15 +39,15 @@ $cart_items = getCartItems();
 					?>
 					<div class="card section display-flex">
 						<div class="flex-stretch"><strong>Sub Total</strong></div>
-						<div class="flex-none">&dollar;<?= number_format($subtotal, 2) ?></div>
+						<div class="flex none">&dollar;<?= number_format($subtotal, 2) ?></div>
 					</div>
 					<div class="card section display-flex">
 						<div class="flex-stretch"><strong>Taxes</strong></div>
-						<div class="flex-none">&dollar;<?= number_format($tax, 2) ?></div>
+						<div class="flex none">&dollar;<?= number_format($tax, 2) ?></div>
 					</div>
 					<div class="card section display-flex">
 						<div class="flex-stretch"><strong>Total</strong></div>
-						<div class="flex-none">&dollar;<?= number_format($total, 2) ?></div>
+						<div class="flex none">&dollar;<?= number_format($total, 2) ?></div>
 					</div>
 					<div class="card section">
 						<a href="checkout.php" class="btn primary full">Checkout</a>

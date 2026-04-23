@@ -18,11 +18,24 @@ header.color.primary.dark {
   left: 0;
   right: 0;
   z-index: 1000;
+  background: transparent;
 }
 header.color.primary.dark .container {
   max-width: 100% !important;
   margin: 0 !important;
   padding: 0 2.5rem !important;
+  background-color: var(--color-primary-dark);
+}
+header.color.primary.dark .nav.crumb {
+  display: flex;
+  align-items: center;
+}
+header.color.primary.dark .nav.crumb a {
+  color: rgba(255, 255, 255, 0.75);
+}
+header.color.primary.dark .nav.crumb a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Push main content down so it doesn't hide behind fixed header */

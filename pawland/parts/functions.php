@@ -31,9 +31,11 @@ function makeExec($conn,$qry) {
 	return $conn->affected_rows;
 }
 
-function array_find($array,$fn) {
-	foreach($array as $o) if($fn($o)) return $o;
-	return false;
+if (!function_exists('array_find')) {
+    function array_find($array, $fn) {
+        foreach($array as $o) if($fn($o)) return $o;
+        return false;
+    }
 }
 
 function getCart() {
@@ -83,8 +85,3 @@ function getCartItems() {
         return $o;
     }, $data);
 }
-
-
-
-?>
-

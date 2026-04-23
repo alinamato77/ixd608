@@ -115,7 +115,7 @@ a:hover { color: var(--color-primary-light); }
 }
 
 .display.flex { display: flex; }
-.flex.none    { flex: none; }
+.flex.none    { flex-shrink: 0;}
 .flex.stretch { flex: 1; }
 .flex.center  { justify-content: center; }
 .flex.align   { align-items: center; }
@@ -134,28 +134,16 @@ a:hover { color: var(--color-primary-light); }
   z-index: 200;
 }
 
-.nav {
-  background-color: var(--color-primary);
-  position: sticky;
-  top: 0;
+.navbar .container { 
+  padding: 1rem; 
 }
 
-.navbar .container { padding: 1rem; }
 .navbar h1 {
   margin: 0;
   font-size: 2.5rem;
   color: var(--color-primary-dark);
   letter-spacing: 1px;
 }
-
-.nav.inline {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 1.5rem;
-}
-
 
 /* ============================================================
    CARDS
@@ -257,40 +245,41 @@ a:hover { color: var(--color-primary-light); }
   box-shadow: 0 2px 12px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
 }
 
-.display-flex {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid var(--color-stroke-light);
-}
-
-.flex-none {
-  width: 80px;
-  height: 80px;
-  flex-shrink: 0;
-}
-
 
 /* ============================================================
    NAVIGATION
    ============================================================ */
 
-.navigation ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
 .nav.horizontal,
 .nav.vertical {
   background: var(--color-primary-dark);
   border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.nav.horizontal ul,
+.nav.vertical ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav.horizontal ul {
+  flex-direction: row;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.nav.vertical ul {
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .nav.horizontal a,
 .nav.vertical a {
   display: block;
+  padding: 0.5rem 1rem;
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.25rem;
   font-weight: 600;
@@ -310,17 +299,10 @@ a:hover { color: var(--color-primary-light); }
   font-weight: 700;
 }
 
-.nav.horizontal      { padding: 0.75rem 1rem; }
-.nav.horizontal ul   { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-.nav.horizontal a    { padding: 0.5rem 1rem; }
-
-.nav.vertical        { padding: 1.25rem 1rem; width: 220px; min-width: 220px; }
-.nav.vertical ul     { display: flex; flex-direction: column; gap: 0.25rem; }
-.nav.vertical a      { padding: 0.6rem 1rem; }
-
 .nav.crumb {
   background: transparent;
   padding: 0.5rem 0;
+  color: var(--color-secondary-light);
 }
 .nav.crumb ul {
   list-style: none;
@@ -329,11 +311,12 @@ a:hover { color: var(--color-primary-light); }
   display: flex;
   gap: 0.25rem;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 .nav.crumb a {
   display: block;
   padding: 0.4rem 1rem;
-  color: var(--color-primary-dark);
+  color: var(--color-secondary-light);
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
@@ -1306,8 +1289,58 @@ span.badge.cart:not(:empty)::before {
 .product-price {
   color:var(--color-primary); font-weight:700; font-size:1.25rem;
 }
+
+
+/* ============================================================
+   DISPLAY - FLEX
+   ============================================================ */
+.display-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-stroke-light);
+}
+
+.flex-none {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.flex-none img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.flex-stretch {
+  flex: 1 1 auto;
+}
+
+
+/* ============================================================
+   IMAGES
+   ============================================================ */
 .images-main {text-align:center;}
 .images-main-style {"max-width:100%; max-height:420px; object-fit:contain;}
 .images-thumb {display:flex; gap:0.75rem; justify-content:center;}
 .images-thumbs-style {width:80px; height:80px; object-fit:contain; border-radius:8px; border:2px solid var(--color-stroke-light); cursor:pointer;}
+
+.cart-images-container {
+  width: 80px;          
+  height: 80px;
+  border-radius: 0.5rem;
+  overflow: hidden;     
+  background-color: #f8f8f8;
+  flex: none;         
+}
+
+.cart-images-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; 
+}
 

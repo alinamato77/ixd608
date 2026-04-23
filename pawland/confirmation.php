@@ -44,8 +44,8 @@ resetCart();
 				</div>
 
 				<div class="confirm actions">
-					<a href="index.php" class="btn outline">Return to Home</a>
-					<a href="#" class="btn primary">Go to Dashboard</a>
+					<a href="index.php" class="btn outline">Go to Home</a>
+					<a href="cart.php" class="btn primary">Return to Cart</a>
 				</div>
 
 			</div>
