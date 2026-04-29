@@ -21,9 +21,15 @@ header.color.primary.dark {
   background: transparent;
 }
 header.color.primary.dark .container {
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding: 0 2.5rem !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 2rem !important;
+  background-color: transparent;
+}
+header.color.primary.dark > .container {
+  background-color: var(--color-primary-dark);
+}
+header.color.primary.dark {
   background-color: var(--color-primary-dark);
 }
 header.color.primary.dark .nav.crumb {
@@ -40,7 +46,7 @@ header.color.primary.dark .nav.crumb a:hover {
 
 /* Push main content down so it doesn't hide behind fixed header */
 main {
-  padding-top: 170px;
+  padding-top: 110px;
   padding-bottom: 4rem;
 }
 
@@ -656,7 +662,8 @@ section.banner .container {
 
 .product-card-img {
   background-color: var(--color-cream);
-  height: 200px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -666,6 +673,58 @@ section.banner .container {
   text-transform: uppercase;
   letter-spacing: 1px;
   position: relative;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.product-card-img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ============================================================
+   CATEGORY PAGE — filter row + product grid overrides
+   ============================================================ */
+
+/* Filter bar container (the .card.soft.display-flex wrapper) */
+.card.soft.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 1rem 1.25rem;
+  border-bottom: none;
+}
+
+/* Override the generic .flex-none (80x80 image slot) when used as a
+   button/select wrapper inside the filter bar */
+.card.soft.display-flex > .flex-none {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+/* Push the sort selector all the way to the right */
+.card.soft.display-flex > .flex-none:last-child {
+  margin-left: auto;
+}
+
+/* Give the sort dropdown enough room for its longest label */
+.card.soft.display-flex .form-select {
+  min-width: 180px;
+}
+.card.soft.display-flex .form-select select {
+  width: 100%;
+}
+
+/* Product list grid — extra breathing room between cards */
+.productlist.grid.gap {
+  --grid-gap: 1.5em;
+  margin-top: 1.5rem;
 }
 
 .product-card-body {

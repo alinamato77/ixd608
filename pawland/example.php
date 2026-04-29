@@ -21,7 +21,7 @@
 
 			<div class="grid gap">
 				<div class="col-xs-12 col-md-3">
-					<a href="product_item.php?id=1">
+					<a href="product.php?id=1">
 						<figure class="figure product">
 							<img src="https://placehold.co/400x400" alt="">
 							<figcaption>
@@ -34,7 +34,7 @@
 				</div>
 
 				<div class="col-xs-12 col-md-3">
-					<a href="product_item.php?id=2">
+					<a href="product.php?id=2">
 						<figure class="figure product">
 							<img src="https://placehold.co/400x400" alt="">
 							<figcaption>
@@ -47,7 +47,7 @@
 				</div>
 
 				<div class="col-xs-12 col-md-3">
-					<a href="product_item.php?id=3">
+					<a href="product.php?id=3">
 						<figure class="figure product">
 							<img src="https://placehold.co/400x400" alt="">
 							<figcaption>
@@ -60,7 +60,7 @@
 				</div>
 
 				<div class="col-xs-12 col-md-3">
-					<a href="product_item.php?id=4">
+					<a href="product.php?id=4">
 						<figure class="figure product">
 							<img src="https://placehold.co/400x400" alt="">
 							<figcaption>

@@ -33,7 +33,7 @@ $cart_items = getCartItems();
 			<div class="col-xs-12 col-md-5">
 				<div class="card soft">
 					<?php
-						$subtotal = array_sum(array_map(function($item){ return $item->price; }, $cart_items));
+						$subtotal = array_sum(array_map(function($item){ return $item->total; }, $cart_items));
 						$tax = $subtotal * 0.1;
 						$total = $subtotal + $tax;
 					?>

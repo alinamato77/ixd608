@@ -11,8 +11,7 @@ include_once "parts/functions.php";
 			<div class="flex stretch"></div>
 			<ul>
 				<li><a href="index.php">Home</a></li>
-				<li><a href="category.php">Category</a></li>
-				<li><a href="product.php">Store</a></li>
+				<li><a href="category.php">Store</a></li>
 				<li><a href="cart.php">
 					<span>Cart</span>
 					<span class="badge cart"><?= makeCartBadge(); ?></span>

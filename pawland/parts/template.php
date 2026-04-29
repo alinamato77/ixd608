@@ -27,27 +27,32 @@ function selectAmount($amount=1,$total=10) {
 
 function cartListTemplate($r,$o){
 $totalfixed = number_format($o->total,2,'.','');
-$selectamount = selectAmount($o->amount,10);
+$options = '';
+for ($i = 1; $i <= 10; $i++) {
+	$sel = ($i == $o->amount) ? ' selected' : '';
+	$options .= "<option value=\"$i\"$sel>Qty: $i</option>";
+}
 return $r.<<<HTML
-<div class="display-flex card section" >
-	<div class="flex-none" >
-		<img src="images/$o->image" style="width:100%; height:100%; object-fit:contain;">
+<div class="cart-item">
+	<div class="cart-item-img">
+		<img src="images/$o->image" alt="$o->name" style="max-width:100%;max-height:100%;object-fit:contain;">
 	</div>
-	<div class="flex-stretch">
-        <strong>$o->name ($o->amount)</strong>
-        <form action="cart_actions.php?action=delete-cart-item" method="post">
-            <input type="hidden" name="id" value="$o->id">
-            <input type="submit" class="btn secondary" value="Delete" style="font-size:0.8em">
-        </form>
+	<div class="cart-item-info">
+		<div class="cart-item-name">$o->name</div>
+		<form action="cart_actions.php?action=update-cart-item" method="post" style="margin-bottom:0.5rem;">
+			<input type="hidden" name="id" value="$o->id">
+			<div class="form-select" style="display:inline-block;">
+				<select name="amount" onchange="this.form.submit()">$options</select>
+			</div>
+		</form>
+		<form action="cart_actions.php?action=delete-cart-item" method="post" style="display:inline;">
+			<input type="hidden" name="id" value="$o->id">
+			<button type="submit" class="cart-item-remove">Remove</button>
+		</form>
 	</div>
-	<div class="flex-none">&dollar;$o->total</div>
-	<div>&dollar;$totalfixed</div>
-	<form action="cart_actions.php?action=update-cart-item" method="post">
-	<div class="form-select">
-		$selectamount
+	<div class="cart-item-right">
+		<div class="cart-item-price">&dollar;$totalfixed</div>
 	</div>
-</form>
-</div>
 </div>
 HTML;
 }

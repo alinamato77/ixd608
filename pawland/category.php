@@ -1,41 +1,71 @@
+<?php
+include_once "parts/functions.php";
+include_once "parts/template.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>All Products &mdash; Pawland</title>
-	<?php include "parts/href.php"; ?>
+    <meta charset="UTF-8">
+    <title>All Products &mdash; Pawland</title>
+    <?php include "parts/href.php"; ?>
+
+    <script src="lib/js/functions.js"></script>
+    <script src="js/templates.js"></script>
+    <script src="js/product_list.js"></script>
 </head>
 <body>
 
-	<?php include "parts/header.php"; ?>
+    <?php include "parts/header.php"; ?>
 
-	<main>
-		<div class="container">
-			<div class="card soft">
-				<h2>All Products</h2>
+    <main>
+    <div class="container">
+        <h2>All Products</h2>
 
-				<?php
+        <div class="form-control">
+            <form class="hotdog light" id="product-search">
+                <input type="search" placeholder="Search Products">
+            </form>
+        </div>
 
-				include_once "parts/functions.php";
-				include "parts/template.php";
+        <div class="form-control">
+            <div class="card soft display-flex">
+                <div class="flex-none">
+                    <button data-filter="category" data-value="" type="button" class="btn primary sm">All</button>
+                </div>
+                <div class="flex-none">
+                    <button data-filter="category" data-value="dry food" type="button" class="btn outline sm">Dry Food</button>
+                </div>
+                <div class="flex-none">
+                    <button data-filter="category" data-value="wet food" type="button" class="btn outline sm">Wet Food</button>
+                </div>
+                <div class="flex-none">
+                    <button data-filter="category" data-value="fresh food" type="button" class="btn outline sm">Fresh Food</button>
+                </div>
+                <div class="flex-none">
+                    <button data-filter="category" data-value="supplements" type="button" class="btn outline sm">Supplements</button>
+                </div>
+                <div class="flex-none">
+                    <button data-filter="category" data-value="treats" type="button" class="btn outline sm">Treats</button>
+                </div>
+                <div class="flex-none">
+                    <div class="form-select">
+                    <select class="js-sort">
+                      <option value="1">Newest</option>
+                      <option value="2">Oldest</option>
+                      <option value="3">Least Expensive</option>
+                      <option value="4">Most Expensive</option>
+        </select>
+    </div>
+</div>
+            </div>
+        </div>
 
-				$result = makeQuery(
-					makeConn(),
-					"
-					SELECT *
-					FROM `products`
-					ORDER BY `id` DESC
-					LIMIT 12
-					"
-				);
+        <div class='productlist grid gap'></div>
+    </div>
+    </main>
 
-				echo "<div class='grid gap'>", array_reduce($result, 'productListTemplate'), "</div>";
+        <?php include "parts/footer.php"; ?>
 
-				?>
-			</div>
-		</div>
-	</main>
-
-	<?php include "parts/footer.php"; ?>
 </body>
 </html>
