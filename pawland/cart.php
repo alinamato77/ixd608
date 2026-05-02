@@ -19,14 +19,17 @@ $cart_items = getCartItems();
 
 	<?php include "parts/header.php"; ?>
 
+
 	<main>
 	<div class="container">
 		<h2>In Your Cart</h2>
 		<div class="grid gap">
 
 			<div class="col-xs-12 col-md-7">
-				<div class="card soft">
-					<?= array_reduce($cart_items, 'cartListTemplate') ?>
+				<div class="card soft cart-list">
+					<?= empty($cart_items)
+						? '<p class="cart-empty">your cart is empty.</p>'
+						: array_reduce($cart_items, 'cartListTemplate') ?>
 				</div>
 			</div>
 
@@ -49,7 +52,7 @@ $cart_items = getCartItems();
 						<div class="flex-stretch"><strong>Total</strong></div>
 						<div class="flex none">&dollar;<?= number_format($total, 2) ?></div>
 					</div>
-					<div class="card section">
+					<div>
 						<a href="checkout.php" class="btn primary full">Checkout</a>
 					</div>
 				</div>

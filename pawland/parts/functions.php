@@ -24,6 +24,14 @@ function makeQuery($conn,$qry) {
 	}
 	return $a;
 }
+function makePDOConn() {
+    try {
+        $conn = new PDO(...PDOAuth());
+    } catch(PDOException $e) {
+        die($e->getMessage());
+    }
+    return $conn;
+}
 
 function makeExec($conn,$qry) {
 	$conn->query($qry);
@@ -68,6 +76,43 @@ function makeCartBadge() {
 	} else {
 		return array_reduce($cart, function($r,$o){return $r+$o->amount;},0);
 	}
+}
+
+// Returns array of image filenames from a product's comma-separated `image` column
+function productImages($o) {
+    return array_filter(array_map('trim', explode(",", $o->image ?? '')));
+}
+
+// Returns the first (thumbnail) image filename, or '' if none
+function firstProductImage($o) {
+    $imgs = productImages($o);
+    return $imgs ? reset($imgs) : '';
+}
+
+// Returns single <img> tag for the product's thumbnail
+function productThumbnailHtml($o) {
+    $first = firstProductImage($o);
+    return $first ? "<img src='images/{$first}' alt='{$o->name}'>" : '';
+}
+
+// Returns a row of <span class="images-thumbs"><img></span> for all product images
+function productOtherImagesHtml($o) {
+    $html = '';
+    foreach(productImages($o) as $img) {
+        $html .= "<span class='images-thumbs'><img src='images/{$img}' alt='{$o->name}'></span>";
+    }
+    return $html;
+}
+
+// Returns <option> tags for the category select, with $selected pre-selected
+function categoryOptions($selected = '') {
+    $cats = ['Fresh Food','Wet Food','Dry Food','Supplements','Treats'];
+    $html = '';
+    foreach($cats as $cat) {
+        $sel = ($selected === $cat) ? ' selected' : '';
+        $html .= "<option value=\"{$cat}\"{$sel}>{$cat}</option>";
+    }
+    return $html;
 }
 
 function getCartItems() {

@@ -22,53 +22,53 @@
 			<div class="grid gap">
 				<div class="col-xs-12 col-md-3">
 					<a href="product.php?id=1">
-						<figure class="figure product">
+						<div class="pet card"><div class="pet img">
 							<img src="https://placehold.co/400x400" alt="">
-							<figcaption>
+							</div><div class="pet body">
 								<div>$3.99</div>
 								<div>Product Name</div>
 							<div class="tagmedium card">Best By 3/28</div>
-							</figcaption>
-						</figure>
+							</div>
+						</div>
 					</a>
 				</div>
 
 				<div class="col-xs-12 col-md-3">
 					<a href="product.php?id=2">
-						<figure class="figure product">
+						<div class="pet card"><div class="pet img">
 							<img src="https://placehold.co/400x400" alt="">
-							<figcaption>
+							</div><div class="pet body">
 								<div>$3.99</div>
 								<div>Product Name</div>
 							<div class="tagmedium card">Best By 3/28</div>
-							</figcaption>
-						</figure>
+							</div>
+						</div>
 					</a>
 				</div>
 
 				<div class="col-xs-12 col-md-3">
 					<a href="product.php?id=3">
-						<figure class="figure product">
+						<div class="pet card"><div class="pet img">
 							<img src="https://placehold.co/400x400" alt="">
-							<figcaption>
+							</div><div class="pet body">
 								<div>$3.99</div>
 								<div>Product Name</div>
 							<div class="tagmedium card">Best By 3/28</div>
-							</figcaption>
-						</figure>
+							</div>
+						</div>
 					</a>
 				</div>
 
 				<div class="col-xs-12 col-md-3">
 					<a href="product.php?id=4">
-						<figure class="figure product">
+						<div class="pet card"><div class="pet img">
 							<img src="https://placehold.co/400x400" alt="">
-							<figcaption>
+							</div><div class="pet body">
 								<div>$3.99</div>
 								<div>Product Name</div>
 							<div class="tagmedium card">Best By 3/28</div>
-							</figcaption>
-						</figure>
+							</div>
+						</div>
 					</a>
 				</div>
 			</div>

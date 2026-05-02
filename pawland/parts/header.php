@@ -7,10 +7,16 @@ include_once "parts/functions.php";
 <header class="color primary dark">
 	<div class="container">
 		<nav class="nav horizontal">
-			<img src="pawlandlogo.svg" id="logo" width="260" class="card logo">
-			<div class="flex stretch"></div>
+			<a href="index.php"><img src="pawlandlogo.svg" id="logo" class="card logo"></a>
+			<div class="flex stretch">
+        <div class="form-control">
+            <form class="hotdog light" id="product-search">
+                <input type="search" placeholder="Search Products">
+                <button type="submit" class="btn primary">Search</button>
+            </form>
+        </div>
+			</div>
 			<ul>
-				<li><a href="index.php">Home</a></li>
 				<li><a href="category.php">Store</a></li>
 				<li><a href="cart.php">
 					<span>Cart</span>

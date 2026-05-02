@@ -63,3 +63,11 @@ storetheme
 	<?php include "parts/footer.php"; ?>
 </body>
 </html>
+
+
+// *search bar in php* //
+<div class="form-control">
+            <form class="hotdog light" id="product-search">
+                <input type="search" placeholder="Search Products">
+            </form>
+        </div>

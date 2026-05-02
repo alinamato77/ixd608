@@ -28,61 +28,75 @@
                         <div class="grid gap">
                             <div class="col-xs-12 col-md-6">
                                 <div class="form group">
-                                    <input class="input" type="text" placeholder="First Name">
+                                    <label class="form label" for="ship-first">First Name</label>
+                                    <input id="ship-first" class="input" type="text" placeholder="e.g. Jane">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-md-6">
                                 <div class="form group">
-                                    <input class="input" type="text" placeholder="Last Name">
+                                    <label class="form label" for="ship-last">Last Name</label>
+                                    <input id="ship-last" class="input" type="text" placeholder="e.g. Doe">
                                 </div>
                             </div>
                         </div>
                         <div class="form group">
-                            <input class="input" type="text" placeholder="Address">
+                            <label class="form label" for="ship-address">Address</label>
+                            <input id="ship-address" class="input" type="text" placeholder="Street address">
                         </div>
                         <div class="grid gap">
                             <div class="col-xs-12 col-md-5">
                                 <div class="form group">
-                                    <input class="input" type="text" placeholder="City">
+                                    <label class="form label" for="ship-city">City</label>
+                                    <input id="ship-city" class="input" type="text" placeholder="City">
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-4">
                                 <div class="form group">
-                                    <input class="input" type="text" placeholder="State">
+                                    <label class="form label" for="ship-state">State</label>
+                                    <input id="ship-state" class="input" type="text" placeholder="State">
                                 </div>
                             </div>
                             <div class="col-xs-6 col-md-3">
                                 <div class="form group last">
-                                    <input class="input" type="text" placeholder="ZIP">
+                                    <label class="form label" for="ship-zip">ZIP</label>
+                                    <input id="ship-zip" class="input" type="text" placeholder="ZIP">
                                 </div>
                             </div>
+                        </div>
+                        <div class="form actions">
+                            <button type="button" class="btn primary full" style="margin-top:1rem">Save</button>
                         </div>
                     </div>
 
                     <div class="card soft">
                         <h4>Payment</h4>
 
-                        <label class="payment method option card outline display-flex" id="pm-card">
-                            <input type="radio" name="payment" checked>
+                        <label class="control label" id="pm-card">
+                            <input type="checkbox" name="payment" value="card" checked>
                             <span>Credit Card</span>
                         </label>
 
-                        <div id="card-fields" class="card outline">
                             <div class="form group">
-                                <input class="input" type="text" placeholder="Card Number">
+                                <label class="form label" for="card-number">Card Number</label>
+                                <input id="card-number" class="input" type="text" placeholder="1234 5678 9012 3456">
                             </div>
                             <div class="grid gap">
                                 <div class="col-xs-6">
                                     <div class="form group last">
-                                        <input class="input" type="text" placeholder="MM / YY">
+                                        <label class="form label" for="card-exp">Expiration</label>
+                                        <input id="card-exp" class="input" type="text" placeholder="MM / YY">
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="form group last">
-                                        <input class="input" type="text" placeholder="CVC">
+                                        <label class="form label" for="card-cvc">CVC</label>
+                                        <input id="card-cvc" class="input" type="text" placeholder="123">
                                     </div>
                                 </div>
                             </div>
+
+                        <div class="form actions">
+                            <button type="button" class="btn primary full"  style="margin-top:1rem">Save</button>
                         </div>
                     </div>
 
@@ -140,7 +154,7 @@
                             </div>
 
                                                 <div class="form actions">
-                        <a href="confirmation.php" class="btn primary full">Place Order</a>
+                        <a href="confirmation.php" class="btn primary full" style="margin-top:5rem">Place Order</a>
                     </div>
                         </div>
                     </div>

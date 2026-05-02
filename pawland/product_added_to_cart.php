@@ -20,27 +20,28 @@ if (!$product) { header('Location: index.php'); exit; }
 		<div class="container">
 
 			<ol class="breadcrumb">
-				<li><a href="index.php">Home</a></li>
+				<li><a href="category.php">Store</a></li>
 				<li><a href="cart.php">Cart</a></li>
 				<li>Added to Cart</li>
 			</ol>
 
 			<div class="card soft">
 
-				<div class="display flex flex align" style="gap:1.5rem; margin-bottom:1.5rem;">
-					<div class="pet img" style="width:120px;height:120px;flex-shrink:0;border-radius:0.75rem;overflow:hidden;background:var(--color-cream);">
+				<div class="display flex-stretch">
+					<div class="cart-item">
+						<div class="cart-item-img">
 						<img src="images/<?php echo htmlspecialchars($product->image); ?>" alt="<?php echo htmlspecialchars($product->name); ?>" style="width:100%;height:100%;object-fit:contain;">
 					</div>
 					<div>
-						<h2><?php echo htmlspecialchars($product->name); ?> has been added to your cart.</h2>
+						<h2><?php echo htmlspecialchars($product->name); ?> </h2><h4>has been added to your cart.</h4>
 						<p class="pet meta">$<?php echo number_format($product->price, 2); ?></p>
 					</div>
 				</div>
 
-				<div class="display flex flex align" style="gap:1rem;">
-					<div class="flex none"><a href="category.php?cat=<?php echo urlencode($product->category); ?>" class="btn outline">Continue Shopping</a></div>
+				<div class="display flex flex align" style="margin-top: 2rem;">
+					<div class="flex none"><a href="category.php?cat=<?php echo urlencode($product->category); ?>" class="btn outline full">Continue Shopping</a></div>
 					<div class="flex stretch"></div>
-					<div class="flex none"><a href="cart.php?id=<?= $product->id ?>" class="btn primary">Go To Cart</a></div>
+					<div class="flex none"><a href="cart.php?id=<?= $product->id ?>" class="btn primary full">Go To Cart</a></div>
 				</div>
 
 			</div>

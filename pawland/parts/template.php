@@ -3,15 +3,15 @@
 function productListTemplate($r,$o) {
 return $r.<<<HTML
 <a class="col-xs-12 col-md-4" href="product.php?id=$o->id">
-	<figure class="figure product display-flex flex-column">
-		<div class="flex-stretch">
-			<img src="images/$o->image" alt="">
+	<div class="pet card">
+		<div class="pet img">
+			<img src="images/$o->image" alt="$o->name">
 		</div>
-		<figcaption class="flex-none">
-			<div>&dollar;$o->price</div>
-			<div>$o->name</div>
-		</figcaption>
-	</figure>
+		<div class="pet body">
+			<p class="pet name">$o->name</p>
+			<p class="pet price">&dollar;$o->price</p>
+		</div>
+	</div>
 </a>
 HTML;
 }
@@ -47,7 +47,7 @@ return $r.<<<HTML
 		</form>
 		<form action="cart_actions.php?action=delete-cart-item" method="post" style="display:inline;">
 			<input type="hidden" name="id" value="$o->id">
-			<button type="submit" class="cart-item-remove">Remove</button>
+			<button type="submit" class="btn danger sm cart-item-remove">Remove</button>
 		</form>
 	</div>
 	<div class="cart-item-right">

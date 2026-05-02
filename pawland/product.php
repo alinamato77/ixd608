@@ -32,85 +32,98 @@ if (!empty($product->product_condition)) {
 
 	<main>
 		<div class="container">
+            <ol class="breadcrumb">
+                <li><a href="category.php">Store</a></li>
+                <li>Products</li>
+            </ol>
+
+            <h2>Product Details</h2>
 			<div class="grid gap">
 
 
 
 				<!-- Left: Images -->
 				<div class="col-xs-12 col-md-6">
-					<div class="card soft" style="height:100%;">
+                <div class="card soft">
+        
+                <div class="gallery-wrapper">
+            
+                <div class="images-thumbs">
+                <img src="images/<?= $product->image ?>">
+                <img src="images/<?= $image_secondary ?>">
+                </div>
 
-						<div class="images-main" >
-							<img src="images/<?= $product->image ?>" class="images-main-style">
-						</div>
-
-						<br>
-
-						<div class="images-thumbs" >
-							<img src="images/<?= $product->image ?>" class="images-thumbs-style">
-							<img src="images/<?= $image_secondary ?>" class="images-thumbs-style">
-						</div>
-
-					</div>
-				</div>
+                <div class="images-main">
+                <img src="images/<?= $product->image ?>">
+            </div>
+            
+        </div>
+        
+    </div>
+</div>
 
 
 
 				<!-- Right: Product info -->
 				<div class="col-xs-12 col-md-6">
-					<form class="card soft" method="post" action="cart_actions.php?action=add-to-cart">
+    <form class="card soft card section display flex flex column" style="height: 100%;" method="post" action="cart_actions.php?action=add-to-cart">
 
-						<input type="hidden" name="product-id" value="<?= $product->id ?>">
+        <input type="hidden" name="product-id" value="<?= $product->id ?>">
 
-						<div class="card section">
-							<h2 class="product-title"><?= htmlspecialchars($product->name) ?></h2>
-							<div class="product-price">
-								&dollar;<?= number_format($product->price, 2) ?>
-							</div>
-						</div>
+        <div>
+            <h4 class="product-title"><?= htmlspecialchars($product->name) ?></h4>
+            <div class="product-price">
+                &dollar;<?= number_format($product->price, 2) ?>
+            </div>
+        </div>
 
-						<?php if ($badges): ?>
-						<div class="card section">
-							<?= $badges ?>
-						</div>
-						<?php endif; ?>
+        <hr style="color: var(--color-text-muted);">
 
-						<?php if (!empty($product->description)): ?>
-						<div class="card section">
-							<p ><?= htmlspecialchars($product->description) ?></p>
-						</div>
-						<?php endif; ?>
+        <?php if ($badges): ?>
+        <div>
+            <?= $badges ?>
+        </div>
+        <?php endif; ?>
 
-						<?php if (!empty($product->ingredients)): ?>
-						<div class="card section">
-							<p ><?= htmlspecialchars($product->ingredients) ?></p>
-						</div>
-						<?php endif; ?>
+        <?php if (!empty($product->description)): ?>
+        <div>
+            <p ><?= htmlspecialchars($product->description) ?></p>
+        </div>
+        <?php endif; ?>
 
-						<div class="card section">
-							<label for="product-amount" class="form-label">Amount</label>
-							<div class="form-select">
-								<select id="product-amount" name="product-amount">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
-									<option>6</option>
-									<option>7</option>
-									<option>8</option>
-									<option>9</option>
-									<option>10</option>
-								</select>
-							</div>
-						</div>
+        <?php if (!empty($product->ingredients)): ?>
+        <div style="margin-bottom: 5rem;">
+            <p ><?= htmlspecialchars($product->ingredients) ?></p>
+        </div>
+        <?php endif; ?>
 
-						<div class="card section">
-							<input type="submit" class="btn primary full" value="Add To Cart">
-						</div>
+        <hr>
 
-					</form>
-				</div>
+        <div style="margin-top: auto;">
+            <label for="product-amount" class="form label">Amount</label>
+            <div class="form-select">
+                <select id="product-amount" name="product-amount">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                </select>
+            </div>
+            <div>
+                <input type="submit" class="btn primary full" value="Add To Cart">
+            </div>
+        </div>
+
+    </form>
+</div>
+
+
 
 			</div>
 		</div>

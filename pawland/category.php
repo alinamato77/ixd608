@@ -18,20 +18,15 @@ include_once "parts/template.php";
 
     <?php include "parts/header.php"; ?>
 
-    <main>
+<main>
     <div class="container">
         <h2>All Products</h2>
 
-        <div class="form-control">
-            <form class="hotdog light" id="product-search">
-                <input type="search" placeholder="Search Products">
-            </form>
-        </div>
 
         <div class="form-control">
             <div class="card soft display-flex">
                 <div class="flex-none">
-                    <button data-filter="category" data-value="" type="button" class="btn primary sm">All</button>
+                    <button data-filter="category" data-value="" type="button" class="btn outline sm" autofocus>All</button>
                 </div>
                 <div class="flex-none">
                     <button data-filter="category" data-value="dry food" type="button" class="btn outline sm">Dry Food</button>
