@@ -1,5 +1,6 @@
 <?php
 include_once "parts/functions.php";
+include_once "parts/template.php";
 
 $id = (int)($_POST['product-id'] ?? $_GET['id'] ?? 0);
 $product = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id`=$id")[0];
@@ -27,13 +28,13 @@ if (!$product) { header('Location: index.php'); exit; }
 
 			<div class="card soft">
 
-				<div class="display flex-stretch">
-					<div class="cart-item">
-						<div class="cart-item-img">
-						<img src="images/<?php echo htmlspecialchars($product->image); ?>" alt="<?php echo htmlspecialchars($product->name); ?>" style="width:100%;height:100%;object-fit:contain;">
+				<div class="display flex flex align" style="gap: 2rem;">
+					<div class="cart-item-img">
+						<img src="images/<?php echo htmlspecialchars(firstProductImage($product)); ?>" alt="<?php echo htmlspecialchars($product->name); ?>">
 					</div>
-					<div>
-						<h2><?php echo htmlspecialchars($product->name); ?> </h2><h4>has been added to your cart.</h4>
+					<div class="flex stretch">
+						<h2><?php echo htmlspecialchars($product->name); ?></h2>
+						<h4>has been added to your cart.</h4>
 						<p class="pet meta">$<?php echo number_format($product->price, 2); ?></p>
 					</div>
 				</div>
@@ -45,6 +46,9 @@ if (!$product) { header('Location: index.php'); exit; }
 				</div>
 
 			</div>
+
+			<h3>Other Recommendations</h3>
+            <?php recommendedAnything(3); ?>
 
 		</div>
 	</main>

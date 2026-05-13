@@ -64,7 +64,7 @@
                             </div>
                         </div>
                         <div class="form actions">
-                            <button type="button" class="btn primary full" style="margin-top:1rem">Save</button>
+                            <button type="button" class="btn primary full mt-2">Save</button>
                         </div>
                     </div>
 
@@ -96,7 +96,7 @@
                             </div>
 
                         <div class="form actions">
-                            <button type="button" class="btn primary full"  style="margin-top:1rem">Save</button>
+                            <button type="button" class="btn primary full mt-2">Save</button>
                         </div>
                     </div>
 
@@ -107,6 +107,7 @@
                 <div class="col-xs-12 col-md-5">
                     <div class="card soft">
                         <h4>In your cart</h4>
+                          <div class="form label">Items Review</div>
                         
                         <?php
                         $items = getCartItems();
@@ -117,7 +118,7 @@
                             <?php foreach($items as $item): ?>
                                 <div class="display-flex">
                                     <div class="flex-none">
-                                        <img src="images/<?= htmlspecialchars($item->image) ?>" alt="<?= htmlspecialchars($item->name) ?>">
+                                        <img src="images/<?= htmlspecialchars(firstProductImage($item)) ?>" alt="<?= htmlspecialchars($item->name) ?>">
                                     </div>
 
                                     <div class="flex-stretch">

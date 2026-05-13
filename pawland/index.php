@@ -1,4 +1,10 @@
-<?php include_once "parts/functions.php"; ?><!DOCTYPE html>
+<?php
+include_once "parts/functions.php";
+
+$dryFood   = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `category`='Dry Food' LIMIT 1");
+$wetFood   = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `category`='Wet Food' LIMIT 1");
+$freshFood = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `category`='Fresh Food' LIMIT 1");
+?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -31,6 +37,9 @@
 						<a href="category.php?cat=Dry Food">
 							<div class="pet card">
 								<div class="pet img">
+									<?php if (!empty($dryFood)): ?>
+									<img src="images/<?= htmlspecialchars(firstProductImage($dryFood[0])) ?>" alt="Dry Food">
+									<?php endif; ?>
 								</div>
 								<div class="pet body">
 									<p class="pet name">Dry Food</p>
@@ -45,6 +54,9 @@
 						<a href="category.php?cat=Wet Food">
 							<div class="pet card">
 								<div class="pet img">
+									<?php if (!empty($wetFood)): ?>
+									<img src="images/<?= htmlspecialchars(firstProductImage($wetFood[0])) ?>" alt="Wet Food">
+									<?php endif; ?>
 								</div>
 								<div class="pet body">
 									<p class="pet name">Wet Food</p>
@@ -59,6 +71,9 @@
 						<a href="category.php?cat=Fresh Food">
 							<div class="pet card">
 								<div class="pet img">
+									<?php if (!empty($freshFood)): ?>
+									<img src="images/<?= htmlspecialchars(firstProductImage($freshFood[0])) ?>" alt="Fresh Food">
+									<?php endif; ?>
 								</div>
 								<div class="pet body">
 									<p class="pet name">Fresh Food</p>

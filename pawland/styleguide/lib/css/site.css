@@ -168,22 +168,15 @@ main {
    HERO BANNER (banner.php)
    ============================================================ */
 section.banner {
+  width: 100%;
+  height: 360px;
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
-  height: 200px;
+  display: flex;
+  align-items: center;
+  padding: 80px;
+  box-sizing: border-box;
   overflow: hidden;
   margin: 0;
-}
-section.banner .container {
-  max-width: 100%;
-  padding: 0;
-  margin: 0;
-  height: 100%;
-}
-.banner.inner {
-  display: flex;
-  align-items: stretch;
-  height: 100%;
-  gap: 0;
 }
 .banner.content {
   flex: 1;
@@ -191,9 +184,12 @@ section.banner .container {
   flex-direction: column;
   justify-content: center;
   gap: 0.75rem;
-  padding: 0 2rem;
+}
+.banner.bg {
+  display: block;
   height: 100%;
-  box-sizing: border-box;
+  width: auto;
+  margin-left: 2rem;
 }
 .banner.heading {
   color: var(--color-white);
@@ -206,21 +202,6 @@ section.banner .container {
   color: rgba(255,255,255,0.75);
   font-size: 0.9375rem;
   line-height: 1.5;
-  margin: 0;
-}
-.banner.figure {
-  flex: 1;
-  margin: 0;
-  background-color: var(--color-primary);
-  border-radius: 0;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-}
-.banner.figure h2 {
-  color: rgba(255,255,255,0.3);
   margin: 0;
 }
 
@@ -372,20 +353,57 @@ section.banner .container {
 .brand.desc { margin: 0; font-size: 1rem; color: var(--color-text-muted); }
 
 /* ============================================================
-   PET CARDS (index.php categories)
+   PET / PRODUCT CARDS (index.php, category.php, product.php)
+   .pet.name and .pet.meta are defined inside .pet.card scope in styleguide.css.
    ============================================================ */
-.pet.name { margin: 0 0 0.25rem; font-size: 1.125rem; font-weight: 700; color: var(--color-text-main); }
-.pet.meta { margin: 0; font-size: 1rem; color: var(--color-text-muted); }
-
 .categories.heading { text-align: center; margin-bottom: 1.5rem; }
 
-/* ============================================================
-   PAYMENT METHOD (checkout.php)
-   ============================================================ */
-.payment.method.option { gap: 0.75rem; cursor: pointer; margin-bottom: 0.5rem; }
+.product-price {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+}
 
-/* Product cards now reuse .pet.card from styleguide.css — no duplicate
-   .product-card rules needed here. */
+/* ============================================================
+   CARD PRODUCT (productList template — recommendation cards)
+   ============================================================ */
+.card.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.card.product > .badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.card.product .img.placeholder {
+  margin: 0 0 0.5rem;
+}
+.card.product .img.placeholder img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.card.product h3 {
+  margin: 0;
+  font-size: 1.125rem;
+}
+.card.product .product.rating {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-secondary-dark);
+}
+.card.product h4 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+.card.product form,
+.pet.card form {
+  margin: 0;
+}
 
 /* ============================================================
    CATEGORY PAGE — filter row + grid (category.php)
@@ -422,35 +440,6 @@ section.banner .container {
   border-color: var(--color-primary);
   color: var(--color-white);
   outline: none;
-}
-
-/* Inner card sections (e.g. cart sub-total rows) should hug content,
-   not inherit the 100px min-height from the base .card rule. */
-.card .card.section,
-.card.soft > .card.section,
-.card .card.section.display-flex {
-  align-items: bottom;
-  min-height: 0;
-  padding: 0.75rem 1rem;
-}
-
-/* Cart list — give the card a comfortable min-height so the empty
-   state doesn't look squashed. */
-.card.soft.cart-list {
-  min-height: 360px;
-  display: flex;
-  flex-direction: column;
-}
-.cart-empty {
-  margin: auto;
-  text-align: center;
-  color: var(--color-text-muted);
-  font-size: 1rem;
-}
-
-/* Checkout button — extra top margin to separate from totals */
-.card.soft > div > .btn.primary.full {
-  margin-top: 5rem;
 }
 
 /* ============================================================
@@ -524,8 +513,8 @@ section.banner .container {
    ============================================================ */
 .cart-item {
   display: grid;
-  grid-template-columns: 80px 1fr auto;
-  gap: 1rem;
+  grid-template-columns: 150px 1fr auto;
+  gap: 1.5rem;
   align-items: start;
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--color-stroke-light);
@@ -544,6 +533,11 @@ section.banner .container {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   text-align: center;
+}
+.cart-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 .cart-item-info { min-width: 0; }
 .cart-item-name {
@@ -581,26 +575,6 @@ section.banner .container {
 }
 
 /* ============================================================
-   UTILITIES
-   ============================================================ */
-.mt-1 { margin-top: 0.5rem; }
-.mt-2 { margin-top: 1rem; }
-.mt-3 { margin-top: 1.5rem; }
-.mt-4 { margin-top: 2rem; }
-.mb-1 { margin-bottom: 0.5rem; }
-.mb-2 { margin-bottom: 1rem; }
-.mb-3 { margin-bottom: 1.5rem; }
-.mb-4 { margin-bottom: 2rem; }
-.text-center { text-align: center; }
-.text-muted { color: var(--color-text-muted); }
-
-
-.product-price {
-  color:var(--color-primary); font-weight:700; font-size:1.25rem;
-}
-
-
-/* ============================================================
    DISPLAY - FLEX
    ============================================================ */
 .display-flex {
@@ -631,20 +605,19 @@ section.banner .container {
 
 
 /* ============================================================
-   IMAGES
+   PRODUCT GALLERY (product.php — gallery-wrapper, main + thumbs)
    ============================================================ */
 
-/* 1. 新增包裹容器的 Flex 布局，让内容左右排列 */
 .gallery-wrapper {
   display: flex;
   gap: 1rem;
-  align-items: flex-start; /* 顶部对齐 */
+  align-items: stretch;
 }
 
-/* 主图容器 — 占据右侧剩余空间，承载 350px 高的主图 */
+/* Main image container — takes remaining width, square aspect for consistency with .pet.img */
 .images-main {
   flex: 1;
-  margin: 0 auto;
+  aspect-ratio: 1 / 1;
   background-color: var(--color-cream);
   border-radius: 0.75rem;
   display: flex;
@@ -654,12 +627,12 @@ section.banner .container {
   box-sizing: border-box;
 }
 
-/* 主图本体 — 选择器匹配 product_thumbs.js 的 ".images-main img" */
+/* Main image itself — selector matches ".images-main img" used by product_thumbs.js */
 .images-main img {
   width: 100%;
-  height: 350px;
+  height: 100%;
   object-fit: contain;
-  padding: 1rem;
+  padding: 1.5rem;
   box-sizing: border-box;
 }
 
@@ -667,17 +640,17 @@ section.banner .container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin-top: 0;
   width: 140px;
   flex-shrink: 0;
 }
 
-/* 缩略图 — 150px 高,选择器匹配 product_thumbs.js 的 ".images-thumbs img" */
+/* Thumbnails */
 .images-thumbs img {
+  flex: 1;
+  min-height: 0;
   width: 100%;
-  height: 150px;
   object-fit: contain;
-  padding: 1rem;
+  padding: 0.75rem;
   box-sizing: border-box;
   background-color: var(--color-cream);
   border-radius: 0.5rem;
@@ -687,18 +660,43 @@ section.banner .container {
 }
 .images-thumbs img:hover { border-color: var(--color-primary); }
 
-.cart-images-container {
-  width: 150px;          
-  height: 150px;
-  border-radius: 0.5rem;
-  overflow: hidden;     
-  background-color: #f8f8f8;
-  flex: none;         
-}
 
-.cart-images-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; 
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 800px) {
+    .container {
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    .cart-item {
+        grid-template-columns: 1fr;
+    }
+    header.color.primary.dark {
+        position: relative;
+    }
+    header.color.primary.dark .container {
+        padding: 0.5rem 1rem;
+    }
+    main {
+        padding-top: 1rem;
+    }
+    header.color.primary.dark .nav.horizontal {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+    }
+    header.color.primary.dark .nav.horizontal #logo {
+        width: 180px;
+        margin: 0 auto;
+    }
+    header.color.primary.dark .nav.horizontal > ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+    header.color.primary.dark .nav.horizontal > ul a {
+        font-size: 1.125rem;
+        height: auto;
+    }
 }
-

@@ -9,6 +9,6 @@ https://alinaxdesign.com/aau/ixd608/pawland/category.php
 https://alinaxdesign.com/aau/ixd608/pawland/admin/admin.php
 
 
-## 13.1 update
-# add product admin page.
-https://alinaxdesign.com/aau/ixd608/pawland/admin/admin.php
+## 14.1 update
+# small improvement
+https://alinaxdesign.com/aau/ixd608/pawland/index.php

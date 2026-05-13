@@ -1004,6 +1004,9 @@ input[type="range"] {
   overflow: hidden;
   transition: box-shadow 0.2s, transform 0.2s;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .pet.card:hover {
   box-shadow: 0 8px 24px rgba(0,0,0,0.08);
@@ -1011,7 +1014,7 @@ input[type="range"] {
 }
 .pet.card .pet.img {
   background: var(--color-cream);
-  height: 160px;
+  aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1048,11 +1051,14 @@ input[type="range"] {
 }
 .pet.card .pet.fav:hover,
 .pet.card .pet.fav.active    { color: var(--color-red); transform: scale(1.1); }
-.pet.card .pet.body          { padding: 1rem; }
+.pet.card .pet.body          { padding: 1rem; display: flex; flex-direction: column; flex: 1; }
 .pet.card .pet.name          { font-weight: 700; font-family: var(--font-family-heading); color: var(--color-text-main); margin-bottom: 0.25rem; }
 .pet.card .pet.meta          { font-size: 0.8125rem; color: var(--color-text-muted); margin-bottom: 0.75rem; }
 .pet.card .pet.price         { font-weight: 700; font-family: var(--font-family-heading); color: var(--color-text-main); }
-.pet.card .pet.actions       { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.pet.card .pet.actions       { display: flex; gap: 0.5rem; margin-top: auto; }
+.pet.card .pet.actions > a,
+.pet.card .pet.actions > form { flex: 1; }
+.pet.card .pet.actions form .btn { width: 100%; }
 
 
 /* ============================================================
@@ -1179,6 +1185,20 @@ input[type="range"] {
 .pet.price.row   { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
 .pet.price.tag   { color: var(--color-text-main); font-family: var(--font-family-heading); }
 .grid--mt        { margin-top: 0.5rem; }
+
+/* Spacing utilities */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+/* Text utilities */
+.text-center { text-align: center; }
+.text-muted  { color: var(--color-text-muted); }
 
 .utility.list {
   display: flex;

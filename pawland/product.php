@@ -4,7 +4,9 @@ include_once "parts/functions.php";
 
 $product = makeQuery(makeConn(),"SELECT * FROM `products` WHERE `id`=".$_GET['id'])[0];
 
-$image_secondary = preg_replace('/(\.\w+)$/', '-2$1', $product->image);
+$imgs = productImages($product);
+$image_primary = $imgs[0] ?? '';
+$image_secondary = $imgs[1] ?? $image_primary;
 
 // Build badges from product_condition (comma-separated values)
 $badges = '';
@@ -44,17 +46,17 @@ if (!empty($product->product_condition)) {
 
 				<!-- Left: Images -->
 				<div class="col-xs-12 col-md-6">
-                <div class="card soft">
-        
+                <div class="card soft" style="height: 100%;">
+
                 <div class="gallery-wrapper">
             
                 <div class="images-thumbs">
-                <img src="images/<?= $product->image ?>">
+                <img src="images/<?= $image_primary ?>">
                 <img src="images/<?= $image_secondary ?>">
                 </div>
 
                 <div class="images-main">
-                <img src="images/<?= $product->image ?>">
+                <img src="images/<?= $image_primary ?>">
             </div>
             
         </div>
@@ -87,12 +89,14 @@ if (!empty($product->product_condition)) {
 
         <?php if (!empty($product->description)): ?>
         <div>
+            <h5>Description</h5>
             <p ><?= htmlspecialchars($product->description) ?></p>
         </div>
         <?php endif; ?>
 
         <?php if (!empty($product->ingredients)): ?>
         <div style="margin-bottom: 5rem;">
+            <h5>Ingredients</h5>
             <p ><?= htmlspecialchars($product->ingredients) ?></p>
         </div>
         <?php endif; ?>

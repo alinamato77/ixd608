@@ -9,9 +9,12 @@ function print_p($v){
 include_once __DIR__ . "/auth.php";
 
 function makeConn(){
-	$conn = new mysqli(...MYSQLIAuth());
-	if($conn->connect_errno) die($conn->connect_error);
-	$conn->set_charset('utf8');
+	static $conn = null;
+	if ($conn === null) {
+		$conn = new mysqli(...MYSQLIAuth());
+		if($conn->connect_errno) die($conn->connect_error);
+		$conn->set_charset('utf8');
+	}
 	return $conn;
 }
 
