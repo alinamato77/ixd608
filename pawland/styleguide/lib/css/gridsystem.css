@@ -1,12 +1,16 @@
 /* Base Grid Container */
 .grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--grid-gap, 1em);
 }
 
-/* Default gutter: 32px / 2em */
+/* Default gutter: 32px / 2em (mobile shrinks to 1em — see media block below) */
 .gap { --grid-gap: 2em; }
+
+@media (max-width: 600px) {
+  .gap { --grid-gap: 1em; }
+}
 
 /* Extra Small */
 @media (min-width: 0) {

@@ -5,78 +5,87 @@
 
 body { background-color: var(--color-cream); }
 
-.color.primary.dark {
-  background-color: var(--color-primary-dark);
+.color.primary {
+  background-color: var(--color-primary);
   color: var(--color-white);
 }
 
 /* ============================================================
-   HEADER — fixed top, 3-zone layout
-   Zone 1 (left): logo
-   Zone 2 (center): hotdog / spacer
-   Zone 3 (right): navigation
+   HEADER — shared base
    ============================================================ */
-
-header.color.primary.dark {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  width: 100%;
-  background-color: var(--color-primary-dark);
-}
-
-header.color.primary.dark .container {
-  max-width: 1920px;
-  margin: 0 auto;
-  padding: 0.25rem 3rem 0.25rem 3rem;
-  background-color: transparent;
-}
-
-/* nav.horizontal becomes the 3-zone flex row */
-header.color.primary.dark .nav.horizontal {
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* Zone 1: logo — left, natural width */
-header.color.primary.dark .nav.horizontal > a:has(> #logo),
-header.color.primary.dark .nav.horizontal > #logo,
-header.color.primary.dark .nav.horizontal > .card.logo {
-  flex-shrink: 0;
-  align-self: center;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
-  display: inline-block;
-  line-height: 0;
-}
-header.color.primary.dark .nav.horizontal #logo {
-  width: 400px;
-  display: block;
-  background: transparent;
-  padding: 0;
-  min-height: 0;
-  border-radius: 0;
-  border: none;
-}
-
-/* Zone 2: spacer / hotdog wrapper — center, grows */
-header.color.primary.dark .nav.horizontal > .flex.stretch {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-header.color.primary.dark .nav.horizontal > .flex.stretch .form-control {
+header.color.primary .nav.horizontal > .flex.stretch .form-control {
   width: 100%;
   max-width: 1040px;
+}
+
+/* ============================================================
+   HEADER — DESKTOP (1 row, fixed)
+   ============================================================ */
+@media (min-width: 801px) {
+  header.color.primary {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+  }
+
+  header.color.primary .container {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0.25rem 3rem;
+  }
+
+  /* nav.horizontal: 3-zone single row */
+  header.color.primary .nav.horizontal {
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    padding: 0;
+  }
+
+  /* Zone 1: logo */
+  header.color.primary .nav.horizontal > a:has(> #logo) {
+    flex-shrink: 0;
+    align-self: center;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    line-height: 0;
+  }
+  header.color.primary .nav.horizontal #logo {
+    width: 400px;
+    display: block;
+  }
+
+  /* Zone 2: spacer / search */
+  header.color.primary .nav.horizontal > .flex.stretch {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Zone 3: nav links */
+  header.color.primary .nav.horizontal > ul {
+    align-items: center;
+    gap: 1.5rem; 
+    flex-shrink: 0;
+  }
+  
+  header.color.primary .nav.horizontal > ul a {
+    color: white; 
+    font-family: var(--font-family-heading);
+    font-size: 1.5rem;
+    line-height: 1;
+    height: 2.75rem;
+    display: inline-flex; 
+    align-items: center;
+    gap: 0.375rem;
+  }
+
 }
 
 
@@ -131,49 +140,24 @@ header.color.primary.dark .nav.horizontal > .flex.stretch .form-control {
   padding: 0 1.5rem;
 }
 
-/* Zone 3: navigation — right */
-header.color.primary.dark .nav.horizontal > ul {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  flex-shrink: 0;
-}
-header.color.primary.dark .nav.horizontal > ul a {
-  color: rgba(255, 255, 255, 0.85);
-  font-family: var(--font-family-heading);
-  font-weight: 600;
-  font-size: 1.5rem;
-  line-height: 1;
-  height: 2.75rem;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
-  transition: color 0.2s ease;
-}
-header.color.primary.dark .nav.horizontal > ul a:hover {
-  color: var(--color-secondary);
-}
+/* (Zone 3 nav-link rules moved into the desktop @media block above) */
 
-/* Push main content below the fixed header */
+/* Push main content below the fixed header.
+   Banner pages: banner extends behind the header (its own background fills the gap),
+   so main itself starts at the very top — no body color shows through. */
 main {
   padding-top: 110px;
   padding-bottom: 4rem;
 }
-
 /* ============================================================
    HERO BANNER (banner.php)
    ============================================================ */
 section.banner {
   width: 100%;
-  height: 600px;
   background: white;
   display: flex;
   align-items: center;
-  padding: 150px;
+  padding: 260px 150px 80px 150px; 
   box-sizing: border-box;
   overflow: hidden;
   margin: 0;
@@ -187,7 +171,6 @@ section.banner {
 }
 .banner.bg {
   display: block;
-  height: 100%;
   width: auto;
   margin-left: 2rem;
 }
@@ -255,7 +238,7 @@ section.banner {
 .confirm.icon {
   width: 48px;
   height: 48px;
-  background-color: var(--color-primary-dark);
+  background-color: var(--color-primary);
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -293,7 +276,7 @@ section.banner {
 .next.steps.item:first-of-type { padding-top: 0; }
 .next.steps.item:last-child { border-bottom: none; padding-bottom: 0; }
 .next.steps.item strong {
-  color: var(--color-primary-dark);
+  color: var(--color-primary);
   font-family: var(--font-family-heading);
   flex-shrink: 0;
   min-width: 1.25rem;
@@ -314,6 +297,7 @@ section.banner {
    ============================================================ */
 .site.footer > .container > .grid > .col-md-7 { text-align: right; }
 .site.footer ul {
+  background-color: var(--color-primary);
   list-style: none;
   padding: 0;
   margin: 0;
@@ -351,17 +335,40 @@ section.banner {
 .brand.figure {
   width: 100%;
   aspect-ratio: 1;
-  background-color: var(--color-warm-gray);
+  background-color: transparent;
   border-radius: 0.75rem 0.75rem 0 0;
   border-color: var(--color-primary);
   margin: 0;
 }
-.brand.name { margin: 0; align-items: center;}
-.brand.desc { margin: 0; font-size: 1rem; color: var(--color-text-muted); }
+.brand.section .card.item.yellow {
+  background-color: var(--color-yellow);
+  padding: 1.5rem;          
+  border-radius: 1rem;      
+}
+
+.brand.section .card.item.yellow .img.placeholder,
+.brand.section .card.item.yellow .img.placeholder img {
+    background-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.brand.name { margin: 0; text-align: center; }
+.brand.desc { margin: 0; font-size: 1rem; color: var(--color-text-muted); text-align: center; }
+
+.brand.title {
+  text-align: center;        
+  margin: 0.5rem 0 0.5rem 0; 
+}
+
+.brand.text {
+  text-align: center;       
+  padding: 0 0.75rem;        
+  margin: 0;                 
+  line-height: 1.5;          
+}
 
 /* ============================================================
-   PET / PRODUCT CARDS (index.php, category.php, product.php)
-   .pet.name and .pet.meta are defined inside .pet.card scope in styleguide.css.
+   INDEX CATEGORY CARDS
    ============================================================ */
 .categories.heading { text-align: center; margin-bottom: 1.5rem; }
 
@@ -370,6 +377,8 @@ section.banner {
   font-weight: 700;
   font-size: 1.25rem;
 }
+
+
 
 /* ============================================================
    PRODUCT DETAIL PAGE (product.php — 2-column grid + form layout)
@@ -398,21 +407,15 @@ section.banner {
   top: 1rem;
   right: 1rem;
 }
-.card.product .img.placeholder {
-  margin: 0 0 0.5rem;
-}
-.card.product .img.placeholder img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
 
-/* Default: images inside .img.placeholder stretch to fill the box */
-.img.placeholder img {
+.card.product .img.placeholder img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: white;
+  border-radius: 0.5rem;
 }
+
 .card.product h3 {
   margin: 0;
   font-size: 1.125rem;
@@ -427,15 +430,13 @@ section.banner {
   font-size: 1.25rem;
   color: var(--color-primary);
 }
-.card.product form,
-.pet.card form {
+.card.product form {
+  text-align: center;
   margin: 0;
 }
 
-.pet.name h4 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.card.product .pet.body {
+  text-align: center;
 }
 
 /* ============================================================
@@ -539,6 +540,14 @@ section.banner {
 .productlist.grid.gap {
   --grid-gap: 1.5em;
   margin-top: 1.5rem;
+}
+
+/* ============================================================
+   CART PAGE — equal-height cart-items card and cart-totals card
+   ============================================================ */
+.cart-grid > .col-xs-12 > .card.soft {
+  min-height: 500px;
+  height: 100%;
 }
 
 /* ============================================================
@@ -658,7 +667,7 @@ section.banner {
 .images-main {
   flex: 1;
   aspect-ratio: 1 / 1;
-  background-color: var(--color-cream);
+  background-color: var(--color-white);
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
@@ -692,7 +701,7 @@ section.banner {
   object-fit: contain;
   padding: 0.75rem;
   box-sizing: border-box;
-  background-color: var(--color-cream);
+  background-color: var(--color-white);
   border-radius: 0.5rem;
   border: 2px solid var(--color-stroke-light);
   cursor: pointer;
@@ -712,31 +721,70 @@ section.banner {
     .cart-item {
         grid-template-columns: 1fr;
     }
-    header.color.primary.dark {
+    header.color.primary {
         position: relative;
     }
-    header.color.primary.dark .container {
+    header.color.primary .container {
         padding: 0.5rem 1rem;
     }
     main {
         padding-top: 1rem;
     }
-    header.color.primary.dark .nav.horizontal {
+    header.color.primary .nav.horizontal {
         flex-direction: column;
         align-items: stretch;
         gap: 0.75rem;
     }
-    header.color.primary.dark .nav.horizontal #logo {
+    header.color.primary .nav.horizontal #logo {
         width: 180px;
         margin: 0 auto;
     }
-    header.color.primary.dark .nav.horizontal > ul {
+    header.color.primary .nav.horizontal > ul {
         flex-direction: row;
         justify-content: center;
         gap: 2rem;
     }
-    header.color.primary.dark .nav.horizontal > ul a {
+    header.color.primary .nav.horizontal > ul a {
         font-size: 1.125rem;
         height: auto;
     }
+
+    /* Banner: collapse to natural height, scale type down */
+    section.banner {
+        height: auto;
+        padding: 2rem 1rem;
+        flex-direction: column;
+    }
+    .banner.content {
+        flex: 0 0 auto;
+        gap: 0.5rem;
+    }
+    .banner.heading { font-size: 1.875rem; }
+    .banner.text    { font-size: 1rem; max-width: none; }
+    .banner.actions {
+        margin-top: 1.5rem;
+        flex-wrap: wrap;
+    }
+    .banner.bg {
+        margin-left: 0;
+        margin-top: 1.5rem;
+        height: auto;
+        max-width: 100%;
+    }
+
+    /* Allow wide tables to scroll inside their card */
+    .card.soft:has(table) {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Footer breathing room */
+    .site.footer > .container > .grid > .col-md-7 { text-align: left; }
+}
+
+@media (max-width: 600px) {
+    .banner.heading { font-size: 1.625rem; }
+    .banner.text    { font-size: 0.9375rem; }
+    .banner.actions { margin-top: 1rem; }
+    .banner.actions .btn { flex: 1 1 auto; }
 }

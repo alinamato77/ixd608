@@ -35,15 +35,15 @@ $freshFood = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `category`='F
 					<!-- Dry Food -->
 					<div class="col-xs-12 col-md-4">
 						<a href="category.php?cat=Dry Food">
-							<div class="pet card">
-								<div class="pet img">
+							<div class="card soft product">
+								<div class="img placeholder">
 									<?php if (!empty($dryFood)): ?>
 									<img src="images/<?= htmlspecialchars(firstProductImage($dryFood[0])) ?>" alt="Dry Food">
 									<?php endif; ?>
 								</div>
 								<div class="pet body">
-									<h4 class="pet name">Dry Food</h4>
-									<p class="pet meta">Premium kibble for every life stage</p>
+									<h4>Dry Food</h4>
+									<p>Premium kibble for every life stage</p>
 								</div>
 							</div>
 						</a>
@@ -52,15 +52,15 @@ $freshFood = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `category`='F
 					<!-- Wet Food -->
 					<div class="col-xs-12 col-md-4">
 						<a href="category.php?cat=Wet Food">
-							<div class="pet card">
-								<div class="pet img">
+							<div class="card soft product">
+								<div class="img placeholder">
 									<?php if (!empty($wetFood)): ?>
 									<img src="images/<?= htmlspecialchars(firstProductImage($wetFood[0])) ?>" alt="Wet Food">
 									<?php endif; ?>
 								</div>
 								<div class="pet body">
-									<h4 class="pet name">Wet Food</h4>
-									<p class="pet meta">Delicious recipes packed with moisture</p>
+									<h4>Wet Food</h4>
+									<p>Delicious recipes packed with moisture</p>
 								</div>
 							</div>
 						</a>
@@ -69,15 +69,15 @@ $freshFood = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `category`='F
 					<!-- Fresh Food -->
 					<div class="col-xs-12 col-md-4">
 						<a href="category.php?cat=Fresh Food">
-							<div class="pet card">
-								<div class="pet img">
+							<div class="card soft product">
+								<div class="img placeholder">
 									<?php if (!empty($freshFood)): ?>
 									<img src="images/<?= htmlspecialchars(firstProductImage($freshFood[0])) ?>" alt="Fresh Food">
 									<?php endif; ?>
 								</div>
 								<div class="pet body">
-									<h4 class="pet name">Fresh Food</h4>
-									<p class="pet meta">Gently cooked with whole ingredients</p>
+									<h4>Fresh Food</h4>
+									<p>Gently cooked with whole ingredients</p>
 								</div>
 							</div>
 						</a>

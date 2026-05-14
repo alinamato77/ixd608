@@ -1,4 +1,4 @@
-<footer class="site footer color primary dark">
+<footer class="site footer color primary">
   <div class="container">
     <div class="grid gap">
 

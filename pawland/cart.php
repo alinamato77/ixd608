@@ -24,7 +24,7 @@ $cart_items = getCartItems();
 <div class="container">
     <h2>In Your Cart</h2>
 
-    <div class="grid gap">
+    <div class="grid gap cart-grid">
         <div class="col-xs-12 col-md-7">
             <div class="card soft">
                 <?php
@@ -32,7 +32,7 @@ $cart_items = getCartItems();
                     echo array_reduce($cart_items, 'cartListTemplate');
                 } else {
                     ?>
-                    <p>No items in cart</p>
+                    <h4 style="color: var(--color-red); align-content: center;">No items in cart</h4>
                     <?php
                 }
                 ?>

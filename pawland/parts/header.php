@@ -4,15 +4,15 @@ include_once "parts/functions.php";
 
 ?>
 
-<header class="color primary dark">
+<header class="color primary">
 	<div class="container">
 		<nav class="nav horizontal">
-			<a href="index.php"><img src="pawlandlogo.svg" id="logo" class="card logo"></a>
+			<a href="index.php"><img src="pawlandlogo.svg" id="logo"></a>
 			<div class="flex stretch">
         <div class="form-control">
             <form class="hotdog light" id="product-search">
                 <input type="search" placeholder="Search Products">
-                <button type="submit" class="btn primary">Search</button>
+                <button type="submit" class="btn secondary">Search</button>
             </form>
         </div>
 			</div>

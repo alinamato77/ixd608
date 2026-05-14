@@ -8,6 +8,6 @@
 		</div>
 	</div>
 
-	<img src="images/banner.png">
+	<img src="images/banner.png" class="banner bg">
 
 </section>
