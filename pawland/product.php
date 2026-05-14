@@ -16,8 +16,6 @@ if (!empty($product->product_condition)) {
 	}
 }
 
-// print_p($product);
-
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,13 +38,13 @@ if (!empty($product->product_condition)) {
             </ol>
 
             <h2>Product Details</h2>
-			<div class="grid gap">
+			<div class="grid gap product-detail product-detail-grid">
 
 
 
 				<!-- Left: Images -->
 				<div class="col-xs-12 col-md-6">
-                <div class="card soft" style="height: 100%;">
+                <div class="card soft">
 
                 <div class="gallery-wrapper">
             
@@ -68,7 +66,7 @@ if (!empty($product->product_condition)) {
 
 				<!-- Right: Product info -->
 				<div class="col-xs-12 col-md-6">
-    <form class="card soft card section display flex flex column" style="height: 100%;" method="post" action="cart_actions.php?action=add-to-cart">
+    <form class="card soft card section display flex flex column" method="post" action="cart_actions.php?action=add-to-cart">
 
         <input type="hidden" name="product-id" value="<?= $product->id ?>">
 
@@ -79,7 +77,7 @@ if (!empty($product->product_condition)) {
             </div>
         </div>
 
-        <hr style="color: var(--color-text-muted);">
+        <hr>
 
         <?php if ($badges): ?>
         <div>
@@ -95,7 +93,7 @@ if (!empty($product->product_condition)) {
         <?php endif; ?>
 
         <?php if (!empty($product->ingredients)): ?>
-        <div style="margin-bottom: 5rem;">
+        <div class="ingredients-block">
             <h5>Ingredients</h5>
             <p ><?= htmlspecialchars($product->ingredients) ?></p>
         </div>
@@ -103,7 +101,7 @@ if (!empty($product->product_condition)) {
 
         <hr>
 
-        <div style="margin-top: auto;">
+        <div class="amount-block">
             <label for="product-amount" class="form label">Amount</label>
             <div class="form-select">
                 <select id="product-amount" name="product-amount">

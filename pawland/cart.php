@@ -37,16 +37,21 @@ $cart_items = getCartItems();
                 }
                 ?>
             </div>
-
-            <h3>Other Recommendations</h3>
-            <?php recommendedAnything(3); ?>
         </div>
-        
+
         <div class="col-xs-12 col-md-5">
-            <div class="card soft mb-4">
+            <div class="card soft">
                 <?= cartTotals() ?>
             </div>
         </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="col-xs-4">
+        <h2>Other Recommendations</h2>
+        <?php recommendedAnything(3); ?>
     </div>
 </div>
 	</main>

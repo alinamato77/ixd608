@@ -47,13 +47,13 @@ return $r.<<<HTML
 	</div>
 	<div class="cart-item-info">
 		<div class="cart-item-name">$o->name</div>
-		<form action="cart_actions.php?action=update-cart-item" method="post" style="margin-bottom:0.5rem;">
+		<form action="cart_actions.php?action=update-cart-item" method="post">
 			<input type="hidden" name="id" value="$o->id">
-			<div class="form-select" style="display:inline-block;">
+			<div class="form-select">
 				<select name="amount" onchange="this.form.submit()">$options</select>
 			</div>
 		</form>
-		<form action="cart_actions.php?action=delete-cart-item" method="post" style="display:inline;">
+		<form action="cart_actions.php?action=delete-cart-item" method="post">
 			<input type="hidden" name="id" value="$o->id">
 			<button type="submit" class="btn danger sm cart-item-remove">Remove</button>
 		</form>

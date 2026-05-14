@@ -155,7 +155,7 @@
                             </div>
 
                                                 <div class="form actions">
-                        <a href="confirmation.php" class="btn primary full" style="margin-top:5rem">Place Order</a>
+                        <a href="confirmation.php" class="btn primary full">Place Order</a>
                     </div>
                         </div>
                     </div>

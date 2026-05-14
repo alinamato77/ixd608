@@ -42,7 +42,7 @@ $freshFood = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `category`='F
 									<?php endif; ?>
 								</div>
 								<div class="pet body">
-									<p class="pet name">Dry Food</p>
+									<h4 class="pet name">Dry Food</h4>
 									<p class="pet meta">Premium kibble for every life stage</p>
 								</div>
 							</div>
@@ -59,7 +59,7 @@ $freshFood = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `category`='F
 									<?php endif; ?>
 								</div>
 								<div class="pet body">
-									<p class="pet name">Wet Food</p>
+									<h4 class="pet name">Wet Food</h4>
 									<p class="pet meta">Delicious recipes packed with moisture</p>
 								</div>
 							</div>
@@ -76,7 +76,7 @@ $freshFood = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `category`='F
 									<?php endif; ?>
 								</div>
 								<div class="pet body">
-									<p class="pet name">Fresh Food</p>
+									<h4 class="pet name">Fresh Food</h4>
 									<p class="pet meta">Gently cooked with whole ingredients</p>
 								</div>
 							</div>

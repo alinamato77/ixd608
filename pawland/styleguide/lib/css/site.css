@@ -30,7 +30,7 @@ header.color.primary.dark {
 header.color.primary.dark .container {
   max-width: 1920px;
   margin: 0 auto;
-  padding: 0.175rem 3rem 0.175rem 1rem;
+  padding: 0.25rem 3rem 0.25rem 3rem;
   background-color: transparent;
 }
 
@@ -169,11 +169,11 @@ main {
    ============================================================ */
 section.banner {
   width: 100%;
-  height: 360px;
-  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
+  height: 600px;
+  background: white;
   display: flex;
   align-items: center;
-  padding: 80px;
+  padding: 150px;
   box-sizing: border-box;
   overflow: hidden;
   margin: 0;
@@ -192,17 +192,23 @@ section.banner {
   margin-left: 2rem;
 }
 .banner.heading {
-  color: var(--color-white);
-  font-size: 1.5rem;
+  color: black;
+  font-size: 2.75rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.15;
   margin: 0;
 }
 .banner.text {
-  color: rgba(255,255,255,0.75);
-  font-size: 0.9375rem;
+  color: black;
+  font-size: 2rem;
   line-height: 1.5;
   margin: 0;
+  max-width: 480px;
+}
+.banner.actions {
+  margin-top: 3.5rem;
+  display: flex;
+  gap: 0.75rem;
 }
 
 /* ============================================================
@@ -347,9 +353,10 @@ section.banner {
   aspect-ratio: 1;
   background-color: var(--color-warm-gray);
   border-radius: 0.75rem 0.75rem 0 0;
+  border-color: var(--color-primary);
   margin: 0;
 }
-.brand.name { margin: 0; }
+.brand.name { margin: 0; align-items: center;}
 .brand.desc { margin: 0; font-size: 1rem; color: var(--color-text-muted); }
 
 /* ============================================================
@@ -363,6 +370,19 @@ section.banner {
   font-weight: 700;
   font-size: 1.25rem;
 }
+
+/* ============================================================
+   PRODUCT DETAIL PAGE (product.php — 2-column grid + form layout)
+   ============================================================ */
+/* Both cards in the detail grid match the row's height */
+.product-detail-grid > .col-xs-12 > .card.soft,
+.product-detail-grid > .col-xs-12 > form.card.soft {
+  height: 100%;
+}
+/* Ingredients block leaves space before the bottom hr / action block */
+.product-detail .ingredients-block { margin-bottom: 5rem; }
+/* Amount + Add To Cart pinned to the bottom of the flex-column form */
+.product-detail .amount-block { margin-top: auto; }
 
 /* ============================================================
    CARD PRODUCT (productList template — recommendation cards)
@@ -386,6 +406,13 @@ section.banner {
   max-height: 100%;
   object-fit: contain;
 }
+
+/* Default: images inside .img.placeholder stretch to fill the box */
+.img.placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .card.product h3 {
   margin: 0;
   font-size: 1.125rem;
@@ -403,6 +430,12 @@ section.banner {
 .card.product form,
 .pet.card form {
   margin: 0;
+}
+
+.pet.name h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ============================================================
@@ -573,9 +606,15 @@ section.banner {
 .cart-item form {
   margin: 0;
 }
+/* The update form keeps a small gap below; the delete form sits inline next to it */
+.cart-item form[action*="update-cart-item"] { margin-bottom: 0.5rem; }
+.cart-item form[action*="delete-cart-item"] { display: inline; }
+
+/* Place Order button — clear separation from the totals block */
+.checkout-totals .btn.primary.full { margin-top: 5rem; }
 
 /* ============================================================
-   DISPLAY - FLEX
+   DISPLAY - FLEX - ROWS IN CARTOTALS() AND PRODUCT.PHP
    ============================================================ */
 .display-flex {
   display: flex;
@@ -612,6 +651,7 @@ section.banner {
   display: flex;
   gap: 1rem;
   align-items: stretch;
+  justify-content: center;
 }
 
 /* Main image container — takes remaining width, square aspect for consistency with .pet.img */
