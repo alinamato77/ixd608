@@ -10,7 +10,7 @@ const listItemTemplate = templater(o=>{
         <h3>${o.name}</h3>
         <div class="product rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
         <h4>&dollar;${o.price.toFixed(2)}</h4>
-        <a href="product.php?id=${o.id}" class="btn outline full">View</a>
+        <a href="product.php?id=${o.id}" class="btn secondary full">View</a>
         <form action="cart_actions.php?action=add-to-cart" method="post">
             <input type="hidden" name="product-id" value="${o.id}">
             <input type="hidden" name="product-amount" value="1">

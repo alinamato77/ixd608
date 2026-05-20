@@ -24,7 +24,7 @@
       <!-- Right: 3-Column Link Grid -->
       <div class="col-xs-12 col-md-7">
         <div class="grid gap">
-          <div class="col-xs-12 col-md-4">
+          <div class="col-xs-4 col-md-4">
             <h5 class="footer col heading">Company</h5>
             <ul class="footer links">
               <li><a href="#">About Us</a></li>
@@ -33,7 +33,7 @@
               <li><a href="#">Press</a></li>
             </ul>
           </div>
-          <div class="col-xs-12 col-md-4">
+          <div class="col-xs-4 col-md-4">
             <h5 class="footer col heading">Support</h5>
             <ul class="footer links">
               <li><a href="#">FAQ</a></li>
@@ -42,7 +42,7 @@
               <li><a href="#">Contact Us</a></li>
             </ul>
           </div>
-          <div class="col-xs-12 col-md-4">
+          <div class="col-xs-4 col-md-4">
             <h5 class="footer col heading">Legal</h5>
             <ul class="footer links">
               <li><a href="#">Privacy Policy</a></li>

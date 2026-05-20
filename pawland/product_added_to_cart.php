@@ -40,7 +40,7 @@ if (!$product) { header('Location: index.php'); exit; }
 				</div>
 
 				<div class="display flex flex align" style="margin-top: 2rem;">
-					<div class="flex none"><a href="category.php?cat=<?php echo urlencode($product->category); ?>" class="btn outline full">Continue Shopping</a></div>
+					<div class="flex none"><a href="category.php?cat=<?php echo urlencode($product->category); ?>" class="btn secondary full">Continue Shopping</a></div>
 					<div class="flex stretch"></div>
 					<div class="flex none"><a href="cart.php?id=<?= $product->id ?>" class="btn primary full">Go To Cart</a></div>
 				</div>

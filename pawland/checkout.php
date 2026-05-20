@@ -23,8 +23,8 @@
 
                 <div class="col-xs-12 col-md-7">
 
-                    <div class="card soft">
-                        <h4>Shipping Information</h4>
+                    <div class="card soft" data-foldable>
+                        <h4>Shipping Information<button type="button" class="card-fold-toggle" aria-expanded="true" aria-label="Toggle Shipping Information"><span class="fold-caret"></span></button></h4>
                         <div class="grid gap">
                             <div class="col-xs-12 col-md-6">
                                 <div class="form group">
@@ -68,8 +68,8 @@
                         </div>
                     </div>
 
-                    <div class="card soft">
-                        <h4>Payment</h4>
+                    <div class="card soft" data-foldable>
+                        <h4>Payment<button type="button" class="card-fold-toggle" aria-expanded="true" aria-label="Toggle Payment"><span class="fold-caret"></span></button></h4>
 
                         <label class="control label" id="pm-card">
                             <input type="checkbox" name="payment" value="card" checked>
@@ -105,9 +105,8 @@
                 </div>
 
                 <div class="col-xs-12 col-md-5">
-                    <div class="card soft">
-                        <h4>In your cart</h4>
-                          <div class="form label">Items Review</div>
+                    <div class="card soft" data-foldable>
+                        <h4>Items Review<button type="button" class="card-fold-toggle" aria-expanded="true" aria-label="Toggle Items Review"><span class="fold-caret"></span></button></h4>
                         
                         <?php
                         $items = getCartItems();
@@ -116,12 +115,12 @@
 
                         <div class="checkout-item-list">
                             <?php foreach($items as $item): ?>
-                                <div class="display-flex">
-                                    <div class="flex-none">
+                                <div class="display flex cart">
+                                    <div class="flex none cart">
                                         <img src="images/<?= htmlspecialchars(firstProductImage($item)) ?>" alt="<?= htmlspecialchars($item->name) ?>">
                                     </div>
 
-                                    <div class="flex-stretch">
+                                    <div class="flex stretch">
                                         <div class="product-info-name"><strong><?= htmlspecialchars($item->name) ?></strong></div>
                                         <div class="product-info-amount"><small>Qty: <?= $item->amount ?></small></div>
                                     </div>
@@ -134,23 +133,23 @@
                         </div>
 
                         <div class="checkout-totals">
-                            <div class="display-flex">
+                            <div class="display flex">
                                 <span>Subtotal</span>
-                                <span class="flex-stretch"></span>
+                                <span class="flex stretch"></span>
                                 <span>&dollar;<?= number_format($total, 2) ?></span>
                             </div>
-                            
-                            <div class="display-flex">
+
+                            <div class="display flex">
                                 <span>Shipping</span>
-                                <span class="flex-stretch"></span>
+                                <span class="flex stretch"></span>
                                 <span>Free</span>
                             </div>
 
                             <hr>
-                            
-                            <div class="display-flex total-line">
+
+                            <div class="display flex total-line">
                                 <strong>Total</strong>
-                                <span class="flex-stretch"></span>
+                                <span class="flex stretch"></span>
                                 <strong>&dollar;<?= number_format($total, 2) ?></strong>
                             </div>
 

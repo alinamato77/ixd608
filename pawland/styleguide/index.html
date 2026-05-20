@@ -223,7 +223,7 @@
                 <h3>Premium Dog Food</h3>
                 <div class="product rating">★★★★☆ (24)</div>
                 <h4><s>$150.00</s> $120.00</h4>
-                <button class="btn outline btn full">View</button>
+                <button class="btn secondary btn full">View</button>
                 <button class="btn primary btn full">Add to Cart</button>
             </figure>
         </div>
@@ -235,7 +235,7 @@
                 <h3>Cat Scratch Tower</h3>
                 <div class="product rating">★★★★★ (12)</div>
                 <h4>$45.00</h4>
-                <button class="btn outline btn full">View</button>
+                <button class="btn secondary btn full">View</button>
                 <button class="btn primary btn full">Add to Cart</button>
             </figure>
         </div>
@@ -247,7 +247,7 @@
                 <h3>Bird Cage Deluxe</h3>
                 <div class="product rating">★★★☆☆ (8)</div>
                 <h4>$85.00</h4>
-                <button class="btn outline btn full">View</button>
+                <button class="btn secondary btn full">View</button>
                 <button class="btn primary btn full">Add to Cart</button>
             </figure>
         </div>
@@ -257,31 +257,31 @@
 <h3>4-up Product Grid</h3>
 <div class="grid gap">
     <div class="col-xs-3">
-        <figure class="card item">
-            <div class="img placeholder">Product Image</div>
-            <h3>Premium Dog Food</h3>
-            <p class="product subtitle">For Every Breed & Size</p>
+        <figure class="card item yellow">
+            <div class="img placeholder"><img src="../images/banner01.svg" alt="Root &amp; Raw"></div>
+            <h4 class="brand title">Root &amp; Raw</h4>
+            <p class="brand text">Organic, farm-to-bowl nutrition focusing on seasonal, minimally processed ingredients for long-term health.</p>
         </figure>
     </div>
     <div class="col-xs-3">
-        <figure class="card item">
-            <div class="img placeholder">Product Image</div>
-            <h3>Cat Scratch Tower</h3>
-            <p class="product subtitle">Keep Your Cat Happy</p>
+        <figure class="card item yellow">
+            <div class="img placeholder"><img src="../images/banner02.svg" alt="TailorMeal"></div>
+            <h4 class="brand title">TailorMeal</h4>
+            <p class="brand text">Precision-crafted recipes customized to your pet&rsquo;s unique breed, weight, and activity level for a perfect fit.</p>
         </figure>
     </div>
     <div class="col-xs-3">
-        <figure class="card item">
-            <div class="img placeholder">Product Image</div>
-            <h3>Bird Cage Deluxe</h3>
-            <p class="product subtitle">Spacious & Easy to Clean</p>
+        <figure class="card item yellow">
+            <div class="img placeholder"><img src="../images/banner03.svg" alt="Zenith Pets"></div>
+            <h4 class="brand title">Zenith Pets</h4>
+            <p class="brand text">High-performance, protein-rich fuel designed to keep active dogs and cats energized for every adventure.</p>
         </figure>
     </div>
     <div class="col-xs-3">
-        <figure class="card item">
-            <div class="img placeholder">Product Image</div>
-            <h3>Rabbit Hutch XL</h3>
-            <p class="product subtitle">Room to Roam & Play</p>
+        <figure class="card item yellow">
+            <div class="img placeholder"><img src="../images/banner04.svg" alt="KindBite"></div>
+            <h4 class="brand title">KindBite</h4>
+            <p class="brand text">Sustainably sourced, ethically made pet food that supports animal welfare and a healthier planet with every meal.</p>
         </figure>
     </div>
 </div>
@@ -527,45 +527,11 @@
     <h2>Hotdog</h2>
     <div class="card soft">
       <h3>Default</h3>
-      <div class="hotdog search" id="hotdog-search-demo">
-        <div class="hotdog search bar">
-          <button class="hotdog search toggle" id="hotdog-toggle" aria-label="Open filters" aria-expanded="false" aria-controls="hotdog-filters">
-            <span class="hotdog bar"></span>
-            <span class="hotdog bar"></span>
-            <span class="hotdog bar"></span>
-          </button>
-
-          <span class="hotdog search icon" aria-hidden="true">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </span>
-
-          <input
-            class="hotdog search input"
-            type="text"
-            id="hotdog-input"
-            placeholder="Search pet products…"
-          >
-
-          <button class="hotdog search clear" id="hotdog-clear" type="button" aria-label="Clear search">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-
-          <button class="btn primary">Search</button>
-        </div>
-
-        <div class="hotdog search filters" id="hotdog-filters">
-          <button class="filter chip active" type="button">Dogs</button>
-          <button class="filter chip" type="button">Cats</button>
-          <button class="filter chip" type="button">Food</button>
-          <button class="filter chip" type="button">Toys</button>
-          <button class="filter chip" type="button">Sale</button>
-        </div>
+      <div class="form-control">
+        <form class="hotdog light">
+          <input type="search" placeholder="Search Products">
+          <button type="submit" class="btn secondary">Search</button>
+        </form>
       </div>
     </div>
   </div>

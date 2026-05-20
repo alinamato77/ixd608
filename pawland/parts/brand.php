@@ -1,6 +1,6 @@
 <section class="brand section">
 	<div class="container">
-		<div class="grid gap">
+		<div class="grid gap" id="brand-carousel">
 			<div class="col-xs-6 col-md-3">
 				<figure class="card item yellow">
 					<div class="img placeholder">

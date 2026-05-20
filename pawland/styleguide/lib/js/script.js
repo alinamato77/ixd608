@@ -80,6 +80,96 @@
 			btn.addEventListener('click', () => btn.closest('.tag').remove());
 		});
 
+// Foldable card sections (checkout.php — small screen)
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.card-fold-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const card = btn.closest('[data-foldable]');
+      if (!card) return;
+      const folded = card.classList.toggle('is-folded');
+      btn.setAttribute('aria-expanded', String(!folded));
+    });
+  });
+});
+
+// Brand carousel (small-screen auto-play)
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.getElementById('brand-carousel');
+  if (!track) return;
+
+  const mq = window.matchMedia('(max-width: 800px)');
+  let timer = null;
+  let index = 0;
+  let cloned = false;
+
+  function step() {
+    const slides = track.children;
+    if (!cloned) {
+      track.appendChild(slides[0].cloneNode(true));
+      cloned = true;
+    }
+    const slide = track.children[0];
+    const slideWidth = slide.getBoundingClientRect().width;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    const stepPx = slideWidth + gap;
+
+    index++;
+    track.style.transition = 'transform 0.5s ease';
+    track.style.transform = `translateX(-${index * stepPx}px)`;
+
+    if (index === track.children.length - 1) {
+      setTimeout(() => {
+        track.style.transition = 'none';
+        track.style.transform = 'translateX(0)';
+        index = 0;
+      }, 520);
+    }
+  }
+
+  function start() {
+    if (timer) return;
+    timer = setInterval(step, 3000);
+  }
+  function stop() {
+    if (!timer) return;
+    clearInterval(timer);
+    timer = null;
+    track.style.transition = 'none';
+    track.style.transform = 'translateX(0)';
+    index = 0;
+  }
+
+  if (mq.matches) start();
+  mq.addEventListener('change', e => (e.matches ? start() : stop()));
+});
+
+// Header search + nav toggles (mobile)
+document.addEventListener('DOMContentLoaded', () => {
+  // Magnifying glass icon ↔ search bar
+  const searchToggle = document.getElementById('header-search-toggle');
+  const searchWrap = document.getElementById('header-search-wrap');
+  if (searchToggle && searchWrap) {
+    searchToggle.addEventListener('click', () => {
+      const isOpen = searchWrap.classList.toggle('is-open');
+      searchToggle.setAttribute('aria-expanded', String(isOpen));
+      if (isOpen) {
+        const input = searchWrap.querySelector('input[type="search"]');
+        if (input) setTimeout(() => input.focus(), 60);
+      }
+    });
+  }
+
+  // Hamburger ↔ nav menu
+  const navToggle = document.getElementById('header-nav-toggle');
+  const navList = document.getElementById('header-nav-list');
+  if (navToggle && navList) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = navList.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+  }
+});
+
 // hotdog //
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('hotdog-toggle');

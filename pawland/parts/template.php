@@ -80,11 +80,11 @@ function cartTotals() {
         $qty = (int)$item->amount;
         $itemTotal = number_format($item->total, 2);
         $itemList .= <<<HTML
-<div class="display-flex">
-    <div class="flex-none">
+<div class="display flex cart">
+    <div class="flex none cart">
         <img src="images/$thumb" alt="$name">
     </div>
-    <div class="flex-stretch">
+    <div class="flex stretch">
         <div class="product-info-name"><strong>$name</strong></div>
         <div class="product-info-amount"><small>Qty: $qty</small></div>
     </div>
@@ -102,29 +102,29 @@ $itemList
 </div>
 
 <div class="checkout-totals">
-    <div class="display-flex">
+    <div class="display flex">
         <span>Subtotal</span>
-        <span class="flex-stretch"></span>
+        <span class="flex stretch"></span>
         <span>&dollar;$pricefixed</span>
     </div>
 
-    <div class="display-flex">
+    <div class="display flex">
         <span>Shipping</span>
-        <span class="flex-stretch"></span>
+        <span class="flex stretch"></span>
         <span>Free</span>
     </div>
 
-    <div class="display-flex">
+    <div class="display flex">
         <span>Taxes</span>
-        <span class="flex-stretch"></span>
+        <span class="flex stretch"></span>
         <span>&dollar;$taxfixed</span>
     </div>
 
     <hr>
 
-    <div class="display-flex total-line">
+    <div class="display flex total-line">
         <strong>Total</strong>
-        <span class="flex-stretch"></span>
+        <span class="flex stretch"></span>
         <strong>&dollar;$taxedfixed</strong>
     </div>
 

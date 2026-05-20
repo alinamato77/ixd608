@@ -22,6 +22,10 @@ header.color.primary .nav.horizontal > .flex.stretch .form-control {
    HEADER — DESKTOP (1 row, fixed)
    ============================================================ */
 @media (min-width: 801px) {
+  /* Toggle buttons only appear on small screens */
+  .header.search.toggle,
+  .header.nav.toggle { display: none; }
+
   header.color.primary {
     position: fixed;
     top: 0;
@@ -88,59 +92,6 @@ header.color.primary .nav.horizontal > .flex.stretch .form-control {
 
 }
 
-
-/* ============================================================
-   HOTDOG SEARCH BAR (form.hotdog.light — header search)
-   ============================================================ */
-.hotdog.light {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  width: 100%;
-  background: var(--color-white);
-  border: 1px solid var(--color-stroke-dark);
-  border-radius: var(--radius-pill);
-  padding: 0.25rem 0.25rem 0.25rem 1.25rem;
-  min-height: 48px;
-  box-sizing: border-box;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-.hotdog.light:focus-within {
-  border-color: var(--color-primary);
-}
-.hotdog.light::before {
-  content: '';
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'/><path d='m21 21-4.3-4.3'/></svg>");
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.hotdog.light input[type="search"] {
-  flex: 1;
-  min-width: 0;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  font-size: 0.9375rem;
-  font-family: var(--font-family-base);
-  color: var(--color-text-main);
-}
-.hotdog.light input[type="search"]::placeholder {
-  color: var(--color-text-muted);
-}
-.hotdog.light input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: none;
-}
-.hotdog.light .btn.primary {
-  margin-left: auto;
-  flex-shrink: 0;
-  height: 40px;
-  padding: 0 1.5rem;
-}
-
-/* (Zone 3 nav-link rules moved into the desktop @media block above) */
 
 /* Push main content below the fixed header.
    Banner pages: banner extends behind the header (its own background fills the gap),
@@ -328,44 +279,9 @@ section.banner {
 .footer.bottom p { font-size: 0.8125rem; color: rgba(255,255,255,0.4); }
 
 /* ============================================================
-   BRAND CARDS (brand.php)
+   BRAND CARDS (brand.php) — base card + title/text live in styleguide.css
    ============================================================ */
 .brand.section { padding: 2.5rem 0; }
-.brand.item { display: flex; flex-direction: column; }
-.brand.figure {
-  width: 100%;
-  aspect-ratio: 1;
-  background-color: transparent;
-  border-radius: 0.75rem 0.75rem 0 0;
-  border-color: var(--color-primary);
-  margin: 0;
-}
-.brand.section .card.item.yellow {
-  background-color: var(--color-yellow);
-  padding: 1.5rem;          
-  border-radius: 1rem;      
-}
-
-.brand.section .card.item.yellow .img.placeholder,
-.brand.section .card.item.yellow .img.placeholder img {
-    background-color: transparent;
-    margin-bottom: 0.5rem;
-}
-
-.brand.name { margin: 0; text-align: center; }
-.brand.desc { margin: 0; font-size: 1rem; color: var(--color-text-muted); text-align: center; }
-
-.brand.title {
-  text-align: center;        
-  margin: 0.5rem 0 0.5rem 0; 
-}
-
-.brand.text {
-  text-align: center;       
-  padding: 0 0.75rem;        
-  margin: 0;                 
-  line-height: 1.5;          
-}
 
 /* ============================================================
    INDEX CATEGORY CARDS
@@ -497,13 +413,14 @@ section.banner {
   display: flex;
   flex-direction: column;
 }
-.checkout-totals .display-flex {
+.checkout-totals .display.flex {
+  align-items: center;
   padding: 0.5rem 0;
   border-bottom: none;
   font-size: 0.95rem;
   color: var(--color-text-secondary);
 }
-.checkout-totals .display-flex.total-line {
+.checkout-totals .display.flex.total-line {
   border-top: 1px solid var(--color-stroke-light);
   padding-top: 1rem;
   margin-top: 0.5rem;
@@ -521,10 +438,7 @@ section.banner {
   padding: 0;
 }
 
-/* Tighten form spacing inside checkout cards.
-   Default .form.group has 1.25rem margin-bottom which stacks awkwardly
-   with the grid.gap's own gap. Reduce, and zero out the last block
-   right before .form.actions so the Save button sits flush. */
+/* spacing */
 .card.soft .form.group {
   margin-bottom: 1rem;
 }
@@ -543,7 +457,7 @@ section.banner {
 }
 
 /* ============================================================
-   CART PAGE — equal-height cart-items card and cart-totals card
+   CART PAGE
    ============================================================ */
 .cart-grid > .col-xs-12 > .card.soft {
   min-height: 500px;
@@ -602,8 +516,7 @@ section.banner {
   color: var(--color-text-main);
 }
 
-/* Constrain the Qty dropdown inside cart items so it doesn't stretch
-   across the full 1fr column. */
+/* Qty dropdown */
 .cart-item .form-select {
   width: auto;
   max-width: 140px;
@@ -615,40 +528,44 @@ section.banner {
 .cart-item form {
   margin: 0;
 }
-/* The update form keeps a small gap below; the delete form sits inline next to it */
+
 .cart-item form[action*="update-cart-item"] { margin-bottom: 0.5rem; }
 .cart-item form[action*="delete-cart-item"] { display: inline; }
 
-/* Place Order button — clear separation from the totals block */
-.checkout-totals .btn.primary.full { margin-top: 5rem; }
+.card.soft:has(> .checkout-totals) {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card.soft > .checkout-totals {
+  flex: 1;
+}
+.card.soft .checkout-totals .form.actions {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
 
 /* ============================================================
-   DISPLAY - FLEX - ROWS IN CARTOTALS() AND PRODUCT.PHP
+   CART ITEM SUMMARY ROW
    ============================================================ */
-.display-flex {
-  display: flex;
+.display.flex.cart {
   align-items: center;
   gap: 1rem;
   padding: 0.75rem 0;
   border-bottom: 1px solid var(--color-stroke-light);
 }
 
-.flex-none {
+.flex.none.cart {
   width: 80px;
   height: 80px;
-  flex-shrink: 0;
   border-radius: 0.5rem;
   overflow: hidden;
 }
 
-.flex-none img {
+.flex.none.cart img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.flex-stretch {
-  flex: 1 1 auto;
 }
 
 
@@ -663,7 +580,6 @@ section.banner {
   justify-content: center;
 }
 
-/* Main image container — takes remaining width, square aspect for consistency with .pet.img */
 .images-main {
   flex: 1;
   aspect-ratio: 1 / 1;
@@ -676,7 +592,6 @@ section.banner {
   box-sizing: border-box;
 }
 
-/* Main image itself — selector matches ".images-main img" used by product_thumbs.js */
 .images-main img {
   width: 100%;
   height: 100%;
@@ -711,75 +626,391 @@ section.banner {
 
 
 /* ============================================================
-   RESPONSIVE
+   RESPONSIVE — SMALL SCREEN  (max-width: 800px)
    ============================================================ */
 @media (max-width: 800px) {
-    .container {
-        padding-left: 1em;
-        padding-right: 1em;
-    }
-    .cart-item {
-        grid-template-columns: 1fr;
-    }
-    header.color.primary {
-        position: relative;
-    }
-    header.color.primary .container {
-        padding: 0.5rem 1rem;
-    }
-    main {
-        padding-top: 1rem;
-    }
-    header.color.primary .nav.horizontal {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0.75rem;
-    }
-    header.color.primary .nav.horizontal #logo {
-        width: 180px;
-        margin: 0 auto;
-    }
-    header.color.primary .nav.horizontal > ul {
-        flex-direction: row;
-        justify-content: center;
-        gap: 2rem;
-    }
-    header.color.primary .nav.horizontal > ul a {
-        font-size: 1.125rem;
-        height: auto;
-    }
 
-    /* Banner: collapse to natural height, scale type down */
-    section.banner {
-        height: auto;
-        padding: 2rem 1rem;
-        flex-direction: column;
-    }
-    .banner.content {
-        flex: 0 0 auto;
-        gap: 0.5rem;
-    }
-    .banner.heading { font-size: 1.875rem; }
-    .banner.text    { font-size: 1rem; max-width: none; }
-    .banner.actions {
-        margin-top: 1.5rem;
-        flex-wrap: wrap;
-    }
-    .banner.bg {
-        margin-left: 0;
-        margin-top: 1.5rem;
-        height: auto;
-        max-width: 100%;
-    }
+  /* --- Layout: container & main padding --- */
+  .container {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  main {
+    padding-top: 0;
+  }
 
-    /* Allow wide tables to scroll inside their card */
-    .card.soft:has(table) {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
+  /* --- Header (header.php) --- */
+  header.color.primary {
+    position: relative;
+  }
+  header.color.primary .container {
+    padding: 0.5rem 1rem;
+  }
+  header.color.primary .nav.horizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+  }
+  header.color.primary .nav.horizontal > a:has(> #logo) {
+    flex-shrink: 0;
+    line-height: 0;
+    display: inline-block;
+  }
+  header.color.primary .nav.horizontal #logo {
+    width: auto;
+    height: 72px;
+    margin: 0;
+    display: block;
+  }
 
-    /* Footer breathing room */
-    .site.footer > .container > .grid > .col-md-7 { text-align: left; }
+  /* Toggle buttons (shared base) */
+  header.color.primary .header.search.toggle,
+  header.color.primary .header.nav.toggle {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: transparent;
+    background-color: transparent;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  /* Search icon (magnifying glass) — toggles the search bar */
+  header.color.primary .header.search.toggle {
+    order: 2;
+    margin-left: auto;
+  }
+  header.color.primary .header.search.toggle svg {
+    width: 26px;
+    height: 26px;
+    display: block;
+    stroke: #ffffff;
+    color: #ffffff;
+  }
+
+  /* Hamburger — toggles the nav menu */
+  header.color.primary .header.nav.toggle {
+    order: 3;
+    flex-direction: column;
+    gap: 5px;
+  }
+  header.color.primary .header.nav.toggle > span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .header.nav.toggle[aria-expanded="true"] > span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .header.nav.toggle[aria-expanded="true"] > span:nth-child(2) {
+    opacity: 0;
+  }
+  .header.nav.toggle[aria-expanded="true"] > span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Search bar — collapsed by default, expands below the row when toggled */
+  header.color.primary .nav.horizontal > .flex.stretch {
+    order: 4;
+    flex: 0 0 100%;
+    display: none;
+  }
+  header.color.primary .nav.horizontal > .flex.stretch.is-open {
+    display: flex;
+  }
+
+  /* Nav menu — collapsed by default, expands below when hamburger toggled */
+  header.color.primary .nav.horizontal > ul {
+    order: 5;
+    flex: 0 0 100%;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0.5rem 0;
+    list-style: none;
+  }
+  header.color.primary .nav.horizontal > ul.is-open {
+    display: flex;
+  }
+  header.color.primary .nav.horizontal > ul a {
+    color: white;
+    font-family: var(--font-family-heading);
+    font-size: 1.125rem;
+    line-height: 1;
+    height: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  /* --- Banner (banner.php) --- */
+  section.banner {
+    height: auto;
+    padding: 1.25rem 1rem 1.5rem;
+    flex-direction: column;
+  }
+  .banner.content {
+    flex: 0 0 auto;
+    gap: 0.5rem;
+  }
+  .banner.heading { font-size: 1.875rem; }
+  .banner.text    { font-size: 1rem; max-width: none; }
+  .banner.actions {
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .banner.actions .btn.ml { width: auto; }
+  .banner.bg {
+    margin-left: 0;
+    margin-top: 1.5rem;
+    height: auto;
+    max-width: 100%;
+  }
+
+  /* --- Brand carousel (brand.php) --- */
+  .brand.section > .container {
+    overflow: hidden;
+  }
+  .brand.section #brand-carousel {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    transition: transform 0.5s ease;
+    will-change: transform;
+  }
+  .brand.section #brand-carousel > .col-xs-6 {
+    flex: 0 0 100%;
+    width: 100%;
+  }
+  .brand.section #brand-carousel > .col-xs-6 > .card.item.yellow {
+    width: 100%;
+    margin: 0;
+  }
+
+  /* --- Category filter row (category.php) --- */
+  .card.soft.display-flex .btn.outline {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+  }
+  .card.soft.display-flex > .flex-none:last-child {
+    flex-basis: 100%;
+    margin-left: 0;
+    margin-top: 0.25rem;
+  }
+  .card.soft.display-flex .form-select {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* --- Cards hug content on mobile (override desktop fixed heights). --- */
+  .cart-grid > .col-xs-12 > .card.soft,
+  .card.soft:has(> .checkout-totals) {
+    min-height: 0;
+    height: auto;
+  }
+  .card.soft:has(> .checkout-totals) > .checkout-totals {
+    flex: 0 1 auto;
+  }
+  .card.soft .checkout-totals .form.actions {
+    margin-top: 1rem;
+  }
+  .product-detail-grid > .col-xs-12 > .card.soft,
+  .product-detail-grid > .col-xs-12 > form.card.soft {
+    height: auto;
+  }
+
+  /* --- Cart item (template.php cartListTemplate) --- */
+  .cart-item {
+    grid-template-columns: 96px 1fr;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 1rem;
+    row-gap: 0.5rem;
+    align-items: start;
+  }
+  .cart-item-img {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    width: 96px;
+    height: 96px;
+  }
+  .cart-item-info { display: contents; }
+  .cart-item-info > .cart-item-name {
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 0;
+  }
+  .cart-item-info > form[action*="update-cart-item"] {
+    grid-column: 2;
+    grid-row: 3;
+    margin-bottom: 0;
+  }
+  .cart-item-info > form[action*="delete-cart-item"] {
+    grid-column: 2;
+    grid-row: 4;
+  }
+  .cart-item-right { display: contents; }
+  .cart-item-right > .cart-item-price {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left;
+  }
+
+  /* --- Foldable checkout sections (checkout.php [data-foldable]) --- */
+  .card.soft[data-foldable] > h4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 0;
+  }
+  .card.soft[data-foldable]:not(.is-folded) > h4 {
+    margin-bottom: 1rem;
+  }
+  .card.soft[data-foldable].is-folded > *:not(h4) {
+    display: none;
+  }
+  .card-fold-toggle {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .card-fold-toggle .fold-caret {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    margin-top: -3px;
+  }
+  .card.soft[data-foldable].is-folded .fold-caret {
+    transform: rotate(-45deg);
+    margin-top: 3px;
+  }
+
+  /* --- Product detail (product.php) ---
+     Gallery flips vertical (main image on top, thumbs in a row below).
+     Form spacing trimmed for stacked mobile layout. */
+  .gallery-wrapper {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+  }
+  .images-thumbs {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+  .images-thumbs img {
+    width: 64px;
+    height: 64px;
+  }
+  .product-detail .ingredients-block { margin-bottom: 1rem; }
+  .product-detail .amount-block { margin-top: 1.25rem; }
+
+  /* --- Confirmation (confirmation.php) --- */
+  .confirmation.wrap { margin: 1.5rem auto; }
+  .card.soft.next.steps { margin: 1rem 0; padding: 1.25rem; }
+
+  /* --- product_added_to_cart.php: tighten inline-style gap --- */
+  .card.soft > .display.flex.flex.align[style*="gap"] { gap: 1rem !important; }
+
+  /* --- Productlist recommendations (template.php productList) ---
+     3 smaller cards in a horizontal swipeable row with scroll-snap. */
+  .productlist.grid.gap {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+  .productlist.grid.gap > .col-xs-12 {
+    flex: 0 0 calc((100% - 1rem) / 3);
+    width: calc((100% - 1rem) / 3);
+    scroll-snap-align: start;
+  }
+  .productlist .card.soft.product {
+    padding: 0.5rem;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+  }
+  .productlist .card.soft.product h3 { font-size: 0.75rem; line-height: 1.2; }
+  .productlist .card.soft.product h4 { font-size: 0.8125rem; }
+  .productlist .card.soft.product .product.rating { font-size: 0.625rem; }
+  .productlist .card.soft.product > .badge { top: 0.5rem; right: 0.5rem; font-size: 0.6875rem; padding: 0.125rem 0.4rem; }
+  .productlist .card.soft.product .btn { font-size: 0.75rem; padding: 0.3rem 0.5rem; margin-top: 0.25rem; }
+
+  /* --- Footer (footer.php) --- */
+  .site.footer > .container > .grid > .col-md-7 { text-align: left; }
+  .site.footer h5 { font-size: 0.9375rem; }
+  .site.footer h3 { font-size: 1.25rem; }
+  .site.footer p  { font-size: 0.875rem; }
+  .site.footer ul a { font-size: 0.8125rem; }
+
+  /* --- Typography (global mobile sizes) --- */
+  h1 { font-size: 1.875rem;  line-height: 1.2;  font-weight: 700; }
+  h2 { font-size: 1.5rem;    line-height: 1.25; font-weight: 700; }
+  h3 { font-size: 1.25rem;   line-height: 1.3;  font-weight: 700; }
+  h4 { font-size: 1.0625rem; line-height: 1.35; font-weight: 700; }
+  h5 { font-size: 0.9375rem; }
+  body, p { font-size: 0.9375rem; line-height: 1.5; }
+  small { font-size: 0.8125rem; }
+  .breadcrumb { font-size: 0.8125rem; }
+  .form.label, label.form.label { font-size: 0.8125rem; font-weight: 600; }
+  .btn, .btn.full { font-size: 0.9375rem; }
+
+  /* Product card prices/names — slightly smaller than desktop */
+  .card.soft.product h3 { font-size: 1.0625rem; }
+  .card.soft.product h4 { font-size: 1rem; font-weight: 700; }
+  .product-info-name   { font-size: 0.9375rem; }
+  .product-info-amount { font-size: 0.8125rem; }
+  .product-info-price  { font-size: 0.9375rem; }
+
+  /* --- Misc: wide tables scroll inside their card --- */
+  .card.soft:has(table) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — DESKTOP-ONLY  (min-width: 801px)
+   Foldable section toggles live in the small-screen block above;
+   desktop simply hides them. (Header desktop layout lives at the
+   top of this file.)
+   ============================================================ */
+@media (min-width: 801px) {
+  .card-fold-toggle { display: none; }
 }
 
 @media (max-width: 600px) {
@@ -788,3 +1019,4 @@ section.banner {
     .banner.actions { margin-top: 1rem; }
     .banner.actions .btn { flex: 1 1 auto; }
 }
+
